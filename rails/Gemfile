@@ -8,6 +8,16 @@ gem 'spring',        group: :development
 
 gem 'sdoc', '~> 0.4.0',          group: :doc
 
+gem 'omniauth'
+gem 'omniauth-lastfm'
+gem 'omniauth-twitter'
+gem "omniauth-google-oauth2"
+gem 'omniauth-soundcloud', '~> 1.0.0'
+
+gem "figaro"
+gem 'pry'
+
 group :development, :test do
   gem 'rspec-rails', '~> 3.0.0'
+  gem 'shoulda-matchers', require: false
 end
