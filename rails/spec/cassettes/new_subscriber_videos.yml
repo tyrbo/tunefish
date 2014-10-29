@@ -1,0 +1,59 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://gdata.youtube.com/feeds/api/users/default/newsubscriptionvideos/?key=AIzaSyBL9xCOlf9VoLtOyHq78KfF7R17zsYx75k
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 401
+      message: User authentication required.
+    headers:
+      X-Gdata-User-Country:
+      - US
+      Www-Authenticate:
+      - GoogleLogin realm="https://accounts.google.com/ClientLogin",service="youtube"
+      Content-Type:
+      - text/html; charset=UTF-8
+      Content-Length:
+      - '181'
+      Date:
+      - Wed, 29 Oct 2014 22:28:32 GMT
+      Expires:
+      - Wed, 29 Oct 2014 22:28:32 GMT
+      Cache-Control:
+      - private, max-age=0
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      Server:
+      - GSE
+      Alternate-Protocol:
+      - 443:quic,p=0.01
+    body:
+      encoding: UTF-8
+      string: |
+        <HTML>
+        <HEAD>
+        <TITLE>User authentication required.</TITLE>
+        </HEAD>
+        <BODY BGCOLOR="#FFFFFF" TEXT="#000000">
+        <H1>User authentication required.</H1>
+        <H2>Error 401</H2>
+        </BODY>
+        </HTML>
+    http_version: 
+  recorded_at: Wed, 29 Oct 2014 22:28:32 GMT
+recorded_with: VCR 2.9.3
