@@ -3,9 +3,7 @@ require 'rails_helper'
 describe "GET '/auth/lastfm/callback'", type: :request do
 
   before(:each) do
-    valid_lastfm_login
-    get "auth/lastfm/callback"
-    request.env["omniauth.auth"] = OmniAuth.config.mock_auth[:lastfm]
+    lastfm_login_request
   end
 
   it 'should create a user' do

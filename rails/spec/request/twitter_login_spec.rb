@@ -3,9 +3,7 @@ require 'rails_helper'
 describe "GET '/auth/twitter/callback'", type: :request do
 
   before(:each) do
-    valid_twitter_login
-    get "auth/twitter/callback"
-    request.env["omniauth.auth"] = OmniAuth.config.mock_auth[:twitter]
+    twitter_login_request
   end
 
   it 'should create a user' do
