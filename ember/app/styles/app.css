@@ -1,3 +1,16 @@
 html, body {
   margin: 20px;
 }
+
+.navbar-custom {
+  background: transparent;
+  border-bottom: 1px solid #eaeaea;
+}
+
+.landing-continer {
+}
+
+.center {
+  text-align: center;
+}
+
