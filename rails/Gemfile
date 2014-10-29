@@ -16,6 +16,8 @@ gem 'omniauth-soundcloud', '~> 1.0.0'
 
 gem "figaro"
 gem 'pry'
+gem 'faraday'
+gem 'vcr'
 
 group :development, :test do
   gem 'rspec-rails', '~> 3.0.0'
