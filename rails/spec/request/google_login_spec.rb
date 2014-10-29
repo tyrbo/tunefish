@@ -3,9 +3,7 @@ require 'rails_helper'
 describe "GET '/auth/google_oauth2/callback'", type: :request do
 
   before(:each) do
-    valid_google_oauth2_login
-    get "auth/google_oauth2/callback"
-    request.env["omniauth.auth"] = OmniAuth.config.mock_auth[:google_oauth2]
+    google_login_request
   end
 
   it 'should create a user' do

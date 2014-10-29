@@ -3,9 +3,7 @@ require 'rails_helper'
 describe "GET '/auth/soundcloud/callback'", type: :request do
 
   before(:each) do
-    valid_soundcloud_login
-    get "auth/soundcloud/callback"
-    request.env["omniauth.auth"] = OmniAuth.config.mock_auth[:soundcloud]
+    soundcloud_login_request
   end
 
   it 'should create a user' do
