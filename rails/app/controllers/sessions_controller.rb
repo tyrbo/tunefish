@@ -19,9 +19,9 @@ class SessionsController < ApplicationController
     else
       if @identity.user.present?
         self.current_user = @identity.user
-        redirect_to "http://localhost:4200/users/#{@identity.user.id}"
+        render :close_window
       else
-        redirect_to "http://localhost:4200"
+        render :close_window
       end
     end
   end
