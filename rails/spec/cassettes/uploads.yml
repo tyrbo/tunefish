@@ -1,0 +1,288 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://www.googleapis.com/youtube/v3/playlistItems?key=AIzaSyBL9xCOlf9VoLtOyHq78KfF7R17zsYx75k&maxResults=5&part=snippet&playlistId=UUn8zNIfYAQNdrFRrr8oibKw
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Expires:
+      - Thu, 30 Oct 2014 20:13:00 GMT
+      Date:
+      - Thu, 30 Oct 2014 20:13:00 GMT
+      Cache-Control:
+      - private, max-age=0, must-revalidate, no-transform
+      Etag:
+      - '"PSjn-HSKiX6orvNhGZvglLI2lvk/0D5fBy8_NCQkpsvEBlufispI4Uo"'
+      Vary:
+      - Origin
+      - Referer
+      - X-Origin
+      Content-Type:
+      - application/json; charset=UTF-8
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      Content-Length:
+      - '11744'
+      Server:
+      - GSE
+      Alternate-Protocol:
+      - 443:quic,p=0.01
+    body:
+      encoding: UTF-8
+      string: |
+        {
+         "kind": "youtube#playlistItemListResponse",
+         "etag": "\"PSjn-HSKiX6orvNhGZvglLI2lvk/0D5fBy8_NCQkpsvEBlufispI4Uo\"",
+         "nextPageToken": "CAUQAA",
+         "pageInfo": {
+          "totalResults": 1319,
+          "resultsPerPage": 5
+         },
+         "items": [
+          {
+           "kind": "youtube#playlistItem",
+           "etag": "\"PSjn-HSKiX6orvNhGZvglLI2lvk/vw4ejSv_9lJWJ-FYgR9TJ8g-JBI\"",
+           "id": "UUSn2_ptcBxeKcP9tIvV5idEqt7DnLavIB",
+           "snippet": {
+            "publishedAt": "2014-10-25T01:47:30.000Z",
+            "channelId": "UCn8zNIfYAQNdrFRrr8oibKw",
+            "title": "Casting the Pirates: Behind the Scenes of 'Fishing Without Nets' (Part 2)",
+            "description": "Click here to watch the film now: http://bit.ly/Fishing-Without-Nets\n\nShot in East Africa using Somali non-actors, Fishing Without Nets tells the mesmerizing and sobering story of the pirates from the Somali point of view. First-time feature filmmaker Cutter Hodierne combines the epic cinematic vision of a glorious action-thriller with intimate, textured qualities of an art film, humanizing the pirates by bringing us inside their moral dilemmas and gut-wrenching struggles\n\nIn this second episode of our behind the scenes series,  we speak to the Somali actors about their home lives and how they came to star in a Sundance award winning film. \n\nWatch Episode 1 here: http://youtu.be/YCpm75mXUFE\n\nFollow director Cutter Hodeirne:\nTwitter: https://twitter.com/MyNameIsCUTTER\nInstagram: http://instagram.com/mynameiscutter\n\nCheck out our full video catalog: http://bit.ly/VICE-Videos\nVideos, daily editorial and more: http://vice.com\nLike VICE on Facebook: http://fb.com/vice\nFollow VICE on Twitter: http://twitter.com/vice\nRead our Tumblr: http://vicemag.tumblr.com\nFollow us on Instagram: http://instagram.com/vice",
+            "thumbnails": {
+             "default": {
+              "url": "https://i.ytimg.com/vi/KFqbt0XAGfo/default.jpg",
+              "width": 120,
+              "height": 90
+             },
+             "medium": {
+              "url": "https://i.ytimg.com/vi/KFqbt0XAGfo/mqdefault.jpg",
+              "width": 320,
+              "height": 180
+             },
+             "high": {
+              "url": "https://i.ytimg.com/vi/KFqbt0XAGfo/hqdefault.jpg",
+              "width": 480,
+              "height": 360
+             },
+             "standard": {
+              "url": "https://i.ytimg.com/vi/KFqbt0XAGfo/sddefault.jpg",
+              "width": 640,
+              "height": 480
+             },
+             "maxres": {
+              "url": "https://i.ytimg.com/vi/KFqbt0XAGfo/maxresdefault.jpg",
+              "width": 1280,
+              "height": 720
+             }
+            },
+            "channelTitle": "VICE",
+            "playlistId": "UUn8zNIfYAQNdrFRrr8oibKw",
+            "position": 0,
+            "resourceId": {
+             "kind": "youtube#video",
+             "videoId": "KFqbt0XAGfo"
+            }
+           }
+          },
+          {
+           "kind": "youtube#playlistItem",
+           "etag": "\"PSjn-HSKiX6orvNhGZvglLI2lvk/bvviU6IcAywRr4nBPjaV1T2baPo\"",
+           "id": "UUSn2_ptcBxeJ8XFtK8qBRXGrANc3Wv5LT",
+           "snippet": {
+            "publishedAt": "2014-10-25T01:45:56.000Z",
+            "channelId": "UCn8zNIfYAQNdrFRrr8oibKw",
+            "title": "The Pirate's POV: Behind the Scenes of 'Fishing Without Nets' (Part 1)",
+            "description": "Click here to watch now: http://bit.ly/Fishing-Without-Nets\n\nShot in East Africa using Somali non-actors, Fishing Without Nets tells the mesmerizing and sobering story of the pirates from the Somali point of view. First-time feature filmmaker Cutter Hodierne combines the epic cinematic vision of a glorious action-thriller with intimate, textured qualities of an art film, humanizing the pirates by bringing us inside their moral dilemmas and gut-wrenching struggles\n\nIn this first episode of our behind the scenes series, we speak to the director, Cutter Hodierne about his drive to create an authentic point of view from the pirates and the importance of filming in Kenya. \n\nFollow director Cutter Hodeirne:\nTwitter: https://twitter.com/MyNameIsCUTTER\nInstagram: http://instagram.com/mynameiscutter\n\nCheck out our full video catalog: http://bit.ly/VICE-Videos\nVideos, daily editorial and more: http://vice.com\nLike VICE on Facebook: http://fb.com/vice\nFollow VICE on Twitter: http://twitter.com/vice\nRead our Tumblr: http://vicemag.tumblr.com\nFollow us on Instagram: http://instagram.com/vice",
+            "thumbnails": {
+             "default": {
+              "url": "https://i.ytimg.com/vi/YCpm75mXUFE/default.jpg",
+              "width": 120,
+              "height": 90
+             },
+             "medium": {
+              "url": "https://i.ytimg.com/vi/YCpm75mXUFE/mqdefault.jpg",
+              "width": 320,
+              "height": 180
+             },
+             "high": {
+              "url": "https://i.ytimg.com/vi/YCpm75mXUFE/hqdefault.jpg",
+              "width": 480,
+              "height": 360
+             },
+             "standard": {
+              "url": "https://i.ytimg.com/vi/YCpm75mXUFE/sddefault.jpg",
+              "width": 640,
+              "height": 480
+             },
+             "maxres": {
+              "url": "https://i.ytimg.com/vi/YCpm75mXUFE/maxresdefault.jpg",
+              "width": 1280,
+              "height": 720
+             }
+            },
+            "channelTitle": "VICE",
+            "playlistId": "UUn8zNIfYAQNdrFRrr8oibKw",
+            "position": 1,
+            "resourceId": {
+             "kind": "youtube#video",
+             "videoId": "YCpm75mXUFE"
+            }
+           }
+          },
+          {
+           "kind": "youtube#playlistItem",
+           "etag": "\"PSjn-HSKiX6orvNhGZvglLI2lvk/X4pOYJ20eDK1rWbacHStAfVrT_8\"",
+           "id": "UUSn2_ptcBxeJ3UtbVtZVdOPu6RNB6VI5t",
+           "snippet": {
+            "publishedAt": "2014-10-24T23:57:47.000Z",
+            "channelId": "UCn8zNIfYAQNdrFRrr8oibKw",
+            "title": "A Girl Walks Home Alone at Night (2014) - Official Trailer [HD]",
+            "description": "In theaters November 21st. Learn more at: http://www.agirlwalkshome.com\n\nThe first Iranian Vampire Western ever made, Ana Lily Amirpour’s debut basks in the sheer pleasure of pulp. A joyful mash-up of genre, archetype, and iconography, its prolific influences span spaghetti westerns, graphic novels, horror films, and the Iranian New Wave.\n\nIn theaters November 21st. Learn more at http://www.agirlwalkshome.com\n\nCheck out our full video catalog: http://bit.ly/VICE-Videos\nVideos, daily editorial and more: http://vice.com\nLike VICE on Facebook: http://fb.com/vice\nFollow VICE on Twitter: http://twitter.com/vice\nRead our Tumblr: http://vicemag.tumblr.com\nFollow us on Instagram: http://instagram.com/vice",
+            "thumbnails": {
+             "default": {
+              "url": "https://i.ytimg.com/vi/_YGmTdo3vuY/default.jpg",
+              "width": 120,
+              "height": 90
+             },
+             "medium": {
+              "url": "https://i.ytimg.com/vi/_YGmTdo3vuY/mqdefault.jpg",
+              "width": 320,
+              "height": 180
+             },
+             "high": {
+              "url": "https://i.ytimg.com/vi/_YGmTdo3vuY/hqdefault.jpg",
+              "width": 480,
+              "height": 360
+             },
+             "standard": {
+              "url": "https://i.ytimg.com/vi/_YGmTdo3vuY/sddefault.jpg",
+              "width": 640,
+              "height": 480
+             },
+             "maxres": {
+              "url": "https://i.ytimg.com/vi/_YGmTdo3vuY/maxresdefault.jpg",
+              "width": 1280,
+              "height": 720
+             }
+            },
+            "channelTitle": "VICE",
+            "playlistId": "UUn8zNIfYAQNdrFRrr8oibKw",
+            "position": 2,
+            "resourceId": {
+             "kind": "youtube#video",
+             "videoId": "_YGmTdo3vuY"
+            }
+           }
+          },
+          {
+           "kind": "youtube#playlistItem",
+           "etag": "\"PSjn-HSKiX6orvNhGZvglLI2lvk/4J8viqfmWxKBnSQFlPuHym3K3Wc\"",
+           "id": "UUSn2_ptcBxeJbIVvQ4n6H4PYGStY23_CL",
+           "snippet": {
+            "publishedAt": "2014-10-24T21:49:36.000Z",
+            "channelId": "UCn8zNIfYAQNdrFRrr8oibKw",
+            "title": "The Human Panda is Back: Latest on VICE (October 25, 2014)",
+            "description": "Check out the latest on VICE: \n\nVICE NEWS: Jailed for a Tweet: Interview with Nabeel Rajab - http://bit.ly/Tweet-Jail\nNOISEY: Kiesza Taught Us the Moves to Hideaway - http://bit.ly/Kiesza-Dance\nMOTHERBOARD: Meet Scotland's DIY Rocketeers - http://bit.ly/DIY-Rocketeers\nMUNCHIES: Huang's World - http://bit.ly/Huangs-World\n\n--\n\nSubscribe to the VICE Network:\n\nVICE: http://bit.ly/Subscribe-to-VICE\nMOTHERBOARD: http://bit.ly/Subscribe-To-MOTHERBOARD\nThe Creators Project: http://bit.ly/Subscribe_to_TheCreatorsProject\nMUNCHIES: http://bit.ly/Subscribe-to-MUNCHIES\nVICE News: http://bit.ly/Subscribe-to-VICE-News\nNoisey: http://bit.ly/Subscribe-to-Noisey\nThump: http://bit.ly/Subscribe_to_THUMP\nVICE Sports: http://bit.ly/Subscribe-to-VICE-Sports\nFightland: http://bit.ly/Subscribe-to-Fightland\n\n--\n\nCheck out our full video catalog: http://bit.ly/VICE-Videos\nVideos, daily editorial and more: http://vice.com\nLike VICE on Facebook: http://fb.com/vice\nFollow VICE on Twitter: http://twitter.com/vice\nRead our Tumblr: http://vicemag.tumblr.com\nFollow us on Instagram: http://instagram.com/vice",
+            "thumbnails": {
+             "default": {
+              "url": "https://i.ytimg.com/vi/L7P088xjItA/default.jpg",
+              "width": 120,
+              "height": 90
+             },
+             "medium": {
+              "url": "https://i.ytimg.com/vi/L7P088xjItA/mqdefault.jpg",
+              "width": 320,
+              "height": 180
+             },
+             "high": {
+              "url": "https://i.ytimg.com/vi/L7P088xjItA/hqdefault.jpg",
+              "width": 480,
+              "height": 360
+             },
+             "standard": {
+              "url": "https://i.ytimg.com/vi/L7P088xjItA/sddefault.jpg",
+              "width": 640,
+              "height": 480
+             },
+             "maxres": {
+              "url": "https://i.ytimg.com/vi/L7P088xjItA/maxresdefault.jpg",
+              "width": 1280,
+              "height": 720
+             }
+            },
+            "channelTitle": "VICE",
+            "playlistId": "UUn8zNIfYAQNdrFRrr8oibKw",
+            "position": 3,
+            "resourceId": {
+             "kind": "youtube#video",
+             "videoId": "L7P088xjItA"
+            }
+           }
+          },
+          {
+           "kind": "youtube#playlistItem",
+           "etag": "\"PSjn-HSKiX6orvNhGZvglLI2lvk/pqSlxoQw8h2qRgWIDYoDaGT8cII\"",
+           "id": "UUSn2_ptcBxeLsNg2femJ__ZM3paf94cEO",
+           "snippet": {
+            "publishedAt": "2014-10-24T16:23:43.000Z",
+            "channelId": "UCn8zNIfYAQNdrFRrr8oibKw",
+            "title": "Jason Schwartzman & Alex Ross Perry on \"Listen Up Philip\": VICE Meets",
+            "description": "Click here to subscribe to VICE: http://bit.ly/Subscribe-to-VICE\n\nWriter and director Alex Ross Perry’s latest film, \"Listen Up Philip,\" stars Jason Schwartzman as a disgruntled novelist on the brink of success, grappling as it estranges him from his life. As Philip distances himself from his girlfriend Ashley, played by Elisabeth Moss, he finds solace in a new mentor, who shares the same apathy for the people around him.\n\nIn this week's VICE Meets, Reihan Salam sits with Ross Perry and Schwartzman to talk about success, working together, and the pains of changing without growing.\n\nWatch more VICE Meets here: http://bit.ly/VICE-Meets\n\nRead on VICE:\n\n'The Big Lebowski' Was the Film That Taught Me to Take It Easy, Man: http://bit.ly/1sYCzFu \n\nWe Spoke to a Psychologist About Hollywood's Depictions of Mental Illness: http://bit.ly/1rtbaHN\n\nThe Best of London Film Fest: http://bit.ly/1rtbbeJ\n\nCheck out our full video catalog: http://bit.ly/VICE-Videos\nVideos, daily editorial and more: http://vice.com\nLike VICE on Facebook: http://fb.com/vice\nFollow VICE on Twitter: http://twitter.com/vice\nRead our Tumblr: http://vicemag.tumblr.com\nFollow us on Instagram: http://instagram.com/vice",
+            "thumbnails": {
+             "default": {
+              "url": "https://i.ytimg.com/vi/UJnT-lllx1E/default.jpg",
+              "width": 120,
+              "height": 90
+             },
+             "medium": {
+              "url": "https://i.ytimg.com/vi/UJnT-lllx1E/mqdefault.jpg",
+              "width": 320,
+              "height": 180
+             },
+             "high": {
+              "url": "https://i.ytimg.com/vi/UJnT-lllx1E/hqdefault.jpg",
+              "width": 480,
+              "height": 360
+             },
+             "standard": {
+              "url": "https://i.ytimg.com/vi/UJnT-lllx1E/sddefault.jpg",
+              "width": 640,
+              "height": 480
+             },
+             "maxres": {
+              "url": "https://i.ytimg.com/vi/UJnT-lllx1E/maxresdefault.jpg",
+              "width": 1280,
+              "height": 720
+             }
+            },
+            "channelTitle": "VICE",
+            "playlistId": "UUn8zNIfYAQNdrFRrr8oibKw",
+            "position": 4,
+            "resourceId": {
+             "kind": "youtube#video",
+             "videoId": "UJnT-lllx1E"
+            }
+           }
+          }
+         ]
+        }
+    http_version: 
+  recorded_at: Thu, 30 Oct 2014 20:13:00 GMT
+recorded_with: VCR 2.9.3

@@ -1,28 +1,44 @@
 require 'rails_helper'
 
 describe YoutubeAPI, type: :model do
-  # it 'test_example_dot_com' do
-  #   VCR.use_cassette('synopsis') do
-  #     response = Net::HTTP.get_response(URI('http://www.iana.org/domains/reserved'))
-  #     assert_match /Example domains/, response.body
-  #   end
-  # end
 
-  # What we're gonna test here
-  # We're testing our interface
-  # We want the new subscriber feed from youtube
-  # using default
-  # https://gdata.youtube.com/feeds/api/users/default/newsubscriptionvideos
-  before(:each) do
-    hash = { 'provider' => 'google_oauth2', 'uid' => '12345', 'info' => {'first_name' => 'Jon'}, 'credentials' => {'token' => '1/fFAGRNJru1FTz70BzhT3Zg'}}
-    identity = Identity.create_from_hash(hash)
-    @user = User.last
-  end
-
-  it 'retrieves new subscriber videos' do
-    VCR.use_cassette('new_subscriber_videos') do
-      response = YoutubeAPI.get_new_subscriber_videos(@user)
-      expect(response.status).to eq 200
+  describe '.get_subscriptions' do
+    it 'gets all youtube subscriptions for a user' do
+      VCR.use_cassette('subscriptions') do
+        channel_id = "UC_R3-VJlFnDhlG_9hk-tZiQ"
+        response = YoutubeAPI.get_subscriptions(channel_id)
+        expect(response.status).to eq 200
+      end
     end
   end
+
+  describe '.get_subscription_details' do
+    it 'gets contentDetail for a channel' do
+      VCR.use_cassette('channelDetail') do
+        channel_ids = ["UCn8zNIfYAQNdrFRrr8oibKw",
+                       "UCt7YulMv6FtTkUGBWqOK9KQ",
+                       "UC_R3-VJlFnDhlG_9hk-tZiQ"]
+        response = YoutubeAPI.get_subscription_details(channel_ids)
+        expect(response.status). to eq 200
+      end
+    end
+  end
+
+  describe '.get_uploads' do
+    it 'gets a list of uploads for a channel' do
+      VCR.use_cassette('uploads') do
+        uploads_id = "UUn8zNIfYAQNdrFRrr8oibKw"
+        response = YoutubeAPI.get_uploads(uploads_id)
+        expect(response.status).to eq 200
+      end
+    end
+  end
+
+  #call the api to find user's subscriptions
+  #call api for each subscription part:contentDetails, id: the channel id
+  #find the uploads value in the response
+  #make api call to get playlistItems part: snippet, id: uploads value
+  #send all those to some kind of feed
+  #https://www.googleapis.com/youtube/v3/subscriptions?part=snippet&key=AIzaSyBL9xCOlf9VoLtOyHq78KfF7R17zsYx75k&channelId=UC_R3-VJlFnDhlG_9hk-tZiQ
+  #https://www.googleapis.com/subscriptions?channelId=UC_R3-VJlFnDhlG_9hk-tZiQ&key=AIzaSyBL9xCOlf9VoLtOyHq78KfF7R17zsYx75k&part=snippet
 end
