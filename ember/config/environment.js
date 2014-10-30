@@ -22,7 +22,7 @@ module.exports = function(environment) {
       'default-src': "'none'",
       'script-src': "'self' 'unsafe-eval' 'unsafe-inline' maxcdn.bootstrapcdn.com",
       'font-src': "'self' maxcdn.bootstrapcdn.com",
-      'connect-src': "'self' localhost:3000",
+      'connect-src': "'self' 127.0.0.1:3000",
       'img-src': "'self'",
       'style-src': "'self' maxcdn.bootstrapcdn.com",
       'frame-src': "'none'"
