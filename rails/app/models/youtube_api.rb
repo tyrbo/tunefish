@@ -2,7 +2,7 @@ class YoutubeAPI
   Api_key = ENV['google_key']
 
   def self.get_subscriptions(channel_id=nil)
-    search_url = "/youtube/v3/subscriptions?part=snippet&fields=items/snippet/channelId&key=#{Api_key}"
+    search_url = "/youtube/v3/subscriptions?part=snippet&fields=items/snippet&key=#{Api_key}"
 
     if channel_id
       search_url += "&channelId=#{channel_id}"

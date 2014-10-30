@@ -12,4 +12,16 @@ class User < ActiveRecord::Base
   def google_token
     google_identity.token
   end
+
+  def subscriptions(json)
+    channels = {}
+
+    json['items'].each do |channel|
+      title = channel['snippet']['title']
+      channel_id = channel['snippet']['resourceId']['channelId']
+      channels[title] = channel_id
+    end
+
+    channels
+  end
 end
