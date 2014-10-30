@@ -7,9 +7,11 @@
     Sign up with one of these providers:
   </p>
   <div class="oauth-icons-container">
-    {{link-to 'Last.fm'}}
-    {{link-to 'Soundcloud'}}
-    {{link-to 'Twitter'}}
-    {{link-to 'Google'}}
+    {{#link-to 'lastfm'}}Last.fm{{/link-to}}
+    {{#link-to 'soundcloud'}}Soundcloud{{/link-to}}
+    {{#link-to 'twitter'}}Twitter{{/link-to}}
+    {{#link-to 'google'}}Google{{/link-to}}
   </div>
+  <div>
+    {{link-to 'Users' 'users'}}
 </div>
