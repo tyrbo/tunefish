@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://www.googleapis.com/youtube/v3/channels?fields=items/contentDetails&id=UCn8zNIfYAQNdrFRrr8oibKw,UCt7YulMv6FtTkUGBWqOK9KQ,UC_R3-VJlFnDhlG_9hk-tZiQ&key=AIzaSyBL9xCOlf9VoLtOyHq78KfF7R17zsYx75k&part=contentDetails
+    uri: https://www.googleapis.com/youtube/v3/channels?fields=items/contentDetails/relatedPlaylists/uploads&id=UCn8zNIfYAQNdrFRrr8oibKw,UCt7YulMv6FtTkUGBWqOK9KQ,UC_R3-VJlFnDhlG_9hk-tZiQ&key=AIzaSyBL9xCOlf9VoLtOyHq78KfF7R17zsYx75k&part=contentDetails
     body:
       encoding: US-ASCII
       string: ''
@@ -19,9 +19,9 @@ http_interactions:
       message: OK
     headers:
       Expires:
-      - Thu, 30 Oct 2014 19:41:00 GMT
+      - Thu, 30 Oct 2014 20:26:14 GMT
       Date:
-      - Thu, 30 Oct 2014 19:41:00 GMT
+      - Thu, 30 Oct 2014 20:26:14 GMT
       Cache-Control:
       - private, max-age=300, must-revalidate, no-transform
       Etag:
@@ -39,7 +39,7 @@ http_interactions:
       X-Xss-Protection:
       - 1; mode=block
       Content-Length:
-      - '624'
+      - '354'
       Server:
       - GSE
       Alternate-Protocol:
@@ -52,17 +52,13 @@ http_interactions:
           {
            "contentDetails": {
             "relatedPlaylists": {
-             "likes": "LLn8zNIfYAQNdrFRrr8oibKw",
-             "favorites": "FLn8zNIfYAQNdrFRrr8oibKw",
              "uploads": "UUn8zNIfYAQNdrFRrr8oibKw"
-            },
-            "googlePlusUserId": "105444907895487096711"
+            }
            }
           },
           {
            "contentDetails": {
             "relatedPlaylists": {
-             "likes": "LLt7YulMv6FtTkUGBWqOK9KQ",
              "uploads": "UUt7YulMv6FtTkUGBWqOK9KQ"
             }
            }
@@ -70,14 +66,12 @@ http_interactions:
           {
            "contentDetails": {
             "relatedPlaylists": {
-             "likes": "LL_R3-VJlFnDhlG_9hk-tZiQ",
              "uploads": "UU_R3-VJlFnDhlG_9hk-tZiQ"
-            },
-            "googlePlusUserId": "114980540934310234294"
+            }
            }
           }
          ]
         }
     http_version: 
-  recorded_at: Thu, 30 Oct 2014 19:41:00 GMT
+  recorded_at: Thu, 30 Oct 2014 20:26:14 GMT
 recorded_with: VCR 2.9.3
