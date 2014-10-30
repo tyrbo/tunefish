@@ -5,23 +5,22 @@ class SessionsController < ApplicationController
     @identity = Identity.find_from_hash(auth)
     if @identity.nil?
       @identity = Identity.create_from_hash(auth, current_user)
-      respond_with @identity
     end
 
     if signed_in?
       if @identity.user == current_user
-        #redirect to root url
+        render :close_window
       else
         @identity.user = current_user
         @identity.save
-        #redirect to root
+        render :close_window
       end
     else
       if @identity.user.present?
         self.current_user = @identity.user
-        #redirect to root
+        render :close_window
       else
-        #redirect to new user
+        render :close_window
       end
     end
   end
