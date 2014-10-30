@@ -7,12 +7,8 @@ var Router = Ember.Router.extend({
 
 Router.map(function() {
   this.route('landing', { path: '/' });
-  this.route('soundcloud');
-  this.route('google');
-  this.route('lastfm');
-  this.route('twitter');
   this.resource('users', function() {
-    this.route('show', {path: ':user_id'});
+    this.route('show', { path: ':user_id' });
   });
 });
 

@@ -7,10 +7,11 @@
     Sign up with one of these providers:
   </p>
   <div class="oauth-icons-container">
-    {{#link-to 'lastfm'}}Last.fm{{/link-to}}
-    {{#link-to 'soundcloud'}}Soundcloud{{/link-to}}
-    {{#link-to 'twitter'}}Twitter{{/link-to}}
-    {{#link-to 'google'}}Google{{/link-to}}
+
+    <a href='http://localhost:3000/auth/twitter' target='_blank'>Twitter</a>
+    <a href='http://localhost:3000/auth/soundcloud'>Soundcloud</a>
+    <a href='http://localhost:3000/auth/lastfm'>Last.fm</a>
+    <a href='http://localhost:3000/auth/google'>Google</a>
   </div>
   <div>
     {{link-to 'Users' 'users'}}
