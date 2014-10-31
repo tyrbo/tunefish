@@ -7,10 +7,37 @@ html, body {
   border-bottom: 1px solid #eaeaea;
 }
 
-.landing-continer {
+.landing-container {
+  float: left;
+}
+
+.oauth-icons-container{
+  margin-top: 10%;
+  margin-left: 5%;
+  float:left;
 }
 
 .center {
-  text-align: center;
+  margin-top: 20%;
 }
 
+.space {
+  margin-bottom: 5%;
+}
+
+.logo {
+  float: right;
+}
+.landing-page-title {
+  color: grey;
+}
+
+.landing {
+  height: 500px;
+  width: 100%;
+  background-image: url(http://imgur.com/HIGu1QM);
+}
+
+.orange {
+  color: orange;
+}
