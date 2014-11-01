@@ -5,7 +5,7 @@ module OmniAuthTestHelper
       provider: 'twitter',
       uid: '123545',
       info: {
-        first_name: "Jon",
+        name: "Jon",
         last_name:  "Snow",
         email:      "test@example.com"
       },
@@ -27,7 +27,7 @@ module OmniAuthTestHelper
       provider: 'lastfm',
       uid: '123546',
       info: {
-        first_name: "Katherine",
+        name: "Katherine",
         last_name:  "Stark",
         email:      "test@example.com"
       },
@@ -49,7 +49,7 @@ module OmniAuthTestHelper
       provider: 'google_oauth2',
       uid: '123546',
       info: {
-        first_name: "Ned",
+        name: "Ned",
         last_name:  "Stark",
         email:      "test@example.com"
       },
@@ -71,7 +71,7 @@ module OmniAuthTestHelper
       provider: 'soundcloud',
       uid: '123546',
       info: {
-        first_name: "Daenerys",
+        name: "Daenerys",
         last_name:  "Targaryen",
         email:      "test@example.com"
       },
