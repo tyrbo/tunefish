@@ -4,7 +4,7 @@ RSpec.describe User, :type => :model do
   include ResponseJsonFaker
 
   it 'should create user from omniauth hash' do
-    hash = {'info' => {'first_name' => 'Jon'}}
+    hash = {'info' => {'name' => 'Jon'}}
     user = User.create_from_hash!(hash)
     expect(user.name).to eq('Jon')
   end
