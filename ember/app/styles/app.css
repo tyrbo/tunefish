@@ -27,6 +27,7 @@ html, body {
 
 .logo {
   float: right; }
+
 .landing-page-title {
   color: grey;
 }
@@ -37,19 +38,25 @@ html, body {
   background-image: url(https://s3-us-west-2.amazonaws.com/tunefish/webb_soundwaves.jpg);
 }
 
+.feed-page {
+  height: 100%;
+  width: 100%;
+  background-image: url(https://s3-us-west-2.amazonaws.com/tunefish/webb_soundwaves.jpg);
+  background-attachment: fixed;
+  background-repeat: repeat-x;
+}
+
 .orange {
   color: orange;
 }
 
 #sidebar-wrapper {
-  left: 100px;
   width: 20%;
   background: #D8D8D8;
   position: fixed;
   height: 100%;
   overflow-y: auto;
   padding: 15px;
-  padding-right: 0;
 }
 
 #page-content-wrapper {
@@ -57,7 +64,7 @@ html, body {
 }
 
 .usercard {
-  width: 90%;
+  width: 100%;
   border-style: solid;
   border-width: 1px;
   border-radius: 15px;
@@ -88,4 +95,16 @@ html, body {
 
 .username {
   text-align: center;
+}
+
+.music {
+  padding: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-style: solid;
+  border-width: 1px;
+}
+
+.feed {
+  overflow: auto;
 }
