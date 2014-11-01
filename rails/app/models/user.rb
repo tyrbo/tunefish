@@ -15,9 +15,10 @@ class User < ActiveRecord::Base
   end
 
   def subscriptions(json)
+    subscriptions = JSON.parse json
     channels = {}
 
-    json['items'].each do |channel|
+    subscriptions['items'].each do |channel|
       title = channel['snippet']['title']
       channel_id = channel['snippet']['resourceId']['channelId']
       channels[title] = channel_id

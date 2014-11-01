@@ -1,4 +1,4 @@
-class YoutubeAPI
+class YoutubeAPI  
   Api_key = ENV['google_key']
 
   def self.get_subscriptions(channel_id=nil)

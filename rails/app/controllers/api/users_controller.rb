@@ -10,8 +10,9 @@ class Api::UsersController < ApplicationController
 
   def update
     @user = User.find(params[:id])
+    params[:subscriptions_hash] = {"America's Test Kitchen" => "UCxAS_aK7sS2x_bqnlJHDSHw", "VICE" => "UCn8zNIfYAQNdrFRrr8oibKw"}
     @user.add_tracked_subscriptions(params[:subscriptions_hash])
-    #trigger background worker
-    render json: current_user.includes(:identities)
+    YoutubeAPIWorker.perform_async(@user.tracked_subscriptions)
+    render json: User.last #this should be to the user's feed page
   end
 end
