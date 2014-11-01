@@ -24,4 +24,13 @@ class User < ActiveRecord::Base
 
     channels
   end
+
+  def add_tracked_subscriptions(subscriptions_hash)
+    tracked_subscriptions = subscriptions_hash.values.to_json
+    update(tracked_subscriptions: tracked_subscriptions)
+  end
+
+  def parsed_tracked_subscriptions
+    JSON.parse tracked_subscriptions
+  end
 end
