@@ -13,7 +13,7 @@ RSpec.describe User, :type => :model do
 
   it 'should have all youtube subscriptions' do
     user = User.create(name: "Jon Snow", email: "jsnow@whitewall.gov")
-    json = youtube_subscriptions
+    json = youtube_subscriptions.to_json
     expect(user.subscriptions(json)).to be_an_instance_of Hash
     expect(user.subscriptions(json)).to eq({"America's Test Kitchen" => "UCxAS_aK7sS2x_bqnlJHDSHw",
                                             "Cook's Illustrated - Topic" => "UCt7YulMv6FtTkUGBWqOK9KQ",
