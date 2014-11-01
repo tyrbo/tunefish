@@ -1,0 +1,91 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://www.googleapis.com/youtube/v3/playlistItems?fields=items/snippet/resourceId/videoId&key=AIzaSyBL9xCOlf9VoLtOyHq78KfF7R17zsYx75k&maxResults=5&part=snippet&playlistId=UUn8zNIfYAQNdrFRrr8oibKw
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Expires:
+      - Thu, 30 Oct 2014 20:26:15 GMT
+      Date:
+      - Thu, 30 Oct 2014 20:26:15 GMT
+      Cache-Control:
+      - private, max-age=0, must-revalidate, no-transform
+      Etag:
+      - '"PSjn-HSKiX6orvNhGZvglLI2lvk/0D5fBy8_NCQkpsvEBlufispI4Uo"'
+      Vary:
+      - Origin
+      - Referer
+      - X-Origin
+      Content-Type:
+      - application/json; charset=UTF-8
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      Content-Length:
+      - '448'
+      Server:
+      - GSE
+      Alternate-Protocol:
+      - 443:quic,p=0.01
+    body:
+      encoding: UTF-8
+      string: |
+        {
+         "items": [
+          {
+           "snippet": {
+            "resourceId": {
+             "videoId": "KFqbt0XAGfo"
+            }
+           }
+          },
+          {
+           "snippet": {
+            "resourceId": {
+             "videoId": "YCpm75mXUFE"
+            }
+           }
+          },
+          {
+           "snippet": {
+            "resourceId": {
+             "videoId": "_YGmTdo3vuY"
+            }
+           }
+          },
+          {
+           "snippet": {
+            "resourceId": {
+             "videoId": "L7P088xjItA"
+            }
+           }
+          },
+          {
+           "snippet": {
+            "resourceId": {
+             "videoId": "UJnT-lllx1E"
+            }
+           }
+          }
+         ]
+        }
+    http_version: 
+  recorded_at: Thu, 30 Oct 2014 20:26:15 GMT
+recorded_with: VCR 2.9.3

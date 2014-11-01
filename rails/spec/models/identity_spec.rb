@@ -16,7 +16,7 @@ RSpec.describe Identity, :type => :model do
   end
 
   it 'should create identity from omniauth hash' do
-    hash = { 'provider' => 'turing', 'uid' => '12345', 'info' => {'first_name' => 'Jon'}}
+    hash = { 'provider' => 'turing', 'uid' => '12345', 'info' => {'first_name' => 'Jon'}, 'credentials' => {'token' => '12345'}}
     expect(User.count).to eq(0)
     identity = Identity.create_from_hash(hash)
     expect(User.count).to eq(1)
