@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe UsersController, :type => :controller do
   describe 'PUT update' do
-    it 'updates tracked_subsriptions' do
+    xit 'updates tracked_subsriptions' do
       user = User.create
       expect(user.tracked_subscriptions).to eq(nil)
       put :update
