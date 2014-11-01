@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
   has_many :identities
+  serialize :tracked_subscriptions
 
   def self.create_from_hash!(hash)
     create(:name => hash['info']['first_name'])
@@ -26,11 +27,7 @@ class User < ActiveRecord::Base
   end
 
   def add_tracked_subscriptions(subscriptions_hash)
-    tracked_subscriptions = subscriptions_hash.values.to_json
+    tracked_subscriptions = subscriptions_hash.values
     update(tracked_subscriptions: tracked_subscriptions)
-  end
-
-  def parsed_tracked_subscriptions
-    JSON.parse tracked_subscriptions
   end
 end
