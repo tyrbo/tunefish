@@ -1,0 +1,7 @@
+<h2>Users!</h2>
+
+{{#each}}
+  {{~#link-to 'users.show' this}}
+    {{name}} ({{identities.length}})
+  {{~/link-to}}
+{{/each}}

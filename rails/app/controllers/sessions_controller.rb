@@ -9,18 +9,18 @@ class SessionsController < ApplicationController
 
     if signed_in?
       if @identity.user == current_user
-        #redirect to root url
+        render :close_window
       else
         @identity.user = current_user
         @identity.save
-        #redirect to root
+        render :close_window
       end
     else
       if @identity.user.present?
         self.current_user = @identity.user
-        #redirect to root
+        render :close_window
       else
-        #redirect to new user
+        render :close_window
       end
     end
   end
