@@ -35,7 +35,7 @@ html, body {
 .landing {
   height: 500px;
   width: 100%;
-  background-image: url(http://imgur.com/HIGu1QM);
+  background-image: url(https://s3-us-west-2.amazonaws.com/tunefish/webb_soundwaves.jpg);
 }
 
 .orange {
