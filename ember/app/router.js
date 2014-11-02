@@ -11,8 +11,8 @@ Router.map(function() {
     this.route('show', { path: ':user_id' });
   });
   this.resource('activities', function(){
-    this.route('show', { path: ':activity_id'})
-  j
+    this.route('show', { path: ':activity_id'});
+  });
 });
 
 export default Router;
