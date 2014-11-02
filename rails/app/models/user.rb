@@ -3,6 +3,7 @@ class User < ActiveRecord::Base
   serialize :tracked_subscriptions
 
   def self.create_from_hash!(hash)
+
     create(:name => hash['info']['name'])
   end
 

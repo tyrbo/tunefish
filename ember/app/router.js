@@ -10,6 +10,7 @@ Router.map(function() {
   this.resource('users', function() {
     this.route('show', { path: ':user_id' });
   });
+  this.route('feed', { path: 'feed' });
 });
 
 export default Router;
