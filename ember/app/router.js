@@ -12,7 +12,7 @@ Router.map(function() {
   });
   this.resource('activities', function(){
     this.route('show', { path: ':activity_id'})
-  });
+  j
 });
 
 export default Router;
