@@ -10,7 +10,9 @@ Router.map(function() {
   this.resource('users', function() {
     this.route('show', { path: ':user_id' });
   });
-  this.resource('activities');
+  this.resource('activities', function(){
+    this.route('show', { path: ':activity_id'})
+  });
 });
 
 export default Router;
