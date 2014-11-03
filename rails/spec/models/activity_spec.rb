@@ -1,5 +1,5 @@
 RSpec.describe Activity, :type => :model do
-  it { should belong_to(:feed) }
+  it { should belong_to(:user) }
 
   it 'should have a youtube scope' do
     youtube_activity = YoutubeActivity.create

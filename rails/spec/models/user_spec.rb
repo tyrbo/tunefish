@@ -11,7 +11,7 @@ RSpec.describe User, :type => :model do
 
   it { should have_many(:identities) }
 
-  it { should have_one(:feed) }
+  it { should have_many(:activities) }
 
   it { should serialize(:tracked_subscriptions) }
 
