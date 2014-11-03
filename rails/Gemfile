@@ -17,6 +17,7 @@ gem 'omniauth-soundcloud', '~> 1.0.0'
 gem "figaro"
 gem 'pry'
 gem 'faraday'
+gem 'twitter'
 gem 'sidekiq', '~> 3.2.6'
 
 group :development do
