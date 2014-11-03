@@ -13,6 +13,21 @@ class TwitterAPI
     end
   end
 
+  def get_oembed_tweets(tweet_ids)
+    tweet_ids.map { |id| client.oembed(id) }
+  end
+
+  # This returns an array of html strings representing an embeeded
+  # tweet that come back as part of the oembed response
+  # def oembed_html_strings
+  #   tweets = get_tweets_with_hashtag_tf
+  #   tweet_ids = tweets.map { |tweet| tweet.id }
+  #   tweet_ids.map do |id|
+  #     tweet = get_oembed_tweet(id)
+  #     tweet.html
+  #   end
+  # end
+
   private
 
   def client
