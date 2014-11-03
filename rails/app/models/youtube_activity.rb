@@ -1,0 +1,2 @@
+class YoutubeActivity < Activity
+end

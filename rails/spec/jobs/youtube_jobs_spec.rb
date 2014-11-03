@@ -29,10 +29,10 @@ describe YoutubeAPIWorker do
   it 'returns the urls of videos' do
     activity = Activity.create
     VCR.use_cassette('channelDetail_and_uploads') do
-      expect(activity.youtube).to eq(nil)
+      expect(Activity.youtube.count).to eq(0)
       YoutubeAPIWorker.perform_async(@user.tracked_subscriptions)
-      activiy = Activity.find(activity.id)
-      expect(activity.youtube).to eq(["https://www.youtube.com/watch?v=xYIBQoAfvf4", "https://www.youtube.com/watch?v=rYsvjbFCUJU", "https://www.youtube.com/watch?v=zEp8HzG8K5A", "https://www.youtube.com/watch?v=KFqbt0XAGfo","https://www.youtube.com/watch?v=YCpm75mXUFE"])
+      YoutubeAPIWorker.drain
+      expect(Activity.youtube.first.url).to eq("https://www.youtube.com/watch?v=xYIBQoAfvf4")
     end
   end
 end

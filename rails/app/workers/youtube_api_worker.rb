@@ -4,6 +4,7 @@ class YoutubeAPIWorker
   def perform(channel_ids)
     uploads_ids = get_uploads_ids(channel_ids)
     video_urls = get_recent_uploads(uploads_ids)
+    assign_urls_to_activity(video_urls)
   end
 
   def get_uploads_ids(channel_ids)
@@ -24,5 +25,11 @@ class YoutubeAPIWorker
       end
     end
     playlists.flatten
+  end
+
+  def assign_urls_to_activity(urls)
+    urls.each do |url|
+      YoutubeActivity.create(url: url)
+    end
   end
 end
