@@ -1,0 +1,70 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.twitter.com/1.1/statuses/oembed.json?id=529292521097416705
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      User-Agent:
+      - Twitter Ruby Gem 5.12.0
+      Authorization:
+      - OAuth oauth_consumer_key="7bnI3yeoY0xHWBIFHVEmyRcPD", oauth_nonce="3f24c8aea7515902fd190400a92e1748",
+        oauth_signature="fLeyZWCXVAKS17fBzidHMdZD6kM%3D", oauth_signature_method="HMAC-SHA1",
+        oauth_timestamp="1415032443", oauth_token="", oauth_version="1.0"
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - must-revalidate, max-age=3153600000
+      Content-Length:
+      - '374'
+      Content-Type:
+      - application/json;charset=utf-8
+      Date:
+      - Mon, 03 Nov 2014 16:34:06 UTC
+      Expires:
+      - Wed, 10 Oct 2114 16:34:06 GMT
+      Last-Modified:
+      - Mon, 03 Nov 2014 16:34:06 GMT
+      Server:
+      - tsa_b
+      Set-Cookie:
+      - guest_id=v1%3A141503244646473486; Domain=.twitter.com; Path=/; Expires=Wed,
+        02-Nov-2016 16:34:06 UTC
+      Strict-Transport-Security:
+      - max-age=631138519
+      X-Connection-Hash:
+      - 78bfb5176e35dbc0c83f7989c4071462
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Rate-Limit-Limit:
+      - '180'
+      X-Rate-Limit-Remaining:
+      - '179'
+      X-Rate-Limit-Reset:
+      - '1415033346'
+      X-Transaction:
+      - 7b994481b3f85a09
+      X-Xss-Protection:
+      - 1; mode=block
+    body:
+      encoding: UTF-8
+      string: '{"cache_age":"3153600000","url":"https:\/\/twitter.com\/Will_Faurot\/statuses\/529292521097416705","height":null,"provider_url":"https:\/\/twitter.com","provider_name":"Twitter","author_name":"Will
+        Faurot","version":"1.0","author_url":"https:\/\/twitter.com\/Will_Faurot","type":"rich","html":"\u003Cblockquote
+        class=\"twitter-tweet\"\u003E\u003Cp\u003E\u003Ca href=\"https:\/\/twitter.com\/hashtag\/tf?src=hash\"\u003E#tf\u003C\/a\u003E\u003C\/p\u003E&mdash;
+        Will Faurot (@Will_Faurot) \u003Ca href=\"https:\/\/twitter.com\/Will_Faurot\/status\/529292521097416705\"\u003ENovember
+        3, 2014\u003C\/a\u003E\u003C\/blockquote\u003E\n\u003Cscript async src=\"\/\/platform.twitter.com\/widgets.js\"
+        charset=\"utf-8\"\u003E\u003C\/script\u003E","width":550}'
+    http_version: 
+  recorded_at: Mon, 03 Nov 2014 16:34:06 GMT
+recorded_with: VCR 2.9.3
