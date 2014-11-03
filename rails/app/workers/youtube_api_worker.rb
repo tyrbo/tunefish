@@ -3,7 +3,7 @@ class YoutubeAPIWorker
 
   def perform(channel_ids)
     uploads_ids = get_uploads_ids(channel_ids)
-    videos_ids = get_recent_uploads(uploads_ids)
+    video_urls = get_recent_uploads(uploads_ids)
   end
 
   def get_uploads_ids(channel_ids)
@@ -18,8 +18,9 @@ class YoutubeAPIWorker
     playlists = uploads_ids.map do |upload_id|
       playlist_json = YoutubeAPI.get_uploads(upload_id).body
       playlist = JSON.parse playlist_json
-      video_ids = playlist['items'].map do |item|
-        item['snippet']['resourceId']['videoId']
+      video_urls = playlist['items'].map do |item|
+        video_id = item['snippet']['resourceId']['videoId']
+        "https://www.youtube.com/watch?v=#{video_id}"
       end
     end
     playlists.flatten

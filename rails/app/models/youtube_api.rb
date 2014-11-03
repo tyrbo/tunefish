@@ -1,4 +1,4 @@
-class YoutubeAPI  
+class YoutubeAPI
   Api_key = ENV['google_key']
 
   def self.get_subscriptions(channel_id=nil)
@@ -14,7 +14,9 @@ class YoutubeAPI
   end
 
   def self.get_subscription_details(channel_ids)
-    ids_string = channel_ids.join(",")
+    if channel_ids.count > 1
+      ids_string = channel_ids.join(",")
+    end
     connection.get "/youtube/v3/channels?part=contentDetails&fields=items/contentDetails/relatedPlaylists/uploads&key=#{Api_key}&id=#{ids_string}"
   end
 

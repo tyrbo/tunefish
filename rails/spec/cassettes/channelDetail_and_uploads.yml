@@ -1,0 +1,269 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://www.googleapis.com/youtube/v3/channels?fields=items/contentDetails/relatedPlaylists/uploads&id=UCn8zNIfYAQNdrFRrr8oibKw,UCt7YulMv6FtTkUGBWqOK9KQ,UC_R3-VJlFnDhlG_9hk-tZiQ&key=AIzaSyBL9xCOlf9VoLtOyHq78KfF7R17zsYx75k&part=contentDetails
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Expires:
+      - Mon, 03 Nov 2014 01:44:41 GMT
+      Date:
+      - Mon, 03 Nov 2014 01:44:41 GMT
+      Cache-Control:
+      - private, max-age=300, must-revalidate, no-transform
+      Etag:
+      - '"PSjn-HSKiX6orvNhGZvglLI2lvk/R0Ju91eY8fudQdlGGpvnQ_SQnr4"'
+      Vary:
+      - Origin
+      - Referer
+      - X-Origin
+      Content-Type:
+      - application/json; charset=UTF-8
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      Content-Length:
+      - '354'
+      Server:
+      - GSE
+      Alternate-Protocol:
+      - 443:quic,p=0.01
+    body:
+      encoding: UTF-8
+      string: |
+        {
+         "items": [
+          {
+           "contentDetails": {
+            "relatedPlaylists": {
+             "uploads": "UUn8zNIfYAQNdrFRrr8oibKw"
+            }
+           }
+          },
+          {
+           "contentDetails": {
+            "relatedPlaylists": {
+             "uploads": "UUt7YulMv6FtTkUGBWqOK9KQ"
+            }
+           }
+          },
+          {
+           "contentDetails": {
+            "relatedPlaylists": {
+             "uploads": "UU_R3-VJlFnDhlG_9hk-tZiQ"
+            }
+           }
+          }
+         ]
+        }
+    http_version: 
+  recorded_at: Mon, 03 Nov 2014 01:44:41 GMT
+- request:
+    method: get
+    uri: https://www.googleapis.com/youtube/v3/playlistItems?fields=items/snippet/resourceId/videoId&key=AIzaSyBL9xCOlf9VoLtOyHq78KfF7R17zsYx75k&maxResults=5&part=snippet&playlistId=UUn8zNIfYAQNdrFRrr8oibKw
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Expires:
+      - Mon, 03 Nov 2014 01:44:42 GMT
+      Date:
+      - Mon, 03 Nov 2014 01:44:42 GMT
+      Cache-Control:
+      - private, max-age=0, must-revalidate, no-transform
+      Etag:
+      - '"PSjn-HSKiX6orvNhGZvglLI2lvk/yRSQJJ8s7xC8VpBEha45lvwpoyA"'
+      Vary:
+      - Origin
+      - Referer
+      - X-Origin
+      Content-Type:
+      - application/json; charset=UTF-8
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      Content-Length:
+      - '448'
+      Server:
+      - GSE
+      Alternate-Protocol:
+      - 443:quic,p=0.01
+    body:
+      encoding: UTF-8
+      string: |
+        {
+         "items": [
+          {
+           "snippet": {
+            "resourceId": {
+             "videoId": "xYIBQoAfvf4"
+            }
+           }
+          },
+          {
+           "snippet": {
+            "resourceId": {
+             "videoId": "rYsvjbFCUJU"
+            }
+           }
+          },
+          {
+           "snippet": {
+            "resourceId": {
+             "videoId": "zEp8HzG8K5A"
+            }
+           }
+          },
+          {
+           "snippet": {
+            "resourceId": {
+             "videoId": "KFqbt0XAGfo"
+            }
+           }
+          },
+          {
+           "snippet": {
+            "resourceId": {
+             "videoId": "YCpm75mXUFE"
+            }
+           }
+          }
+         ]
+        }
+    http_version: 
+  recorded_at: Mon, 03 Nov 2014 01:44:42 GMT
+- request:
+    method: get
+    uri: https://www.googleapis.com/youtube/v3/playlistItems?fields=items/snippet/resourceId/videoId&key=AIzaSyBL9xCOlf9VoLtOyHq78KfF7R17zsYx75k&maxResults=5&part=snippet&playlistId=UUt7YulMv6FtTkUGBWqOK9KQ
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Expires:
+      - Mon, 03 Nov 2014 01:44:42 GMT
+      Date:
+      - Mon, 03 Nov 2014 01:44:42 GMT
+      Cache-Control:
+      - private, max-age=0, must-revalidate, no-transform
+      Etag:
+      - '"PSjn-HSKiX6orvNhGZvglLI2lvk/3cxjRXf86G9z5Bg7rup3QfCgrxM"'
+      Vary:
+      - Origin
+      - Referer
+      - X-Origin
+      Content-Type:
+      - application/json; charset=UTF-8
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      Content-Length:
+      - '17'
+      Server:
+      - GSE
+      Alternate-Protocol:
+      - 443:quic,p=0.01
+    body:
+      encoding: UTF-8
+      string: |
+        {
+         "items": []
+        }
+    http_version: 
+  recorded_at: Mon, 03 Nov 2014 01:44:42 GMT
+- request:
+    method: get
+    uri: https://www.googleapis.com/youtube/v3/playlistItems?fields=items/snippet/resourceId/videoId&key=AIzaSyBL9xCOlf9VoLtOyHq78KfF7R17zsYx75k&maxResults=5&part=snippet&playlistId=UU_R3-VJlFnDhlG_9hk-tZiQ
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Expires:
+      - Mon, 03 Nov 2014 01:44:42 GMT
+      Date:
+      - Mon, 03 Nov 2014 01:44:42 GMT
+      Cache-Control:
+      - private, max-age=0, must-revalidate, no-transform
+      Etag:
+      - '"PSjn-HSKiX6orvNhGZvglLI2lvk/3cxjRXf86G9z5Bg7rup3QfCgrxM"'
+      Vary:
+      - Origin
+      - Referer
+      - X-Origin
+      Content-Type:
+      - application/json; charset=UTF-8
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      Content-Length:
+      - '17'
+      Server:
+      - GSE
+      Alternate-Protocol:
+      - 443:quic,p=0.01
+    body:
+      encoding: UTF-8
+      string: |
+        {
+         "items": []
+        }
+    http_version: 
+  recorded_at: Mon, 03 Nov 2014 01:44:43 GMT
+recorded_with: VCR 2.9.3

@@ -1,6 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe Api::UsersController, :type => :request do
+  Sidekiq::Testing.fake!
   describe 'PUT update' do
     it 'adds tracked_subsriptions' do
       user = User.create
