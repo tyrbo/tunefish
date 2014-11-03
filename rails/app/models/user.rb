@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  has_one   :feed
+  has_many  :activities
   has_many  :identities
   serialize :tracked_subscriptions
 

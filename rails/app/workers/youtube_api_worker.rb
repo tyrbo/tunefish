@@ -1,10 +1,10 @@
 class YoutubeAPIWorker
   include Sidekiq::Worker
 
-  def perform(channel_ids)
+  def perform(channel_ids, current_user_id)
     uploads_ids = get_uploads_ids(channel_ids)
     video_urls = get_recent_uploads(uploads_ids)
-    assign_urls_to_activity(video_urls)
+    assign_urls_to_activity(video_urls, current_user_id)
   end
 
   def get_uploads_ids(channel_ids)
@@ -27,9 +27,9 @@ class YoutubeAPIWorker
     playlists.flatten
   end
 
-  def assign_urls_to_activity(urls)
+  def assign_urls_to_activity(urls, current_user_id)
     urls.each do |url|
-      YoutubeActivity.create(url: url)
+      YoutubeActivity.create(url: url, user_id: current_user_id)
     end
   end
 end
