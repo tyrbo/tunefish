@@ -1,0 +1,2 @@
+class TwitterActivity < Activity
+end

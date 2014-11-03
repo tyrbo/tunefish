@@ -12,14 +12,14 @@ describe YoutubeAPIWorker do
 
   it 'adds a job to the queue' do
     expect {
-      YoutubeAPIWorker.perform_async(@user.tracked_subscriptions)
+      YoutubeAPIWorker.perform_async(@user.tracked_subscriptions, @user.id)
     }.to change(YoutubeAPIWorker.jobs, :size).by(1)
   end
 
   it 'executes the queued jobs' do
     VCR.use_cassette('channelDetail_and_uploads') do
       expect {
-        YoutubeAPIWorker.perform_async(@user.tracked_subscriptions)
+        YoutubeAPIWorker.perform_async(@user.tracked_subscriptions, @user.id)
       }.to change(YoutubeAPIWorker.jobs, :size).by(1)
       YoutubeAPIWorker.drain
       expect(YoutubeAPIWorker.jobs.size).to eq 0
@@ -30,7 +30,7 @@ describe YoutubeAPIWorker do
     activity = Activity.create
     VCR.use_cassette('channelDetail_and_uploads') do
       expect(Activity.youtube.count).to eq(0)
-      YoutubeAPIWorker.perform_async(@user.tracked_subscriptions)
+      YoutubeAPIWorker.perform_async(@user.tracked_subscriptions, @user.id)
       YoutubeAPIWorker.drain
       expect(Activity.youtube.first.url).to eq("https://www.youtube.com/watch?v=xYIBQoAfvf4")
     end
