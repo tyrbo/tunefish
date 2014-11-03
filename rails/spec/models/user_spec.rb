@@ -11,6 +11,10 @@ RSpec.describe User, :type => :model do
 
   it { should have_many(:identities) }
 
+  it { should have_one(:feed) }
+
+  it { should serialize(:tracked_subscriptions) }
+
   it 'should have all youtube subscriptions' do
     user = User.create(name: "Jon Snow", email: "jsnow@whitewall.gov")
     json = youtube_subscriptions.to_json

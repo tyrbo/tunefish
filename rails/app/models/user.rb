@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
-  has_many :identities
+  has_one   :feed
+  has_many  :identities
   serialize :tracked_subscriptions
 
   def self.create_from_hash!(hash)
