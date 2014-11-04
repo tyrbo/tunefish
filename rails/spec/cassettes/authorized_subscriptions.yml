@@ -1,0 +1,156 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://www.googleapis.com/youtube/v3/subscriptions?channelId=UC_R3-VJlFnDhlG_9hk-tZiQ&fields=items/snippet&key=AIzaSyBL9xCOlf9VoLtOyHq78KfF7R17zsYx75k&part=snippet
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Expires:
+      - Tue, 04 Nov 2014 03:58:35 GMT
+      Date:
+      - Tue, 04 Nov 2014 03:58:35 GMT
+      Cache-Control:
+      - private, max-age=0, must-revalidate, no-transform
+      Etag:
+      - '"PSjn-HSKiX6orvNhGZvglLI2lvk/JnpYQpXw2bYWzY1sxNcpPH2DigM"'
+      Vary:
+      - Origin
+      - Referer
+      - X-Origin
+      Content-Type:
+      - application/json; charset=UTF-8
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      Content-Length:
+      - '4253'
+      Server:
+      - GSE
+      Alternate-Protocol:
+      - 443:quic,p=0.01
+    body:
+      encoding: UTF-8
+      string: |
+        {
+         "items": [
+          {
+           "snippet": {
+            "publishedAt": "2014-10-30T15:39:17.000Z",
+            "title": "Noisey",
+            "description": "Music by VICE",
+            "resourceId": {
+             "kind": "youtube#channel",
+             "channelId": "UC0iwHRFpv2_fpojZgQhElEQ"
+            },
+            "channelId": "UC_R3-VJlFnDhlG_9hk-tZiQ",
+            "thumbnails": {
+             "default": {
+              "url": "https://yt3.ggpht.com/-WHdsTGMMGoo/AAAAAAAAAAI/AAAAAAAAAAA/YG6V1iqrJUg/s88-c-k-no/photo.jpg"
+             },
+             "high": {
+              "url": "https://yt3.ggpht.com/-WHdsTGMMGoo/AAAAAAAAAAI/AAAAAAAAAAA/YG6V1iqrJUg/s240-c-k-no/photo.jpg"
+             }
+            }
+           }
+          },
+          {
+           "snippet": {
+            "publishedAt": "2014-10-30T15:39:16.000Z",
+            "title": "VICE News",
+            "description": "VICE News is an international news channel created by and for a connected generation. Our documentaries and original news series bring you an unvarnished look at some of the most important events of our time, and shine a light on underreported stories around the globe.",
+            "resourceId": {
+             "kind": "youtube#channel",
+             "channelId": "UCZaT_X_mc0BI-djXOlfhqWQ"
+            },
+            "channelId": "UC_R3-VJlFnDhlG_9hk-tZiQ",
+            "thumbnails": {
+             "default": {
+              "url": "https://yt3.ggpht.com/-C_54SDZRV_U/AAAAAAAAAAI/AAAAAAAAAAA/tATYqE6eIT0/s88-c-k-no/photo.jpg"
+             },
+             "high": {
+              "url": "https://yt3.ggpht.com/-C_54SDZRV_U/AAAAAAAAAAI/AAAAAAAAAAA/tATYqE6eIT0/s240-c-k-no/photo.jpg"
+             }
+            }
+           }
+          },
+          {
+           "snippet": {
+            "publishedAt": "2014-10-30T15:39:14.000Z",
+            "title": "VICE",
+            "description": "VICE specializes in exploring uncomfortable truths and going to places we don't belong. Herein you will find people talking frankly about their hatred and love for various things, general heresy, the only culture, travel and news documentaries you'll want to watch, tons of exclusive new stuff, and probably not a lot of cats. You're welcome.",
+            "resourceId": {
+             "kind": "youtube#channel",
+             "channelId": "UCn8zNIfYAQNdrFRrr8oibKw"
+            },
+            "channelId": "UC_R3-VJlFnDhlG_9hk-tZiQ",
+            "thumbnails": {
+             "default": {
+              "url": "https://yt3.ggpht.com/-SuohYAOTZvs/AAAAAAAAAAI/AAAAAAAAAAA/JHg2bUQ0Gjc/s88-c-k-no/photo.jpg"
+             },
+             "high": {
+              "url": "https://yt3.ggpht.com/-SuohYAOTZvs/AAAAAAAAAAI/AAAAAAAAAAA/JHg2bUQ0Gjc/s240-c-k-no/photo.jpg"
+             }
+            }
+           }
+          },
+          {
+           "snippet": {
+            "publishedAt": "2014-10-30T15:39:06.000Z",
+            "title": "Cook's Illustrated - Topic",
+            "description": "Cook's Illustrated is an American cooking magazine published by America's Test Kitchen in Brookline, Massachusetts, every two months. It accepts no advertising and is characterized by extensive recipe testing and detailed instructions. The magazine also conducts thorough evaluations of kitchen equipment and branded foods and ingredients.\n\nThis channel was generated automatically by YouTube's video discovery system.",
+            "resourceId": {
+             "kind": "youtube#channel",
+             "channelId": "UCt7YulMv6FtTkUGBWqOK9KQ"
+            },
+            "channelId": "UC_R3-VJlFnDhlG_9hk-tZiQ",
+            "thumbnails": {
+             "default": {
+              "url": "https://i.ytimg.com/i/t7YulMv6FtTkUGBWqOK9KQ/1.jpg"
+             },
+             "high": {
+              "url": "https://i.ytimg.com/i/t7YulMv6FtTkUGBWqOK9KQ/mq1.jpg"
+             }
+            }
+           }
+          },
+          {
+           "snippet": {
+            "publishedAt": "2014-10-30T15:39:04.000Z",
+            "title": "Cook's Country - Topic",
+            "description": "Christopher Kimball hosts this cooking show filmed in a renovated Vermont farmhouse in which Kimball and the crew from \"America's Test Kitchen\" revisit favorite American recipes, including lost recipes, regional favorites and new classics. Other regular segments on the show include food tastings, equipment testing and tips and techniques from the test kitchen, including caring for cookware and mistakes to avoid when cooking.\n\nThis channel was generated automatically by YouTube's video discovery system.",
+            "resourceId": {
+             "kind": "youtube#channel",
+             "channelId": "UCTKpRucsWimjH6Ef43wQanA"
+            },
+            "channelId": "UC_R3-VJlFnDhlG_9hk-tZiQ",
+            "thumbnails": {
+             "default": {
+              "url": "https://i.ytimg.com/i/TKpRucsWimjH6Ef43wQanA/1.jpg"
+             },
+             "high": {
+              "url": "https://i.ytimg.com/i/TKpRucsWimjH6Ef43wQanA/mq1.jpg"
+             }
+            }
+           }
+          }
+         ]
+        }
+    http_version: 
+  recorded_at: Tue, 04 Nov 2014 03:58:36 GMT
+recorded_with: VCR 2.9.3
