@@ -21,7 +21,7 @@ class YoutubeAPIWorker
       playlist = JSON.parse playlist_json
       video_urls = playlist['items'].map do |item|
         video_id = item['snippet']['resourceId']['videoId']
-        "https://www.youtube.com/watch?v=#{video_id}"
+        "//www.youtube.com/embed/#{video_id}"
       end
     end
     playlists.flatten
@@ -29,7 +29,7 @@ class YoutubeAPIWorker
 
   def assign_urls_to_activity(urls, current_user_id)
     urls.each do |url|
-      YoutubeActivity.create(url: url, user_id: current_user_id)
+      YoutubeActivity.create(url: url, user_id: current_user_id, provider: 'youtube')
     end
   end
 end
