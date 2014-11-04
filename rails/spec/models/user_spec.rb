@@ -16,14 +16,17 @@ RSpec.describe User, :type => :model do
   it { should serialize(:tracked_subscriptions) }
 
   it 'should have all youtube subscriptions' do
-    user = User.create(name: "Jon Snow", email: "jsnow@whitewall.gov")
-    json = youtube_subscriptions.to_json
-    expect(user.subscriptions(json)).to be_an_instance_of Hash
-    expect(user.subscriptions(json)).to eq({"America's Test Kitchen" => "UCxAS_aK7sS2x_bqnlJHDSHw",
-                                            "Cook's Illustrated - Topic" => "UCt7YulMv6FtTkUGBWqOK9KQ",
-                                            "Munchies" => "UCaLfMkkHhSA_LaCta0BzyhQ",
-                                            "Noisey" => "UC0iwHRFpv2_fpojZgQhElEQ",
-                                            "VICE" => "UCn8zNIfYAQNdrFRrr8oibKw"})
+    VCR.use_cassette('subscriptions') do
+      user = User.create(name: "Jon Snow", email: "jsnow@whitewall.gov")
+      channel_id = "UC_R3-VJlFnDhlG_9hk-tZiQ"
+      response = YoutubeAPI.get_subscriptions(channel_id)
+      expect(user.subscriptions(response)).to be_an_instance_of Hash
+      expect(user.subscriptions(response)).to eq({"Noisey"=>"UC0iwHRFpv2_fpojZgQhElEQ",
+                                                  "VICE News"=>"UCZaT_X_mc0BI-djXOlfhqWQ",
+                                                  "VICE"=>"UCn8zNIfYAQNdrFRrr8oibKw",
+                                                  "Cook's Illustrated - Topic"=>"UCt7YulMv6FtTkUGBWqOK9KQ",
+                                                  "Cook's Country - Topic"=>"UCTKpRucsWimjH6Ef43wQanA"})
+    end
   end
 
   it 'should have tracked subscriptions' do
