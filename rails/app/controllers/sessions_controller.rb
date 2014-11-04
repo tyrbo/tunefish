@@ -5,6 +5,9 @@ class SessionsController < ApplicationController
     @identity = Identity.find_from_hash(auth)
     if @identity.nil?
       @identity = Identity.create_from_hash(auth, current_user)
+      if auth['provider'] == 'soundcloud'
+        @identity.user.update_attributes(soundcloud_user_id: auth['extra']['raw_info']['id'])
+      end
     end
 
     if signed_in?
