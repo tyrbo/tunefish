@@ -81,6 +81,7 @@ module OmniAuthTestHelper
       },
       extra: {
         raw_info: {
+          id: '12345',
           gender: 'female'
         }
       }

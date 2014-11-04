@@ -25,7 +25,7 @@ module.exports = function(environment) {
       'connect-src': "'self' 127.0.0.1:3000 ws://127.0.0.1:35729",
       'img-src': "'self' s3-us-west-2.amazonaws.com",
       'style-src': "'self' maxcdn.bootstrapcdn.com",
-      'frame-src': "youtube.com w.soundcloud.com",
+      'frame-src': "www.youtube.com w.soundcloud.com",
       'report-uri': 'http://localhost:4200'
     },
   };
