@@ -1,5 +1,5 @@
 class Api::ActivitiesController < ApplicationController
   def index
-    render json: YoutubeActivity.all
+    render json: Activity.all
   end
 end
