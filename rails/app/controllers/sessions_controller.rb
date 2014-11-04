@@ -9,9 +9,8 @@ class SessionsController < ApplicationController
         @identity.user.update_attributes(soundcloud_user_id: auth['extra']['raw_info']['id'])
       end
     end
-
-    # Save soundcloud activity
-    SoundcloudAPIWorker.perform_async(@identity.user.soundcloud_user_id, @identity.user.id)
+    # Save soundcloud activit y
+     SoundcloudAPIWorker.perform_async(@identity.user.soundcloud_user_id, @identity.user.id)
 
     if signed_in?
       if @identity.user == current_user
@@ -28,6 +27,11 @@ class SessionsController < ApplicationController
       else
         render :close_window
       end
+    end
+    if auth['provider'] == 'google_oauth2'
+      binding.pry
+      params[:subscriptions_hash] = @identity.user.subscriptions(YoutubeAPI.get_subscriptions(current_user))
+      @identity.user.add_tracked_subscriptions(params[:subscriptions_hash])
     end
   end
 end
