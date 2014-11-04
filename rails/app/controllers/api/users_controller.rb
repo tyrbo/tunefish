@@ -1,5 +1,6 @@
 class Api::UsersController < ApplicationController
-include ResponseJsonFaker
+  # include ResponseJsonFaker
+
   def index
     render json: User.all
   end
