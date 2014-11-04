@@ -6,6 +6,6 @@ export default Ember.ObjectController.extend({
   }.property('provider'),
 
   isSoundcloud: function() {
-    return this.get('provider') === 'soundcloud'
+    return this.get('provider') === 'soundcloud';
   }.property('provider')
 });

@@ -1,7 +1,7 @@
 class YoutubeAPI
   Api_key = ENV['google_key']
 
-  def self.get_subscriptions(channel_id=nil)
+  def self.get_subscriptions(current_user, channel_id=nil)
     search_url = "/youtube/v3/subscriptions?part=snippet&fields=items/snippet&key=#{Api_key}"
 
     if channel_id
@@ -9,8 +9,11 @@ class YoutubeAPI
     else
       search_url += '&mine=true'
     end
-
-    connection.get search_url
+    connection.get do |req|
+      req.url search_url
+      req.headers['Authorization'] = current_user.google_token
+      req.headers['X-GData-Key'] = "key=#{Api_key}"
+    end
   end
 
   def self.get_subscription_details(channel_ids)
