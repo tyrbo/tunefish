@@ -12,7 +12,7 @@ class User < ActiveRecord::Base
   end
 
   def google_token
-    google_identity.token
+   "Bearer #{ google_identity.token}"
   end
 
   def subscriptions(subscriptions_response)
