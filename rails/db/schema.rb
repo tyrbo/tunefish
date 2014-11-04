@@ -24,12 +24,6 @@ ActiveRecord::Schema.define(version: 20141103023055) do
     t.datetime "updated_at"
   end
 
-  create_table "feeds", force: true do |t|
-    t.integer  "user_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "identities", force: true do |t|
     t.string   "uid"
     t.string   "provider"
