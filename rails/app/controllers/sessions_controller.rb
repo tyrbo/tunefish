@@ -7,10 +7,16 @@ class SessionsController < ApplicationController
       @identity = Identity.create_from_hash(auth, current_user)
       if auth['provider'] == 'soundcloud'
         @identity.user.update_attributes(soundcloud_user_id: auth['extra']['raw_info']['id'])
+      elsif auth['provider'] == 'twitter'
+        binding.pry
+        @identity.user.update_attributes(twitter_screen_name: auth['info']['nickname'])
       end
     end
-    # Save soundcloud activit y
-     SoundcloudAPIWorker.perform_async(@identity.user.soundcloud_user_id, @identity.user.id)
+
+    # Save soundcloud activity
+    if @identity.user.soundcloud_user_id
+      SoundcloudAPIWorker.perform_async(@identity.user.soundcloud_user_id, @identity.user.id)
+    end
 
     if signed_in?
       if @identity.user == current_user
@@ -33,4 +39,9 @@ class SessionsController < ApplicationController
       @identity.user.add_tracked_subscriptions(params[:subscriptions_hash])
     end
   end
+
+  private
+
+  # def save_details_for_provider(auth_hash)
+  # end
 end
