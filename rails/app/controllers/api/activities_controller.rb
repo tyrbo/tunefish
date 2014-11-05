@@ -1,5 +1,5 @@
 class Api::ActivitiesController < ApplicationController
   def index
-    render json: Activity.all
+    render json: current_user.activities.shuffle
   end
 end
