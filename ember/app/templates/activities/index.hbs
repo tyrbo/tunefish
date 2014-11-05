@@ -60,6 +60,9 @@
                     <iframe height='300' width='100%' scrolling="no" frameborder="no" src={{unbound url}}></iframe>
                   </div>
                 {{/if}}
+                {{#if isTwitter}}
+                  <div class='tweet'>{{{unbound url}}}</div>
+                {{/if}}
               {{/with}}
             {{/each}}
             </div>
