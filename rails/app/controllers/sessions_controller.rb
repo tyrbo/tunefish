@@ -5,17 +5,19 @@ class SessionsController < ApplicationController
     @identity = Identity.find_from_hash(auth)
     if @identity.nil?
       @identity = Identity.create_from_hash(auth, current_user)
+      # This can be moved to Identity.create_from_hash
       if auth['provider'] == 'soundcloud'
         @identity.user.update_attributes(soundcloud_user_id: auth['extra']['raw_info']['id'])
       elsif auth['provider'] == 'twitter'
-        binding.pry
         @identity.user.update_attributes(twitter_screen_name: auth['info']['nickname'])
       end
     end
 
-    # Save soundcloud activity
+    # Fire 3rd party api requests only for services associated with a user
     if @identity.user.soundcloud_user_id
       SoundcloudAPIWorker.perform_async(@identity.user.soundcloud_user_id, @identity.user.id)
+    elsif @identity.user.twitter_screen_name
+      TwitterAPIWorker.perform_async(@identity.user.twitter_screen_name, @identity.user.id)
     end
 
     if signed_in?
