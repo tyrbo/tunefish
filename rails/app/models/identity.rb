@@ -12,7 +12,7 @@ class Identity < ActiveRecord::Base
     @identity
   end
 
-  def self.create_from_hash(hash, user = nil )
+  def self.create_from_hash(hash, user = nil)
     user ||= User.create_from_hash!(hash)
     Identity.create(:user => user, :uid => hash['uid'], :provider => hash['provider'], :token => hash['credentials']['refresh_token'])
   end
