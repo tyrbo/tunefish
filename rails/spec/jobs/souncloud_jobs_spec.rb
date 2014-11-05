@@ -6,12 +6,12 @@ describe SoundcloudAPIWorker do
   before { @user = User.create(soundcloud_user_id: '3171632') }
 
   it 'adds a job to the queue' do
-    expect {
-      SoundcloudAPIWorker.perform_async(@user)
+    expect{
+      SoundcloudAPIWorker.perform_async(@user.soundcloud_user_id, @user.id)
     }.to change(SoundcloudAPIWorker.jobs, :size).by(1)
   end
 
-  describe '.perform' do
+  describe '#perform' do
     it 'creates new soundcloud activities' do
       VCR.use_cassette('soundcloud/tracks_from_jobs') do
         work = SoundcloudAPIWorker.new
