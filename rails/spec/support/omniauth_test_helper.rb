@@ -11,6 +11,7 @@ module OmniAuthTestHelper
       },
       credentials: {
         token: "123456",
+        refresh_token: "", 
         expires_at: Time.now + 1.week
       },
       extra: {

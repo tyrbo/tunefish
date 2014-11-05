@@ -32,7 +32,7 @@ describe YoutubeAPIWorker do
       expect(Activity.youtube.count).to eq(0)
       YoutubeAPIWorker.perform_async(@user.tracked_subscriptions, @user.id)
       YoutubeAPIWorker.drain
-      expect(Activity.youtube.first.url).to eq("//www.youtube.com/embed/xYIBQoAfvf4")
+      expect(Activity.youtube.first.url).to eq("//www.youtube.com/embed/iMYBy_9WBl4")
     end
   end
 end

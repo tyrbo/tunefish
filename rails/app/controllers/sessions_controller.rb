@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
       end
     end
     # Save soundcloud activit y
-     SoundcloudAPIWorker.perform_async(@identity.user.soundcloud_user_id, @identity.user.id)
+    SoundcloudAPIWorker.perform_async(@identity.user.soundcloud_user_id, @identity.user.id)
 
     if signed_in?
       if @identity.user == current_user
