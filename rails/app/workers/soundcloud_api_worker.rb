@@ -6,7 +6,12 @@ class SoundcloudAPIWorker
     resp = soundcloud.get_favorited_tracks_for_user
     tracks = JSON.parse(resp.body)
     tracks.each do |track|
-      SoundcloudActivity.create(url: track['id'], user_id: user_id, provider: 'soundcloud')
+      url = soundcloud_embed_url(track['id'])
+      SoundcloudActivity.find_or_create_by(url: url, user_id: user_id, provider: 'soundcloud')
     end
+  end
+
+  def soundcloud_embed_url(track_id)
+    "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/#{track_id}&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true"
   end
 end
