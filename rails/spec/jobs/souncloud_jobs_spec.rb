@@ -12,12 +12,13 @@ describe SoundcloudAPIWorker do
   end
 
   describe '.perform' do
-    it 'creates soundcloud activities' do
+    it 'creates new soundcloud activities' do
       VCR.use_cassette('soundcloud/tracks_from_jobs') do
         work = SoundcloudAPIWorker.new
         work.perform(@user.soundcloud_user_id, @user.id)
-        pp SoundcloudActivity.all
         expect(SoundcloudActivity.first.url).to be
+        work.perform(@user.soundcloud_user_id, @user.id)
+        expect(SoundcloudActivity.count).to be(1)
       end
     end
   end
