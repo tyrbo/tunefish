@@ -4,6 +4,9 @@
         <p><a href="http://127.0.0.1:3000/auth/google_oauth2"  target="_blank" >
           Connect
         </a></p>
+        {{#each}}
+          {{title}}
+        {{/each}}
       <button {{action "close"}}>Done</button>
   </div>
 </div>
