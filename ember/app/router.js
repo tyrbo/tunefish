@@ -13,6 +13,9 @@ Router.map(function() {
   this.resource('activities', function(){
     this.route('show', { path: ':activity_id'});
   });
+  this.resource('youtube_subscriptions', function(){
+    this.route('show', { path: ':youtube_subscription_id'});
+  });
 });
 
 export default Router;
