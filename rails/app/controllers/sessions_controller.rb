@@ -19,6 +19,19 @@ class SessionsController < ApplicationController
       TwitterAPIWorker.perform_async(@identity.user.twitter_screen_name, @identity.user.id)
     end
 
+    # if auth['provider'] == 'google_oauth2'
+    #   subscriptions_json = YoutubeAPI.get_subscriptions(current_user).body
+    #   subscriptions = @identity.user.parse_subscriptions(subscriptions_json)
+
+    #   binding.pry
+    #   subscriptions.each do |sub|
+    #     user.youtube_subscriptions.create(title: sub["title"], channel_id: sub["channel_id"])
+    #   end
+
+    #   channel_ids = subscriptions_hash.values
+    #   YoutubeAPIWorker.perform_async(channel_ids)
+    # end
+
     if signed_in?
       if @identity.user == current_user
         render :close_window
@@ -35,15 +48,5 @@ class SessionsController < ApplicationController
         render :close_window
       end
     end
-    # subscriptions now have their own table
-    # if auth['provider'] == 'google_oauth2'
-    #   params[:subscriptions_hash] = @identity.user.subscriptions(YoutubeAPI.get_subscriptions(current_user))
-    #   @identity.user.add_tracked_subscriptions(params[:subscriptions_hash])
-    # end
   end
-
-  private
-
-  # def save_details_for_provider(auth_hash)
-  # end
 end
