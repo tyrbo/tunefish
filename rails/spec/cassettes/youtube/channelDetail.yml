@@ -19,9 +19,9 @@ http_interactions:
       message: OK
     headers:
       Expires:
-      - Thu, 30 Oct 2014 20:38:41 GMT
+      - Wed, 05 Nov 2014 20:28:24 GMT
       Date:
-      - Thu, 30 Oct 2014 20:38:41 GMT
+      - Wed, 05 Nov 2014 20:28:24 GMT
       Cache-Control:
       - private, max-age=300, must-revalidate, no-transform
       Etag:
@@ -73,5 +73,5 @@ http_interactions:
          ]
         }
     http_version: 
-  recorded_at: Thu, 30 Oct 2014 20:38:42 GMT
+  recorded_at: Wed, 05 Nov 2014 20:28:24 GMT
 recorded_with: VCR 2.9.3

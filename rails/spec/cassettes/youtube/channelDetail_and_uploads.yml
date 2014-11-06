@@ -19,9 +19,9 @@ http_interactions:
       message: OK
     headers:
       Expires:
-      - Mon, 03 Nov 2014 01:44:41 GMT
+      - Wed, 05 Nov 2014 20:28:22 GMT
       Date:
-      - Mon, 03 Nov 2014 01:44:41 GMT
+      - Wed, 05 Nov 2014 20:28:22 GMT
       Cache-Control:
       - private, max-age=300, must-revalidate, no-transform
       Etag:
@@ -73,7 +73,7 @@ http_interactions:
          ]
         }
     http_version: 
-  recorded_at: Mon, 03 Nov 2014 01:44:41 GMT
+  recorded_at: Wed, 05 Nov 2014 20:28:22 GMT
 - request:
     method: get
     uri: https://www.googleapis.com/youtube/v3/playlistItems?fields=items/snippet/resourceId/videoId&key=AIzaSyBL9xCOlf9VoLtOyHq78KfF7R17zsYx75k&maxResults=5&part=snippet&playlistId=UUn8zNIfYAQNdrFRrr8oibKw
@@ -93,13 +93,13 @@ http_interactions:
       message: OK
     headers:
       Expires:
-      - Mon, 03 Nov 2014 01:44:42 GMT
+      - Wed, 05 Nov 2014 20:28:23 GMT
       Date:
-      - Mon, 03 Nov 2014 01:44:42 GMT
+      - Wed, 05 Nov 2014 20:28:23 GMT
       Cache-Control:
       - private, max-age=0, must-revalidate, no-transform
       Etag:
-      - '"PSjn-HSKiX6orvNhGZvglLI2lvk/yRSQJJ8s7xC8VpBEha45lvwpoyA"'
+      - '"PSjn-HSKiX6orvNhGZvglLI2lvk/vyUufdg9FhEFrlmOihBHmhtFU4w"'
       Vary:
       - Origin
       - Referer
@@ -126,6 +126,27 @@ http_interactions:
           {
            "snippet": {
             "resourceId": {
+             "videoId": "iMYBy_9WBl4"
+            }
+           }
+          },
+          {
+           "snippet": {
+            "resourceId": {
+             "videoId": "-yeyy5GpLYs"
+            }
+           }
+          },
+          {
+           "snippet": {
+            "resourceId": {
+             "videoId": "0aTpF7_igpY"
+            }
+           }
+          },
+          {
+           "snippet": {
+            "resourceId": {
              "videoId": "xYIBQoAfvf4"
             }
            }
@@ -133,35 +154,14 @@ http_interactions:
           {
            "snippet": {
             "resourceId": {
-             "videoId": "rYsvjbFCUJU"
-            }
-           }
-          },
-          {
-           "snippet": {
-            "resourceId": {
-             "videoId": "zEp8HzG8K5A"
-            }
-           }
-          },
-          {
-           "snippet": {
-            "resourceId": {
-             "videoId": "KFqbt0XAGfo"
-            }
-           }
-          },
-          {
-           "snippet": {
-            "resourceId": {
-             "videoId": "YCpm75mXUFE"
+             "videoId": "hEBDUBiZoKI"
             }
            }
           }
          ]
         }
     http_version: 
-  recorded_at: Mon, 03 Nov 2014 01:44:42 GMT
+  recorded_at: Wed, 05 Nov 2014 20:28:23 GMT
 - request:
     method: get
     uri: https://www.googleapis.com/youtube/v3/playlistItems?fields=items/snippet/resourceId/videoId&key=AIzaSyBL9xCOlf9VoLtOyHq78KfF7R17zsYx75k&maxResults=5&part=snippet&playlistId=UUt7YulMv6FtTkUGBWqOK9KQ
@@ -181,9 +181,9 @@ http_interactions:
       message: OK
     headers:
       Expires:
-      - Mon, 03 Nov 2014 01:44:42 GMT
+      - Wed, 05 Nov 2014 20:28:23 GMT
       Date:
-      - Mon, 03 Nov 2014 01:44:42 GMT
+      - Wed, 05 Nov 2014 20:28:23 GMT
       Cache-Control:
       - private, max-age=0, must-revalidate, no-transform
       Etag:
@@ -213,7 +213,7 @@ http_interactions:
          "items": []
         }
     http_version: 
-  recorded_at: Mon, 03 Nov 2014 01:44:42 GMT
+  recorded_at: Wed, 05 Nov 2014 20:28:23 GMT
 - request:
     method: get
     uri: https://www.googleapis.com/youtube/v3/playlistItems?fields=items/snippet/resourceId/videoId&key=AIzaSyBL9xCOlf9VoLtOyHq78KfF7R17zsYx75k&maxResults=5&part=snippet&playlistId=UU_R3-VJlFnDhlG_9hk-tZiQ
@@ -233,9 +233,9 @@ http_interactions:
       message: OK
     headers:
       Expires:
-      - Mon, 03 Nov 2014 01:44:42 GMT
+      - Wed, 05 Nov 2014 20:28:23 GMT
       Date:
-      - Mon, 03 Nov 2014 01:44:42 GMT
+      - Wed, 05 Nov 2014 20:28:23 GMT
       Cache-Control:
       - private, max-age=0, must-revalidate, no-transform
       Etag:
@@ -265,5 +265,5 @@ http_interactions:
          "items": []
         }
     http_version: 
-  recorded_at: Mon, 03 Nov 2014 01:44:43 GMT
+  recorded_at: Wed, 05 Nov 2014 20:28:24 GMT
 recorded_with: VCR 2.9.3
