@@ -6,14 +6,13 @@ export default Ember.ObjectController.extend({
   }.property('tracked'),
 
   track: function() {
-    this.set('tracked', 'true')
-    this.save();
+    this.set('tracked', 'true');
+    this.get('model').save();
   },
 
   untrack: function(){
-   this.set('tracked', 'false')
-   debugger;
-   this.save();
+   this.set('tracked', 'false');
+   this.get('model').save();
   }
 
 });
