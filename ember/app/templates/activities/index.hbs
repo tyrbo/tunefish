@@ -6,12 +6,15 @@
         <div class='icon-container'>
           <div>
             <img src='https://s3-us-west-2.amazonaws.com/tunefish/soundcloud-icon.png' height='26%' width='26%'>
-            <img src='https://s3-us-west-2.amazonaws.com/tunefish/social_lastfm_box_red.png' height='25%' width='23%'>
-            <a href="http://127.0.0.1:3000/auth/google_oauth2" target="_blank">
+
+            <a class='jsYoutubeModal' {{action openModal 'user'}}>
               <img src='https://s3-us-west-2.amazonaws.com/tunefish/256px-Youtube_icon.svg.png' height='23%' width='23%'>
             </a>
             <img src='https://s3-us-west-2.amazonaws.com/tunefish/twitter-icon.png' height='23%' width='23%'>
+            <img src='https://s3-us-west-2.amazonaws.com/tunefish/iauro-more-icon.png' height='23%' width='23%'>
           </div>
+
+
         </div>
       </div>
       <div>
@@ -48,6 +51,7 @@
         <div class="row">
           <div class="col-md-9">
             <div class='feed'>
+              {{outlet 'modal'}}
             {{#each activity in content itemController="activity"}}
               {{#with activity}}
                 {{#if isYoutube}}
