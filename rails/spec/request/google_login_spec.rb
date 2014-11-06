@@ -3,7 +3,7 @@ require 'rails_helper'
 describe "GET '/auth/google_oauth2/callback'", type: :request do
 
   before(:each) do
-    VCR.use_cassette('subscription') do
+    VCR.use_cassette('youtube/login_subscriptions') do
       google_login_request
     end
   end

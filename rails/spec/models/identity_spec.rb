@@ -10,7 +10,7 @@ RSpec.describe Identity, :type => :model do
 
   it 'should find identity from omniauth hash' do
     Identity.create(user_id: 34, uid: '12345', provider: 'turing')
-    hash = { 'provider' => 'turing', 'uid' => '12345'}
+    hash = { 'provider' => 'turing', 'uid' => '12345', 'credentials' => {'token' => '12345'}}
     identity = Identity.find_from_hash(hash)
     expect(identity.user_id).to eq(34)
   end

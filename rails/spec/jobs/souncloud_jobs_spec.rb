@@ -18,7 +18,7 @@ describe SoundcloudAPIWorker do
         work.perform(@user.soundcloud_user_id, @user.id)
         expect(SoundcloudActivity.first.url).to be
         work.perform(@user.soundcloud_user_id, @user.id)
-        expect(SoundcloudActivity.count).to be(1)
+        expect(SoundcloudActivity.count).to be(13)
       end
     end
   end
