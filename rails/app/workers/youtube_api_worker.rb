@@ -16,6 +16,7 @@ class YoutubeAPIWorker
   end
 
   def get_recent_uploads(uploads_ids)
+
     playlists = uploads_ids.map do |upload_id|
       playlist_json = YoutubeAPI.get_uploads(upload_id).body
       playlist = JSON.parse playlist_json
