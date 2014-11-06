@@ -1,18 +1,23 @@
 <div class="modal-dialog">
-  <div class="modal-content">
+  <div class="modal-content youtube-modal">
       <h3 class="flush--top">Youtube Settings</h5>
-        <p><a href="http://127.0.0.1:3000/auth/google_oauth2"  target="_blank" >
-          Connect
-        </a></p>
+        Select channels you want Tunefi.sh to add to your feed:
+        <div class='modal_body'>
         {{#each subscription in subscription itemController='subscription'}}
+          <div class='sub'>
           {{#with subscription}}
           {{#if isTracked}}
-          <p><button {{action untrack}}><b> {{title}}</b></button> !!!</p>
+          <button class='btn btn-warning'{{action untrack}}><b> {{title}}</b></button>
           {{else}}
-          <p><button {{action track}}> {{title}}</button></p>
+          <button class= 'btn'{{action track}}> {{title}}</button>
           {{/if}}
           {{/with}}
+        </div>
         {{/each}}
-      <button {{action "close"}}>Done</button>
+      </div><br><br><br><br><br><br>
+    <div>
+    <button class='btn btn-primary' {{action "close"}}>Done</button>
+    </div>
   </div>
+
 </div>
