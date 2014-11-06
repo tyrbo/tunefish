@@ -2,13 +2,17 @@
 http_interactions:
 - request:
     method: get
-    uri: https://www.googleapis.com/youtube/v3/subscriptions?channelId=UC_R3-VJlFnDhlG_9hk-tZiQ&fields=items/snippet&key=AIzaSyBL9xCOlf9VoLtOyHq78KfF7R17zsYx75k&part=snippet
+    uri: https://www.googleapis.com/youtube/v3/subscriptions?fields=items/snippet&key=AIzaSyBL9xCOlf9VoLtOyHq78KfF7R17zsYx75k&mine=true&part=snippet
     body:
       encoding: US-ASCII
       string: ''
     headers:
       User-Agent:
       - Faraday v0.9.0
+      Authorization:
+      - Bearer ya29.tgB0u9BuB--0T9E4Zg8TxlDKQVKeNJgF5AsT-PNDBY_Eb-9TWtaMBv_zRMJODTzdYysEq1WmFUr1AQ
+      X-Gdata-Key:
+      - key=AIzaSyBL9xCOlf9VoLtOyHq78KfF7R17zsYx75k
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -19,13 +23,13 @@ http_interactions:
       message: OK
     headers:
       Expires:
-      - Tue, 04 Nov 2014 03:58:35 GMT
+      - Thu, 06 Nov 2014 05:54:34 GMT
       Date:
-      - Tue, 04 Nov 2014 03:58:35 GMT
+      - Thu, 06 Nov 2014 05:54:34 GMT
       Cache-Control:
       - private, max-age=0, must-revalidate, no-transform
       Etag:
-      - '"PSjn-HSKiX6orvNhGZvglLI2lvk/JnpYQpXw2bYWzY1sxNcpPH2DigM"'
+      - '"PSjn-HSKiX6orvNhGZvglLI2lvk/jO0WZjsKPpzQlW1XncxJJ8DqLb4"'
       Vary:
       - Origin
       - Referer
@@ -49,6 +53,26 @@ http_interactions:
       string: |
         {
          "items": [
+          {
+           "snippet": {
+            "publishedAt": "2014-10-30T15:39:14.000Z",
+            "title": "VICE",
+            "description": "VICE specializes in exploring uncomfortable truths and going to places we don't belong. Herein you will find people talking frankly about their hatred and love for various things, general heresy, the only culture, travel and news documentaries you'll want to watch, tons of exclusive new stuff, and probably not a lot of cats. You're welcome.",
+            "resourceId": {
+             "kind": "youtube#channel",
+             "channelId": "UCn8zNIfYAQNdrFRrr8oibKw"
+            },
+            "channelId": "UC_R3-VJlFnDhlG_9hk-tZiQ",
+            "thumbnails": {
+             "default": {
+              "url": "https://yt3.ggpht.com/-SuohYAOTZvs/AAAAAAAAAAI/AAAAAAAAAAA/JHg2bUQ0Gjc/s88-c-k-no/photo.jpg"
+             },
+             "high": {
+              "url": "https://yt3.ggpht.com/-SuohYAOTZvs/AAAAAAAAAAI/AAAAAAAAAAA/JHg2bUQ0Gjc/s240-c-k-no/photo.jpg"
+             }
+            }
+           }
+          },
           {
            "snippet": {
             "publishedAt": "2014-10-30T15:39:17.000Z",
@@ -85,26 +109,6 @@ http_interactions:
              },
              "high": {
               "url": "https://yt3.ggpht.com/-C_54SDZRV_U/AAAAAAAAAAI/AAAAAAAAAAA/tATYqE6eIT0/s240-c-k-no/photo.jpg"
-             }
-            }
-           }
-          },
-          {
-           "snippet": {
-            "publishedAt": "2014-10-30T15:39:14.000Z",
-            "title": "VICE",
-            "description": "VICE specializes in exploring uncomfortable truths and going to places we don't belong. Herein you will find people talking frankly about their hatred and love for various things, general heresy, the only culture, travel and news documentaries you'll want to watch, tons of exclusive new stuff, and probably not a lot of cats. You're welcome.",
-            "resourceId": {
-             "kind": "youtube#channel",
-             "channelId": "UCn8zNIfYAQNdrFRrr8oibKw"
-            },
-            "channelId": "UC_R3-VJlFnDhlG_9hk-tZiQ",
-            "thumbnails": {
-             "default": {
-              "url": "https://yt3.ggpht.com/-SuohYAOTZvs/AAAAAAAAAAI/AAAAAAAAAAA/JHg2bUQ0Gjc/s88-c-k-no/photo.jpg"
-             },
-             "high": {
-              "url": "https://yt3.ggpht.com/-SuohYAOTZvs/AAAAAAAAAAI/AAAAAAAAAAA/JHg2bUQ0Gjc/s240-c-k-no/photo.jpg"
              }
             }
            }
@@ -152,5 +156,5 @@ http_interactions:
          ]
         }
     http_version: 
-  recorded_at: Tue, 04 Nov 2014 03:58:36 GMT
+  recorded_at: Thu, 06 Nov 2014 05:54:34 GMT
 recorded_with: VCR 2.9.3

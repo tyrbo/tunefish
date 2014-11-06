@@ -7,8 +7,9 @@ RSpec.describe Api::UsersController, :type => :request do
 
   Sidekiq::Testing.fake!
   describe 'PUT update' do
-    it 'adds tracked_subsriptions' do
-      VCR.use_cassette('authorized_subscriptions') do
+    #currently not doing it in this way but I think we will be changing back to this
+    xit 'adds tracked_subsriptions' do
+      VCR.use_cassette('youtube/another_subscriptions') do
         user = User.last
         expect(user.tracked_subscriptions).to eq(nil)
         put "api/users/#{user.id}"

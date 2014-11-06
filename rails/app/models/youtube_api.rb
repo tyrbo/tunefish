@@ -3,16 +3,18 @@ class YoutubeAPI
 
   def self.get_subscriptions(current_user, channel_id=nil)
     search_url = "/youtube/v3/subscriptions?part=snippet&fields=items/snippet&key=#{Api_key}"
-
     if channel_id
       search_url += "&channelId=#{channel_id}"
+      connection.get do |req|
+        req.url search_url
+      end
     else
       search_url += '&mine=true'
-    end
-    connection.get do |req|
-      req.url search_url
-      req.headers['Authorization'] = current_user.google_token
-      req.headers['X-GData-Key'] = "key=#{Api_key}"
+      connection.get do |req|
+        req.url search_url
+        req.headers['Authorization'] = current_user.google_token
+        req.headers['X-GData-Key'] = "key=#{Api_key}"
+      end
     end
   end
 
