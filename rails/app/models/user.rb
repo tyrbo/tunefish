@@ -15,9 +15,10 @@ class User < ActiveRecord::Base
    "Bearer #{ google_identity.token}"
   end
 
-  def subscriptions(subscriptions_response)
-    subscriptions = JSON.parse subscriptions_response.body
+  def parse_subscriptions(subscriptions_response_string)
+    subscriptions = JSON.parse(subscriptions_response_string)
     channels = {}
+
     subscriptions['items'].each do |channel|
       title = channel['snippet']['title']
       channel_id = channel['snippet']['resourceId']['channelId']
