@@ -52,7 +52,7 @@
           <div class="col-md-9">
             <div class='feed'>
               {{outlet 'modal'}}
-            {{#each activity in content itemController="activity"}}
+            {{#each activity in activity itemController="activity"}}
               {{#with activity}}
                 {{#if isYoutube}}
                   <div class='music'>
