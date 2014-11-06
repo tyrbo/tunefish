@@ -12,7 +12,6 @@ class SessionsController < ApplicationController
         @identity.user.update_attributes(twitter_screen_name: auth['info']['nickname'])
       end
     end
-
     # Fire 3rd party api requests only for services associated with a user
     if @identity.user.soundcloud_user_id
       SoundcloudAPIWorker.perform_async(@identity.user.soundcloud_user_id, @identity.user.id)

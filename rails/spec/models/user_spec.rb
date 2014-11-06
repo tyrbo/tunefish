@@ -17,7 +17,7 @@ RSpec.describe User, :type => :model do
     VCR.use_cassette('subscriptions') do
       user = User.create(name: "Jon Snow", email: "jsnow@whitewall.gov")
       channel_id = "UC_R3-VJlFnDhlG_9hk-tZiQ"
-      response = YoutubeAPI.get_subscriptions(channel_id)
+      response = YoutubeAPI.get_subscriptions("user", channel_id)
       expect(user.subscriptions(response)).to be_an_instance_of Hash
       expect(user.subscriptions(response)).to eq({"Noisey"=>"UC0iwHRFpv2_fpojZgQhElEQ",
                                                   "VICE News"=>"UCZaT_X_mc0BI-djXOlfhqWQ",

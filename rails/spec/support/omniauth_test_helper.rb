@@ -45,24 +45,31 @@ module OmniAuthTestHelper
 
   def valid_google_oauth2_login
     OmniAuth.config.test_mode = true
-    OmniAuth.config.mock_auth[:google_oauth2] = OmniAuth::AuthHash.new({
-      provider: 'google_oauth2',
-      uid: '123546',
-      info: {
-        name: "Ned",
-        last_name:  "Stark",
-        email:      "test@example.com"
-      },
-      credentials: {
-        token: "123456",
-        expires_at: Time.now + 1.week
-      },
-      extra: {
-        raw_info: {
-          gender: 'male'
-        }
-      }
-    })
+    OmniAuth.config.mock_auth[:google_oauth2] = OmniAuth::AuthHash.new({"provider"=>"google_oauth2",
+       "uid"=>"114980540934310234294",
+       "info"=>
+        {"name"=>"Ned",
+         "email"=>"hilarydenton90@gmail.com",
+         "first_name"=>"Hilary",
+         "last_name"=>"Denton",
+         "image"=>"https://lh6.googleusercontent.com/-F6l_63vc8Zs/AAAAAAAAAAI/AAAAAAAAABA/kFKkZ6CfMUw/photo.jpg?sz=50",
+         "urls"=>{"Google"=>"https://plus.google.com/114980540934310234294"}},
+       "credentials"=>{"token"=>"ya29.tgB0u9BuB--0T9E4Zg8TxlDKQVKeNJgF5AsT-PNDBY_Eb-9TWtaMBv_zRMJODTzdYysEq1WmFUr1AQ", "expires_at"=>1415256708, "expires"=>true},
+       "extra"=>
+        {"id_token"=>
+          "eyJhbGciOiJSUzI1NiIsImtpZCI6IjMzZWU0N2Y3NjkxNDVkZDZkM2Q4ZGUwZTYzZTY0ODgyMjBhY2I3OTYifQ.eyJpc3MiOiJhY2NvdW50cy5nb29nbGUuY29tIiwiaWQiOiIxMTQ5ODA1NDA5MzQzMTAyMzQyOTQiLCJzdWIiOiIxMTQ5ODA1NDA5MzQzMTAyMzQyOTQiLCJhenAiOiI1MTI0NTQwMjkwNDQtYWo1dmNqbmdrMXFsdWhzcHVlbDFmMnE4ZG9nc3ZpYXIuYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJlbWFpbCI6ImhpbGFyeWRlbnRvbjkwQGdtYWlsLmNvbSIsImF0X2hhc2giOiI0dWpyODlNeDJKamdZZ0Z2VGdlNmFBIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsImF1ZCI6IjUxMjQ1NDAyOTA0NC1hajV2Y2puZ2sxcWx1aHNwdWVsMWYycThkb2dzdmlhci5hcHBzLmdvb2dsZXVzZXJjb250ZW50LmNvbSIsInRva2VuX2hhc2giOiI0dWpyODlNeDJKamdZZ0Z2VGdlNmFBIiwidmVyaWZpZWRfZW1haWwiOnRydWUsImNpZCI6IjUxMjQ1NDAyOTA0NC1hajV2Y2puZ2sxcWx1aHNwdWVsMWYycThkb2dzdmlhci5hcHBzLmdvb2dsZXVzZXJjb250ZW50LmNvbSIsImlhdCI6MTQxNTI1MjgwNywiZXhwIjoxNDE1MjU2NzA3fQ.myNUGx_S90aDYQZDE4zEBr9YRU_98T-t2M_7mZU67wAbjulTxoqyKE4OqtTmHjmk50QsiEJUeHaYmyLllXCzmXblBvn3plg3J2GxhsHu8QOmrrQWK1r1XjF3m39hzMRJbSZedoHcrMz6J165B4lhJO2oahZ_CyCh2fLz9tRzq1I",
+         "raw_info"=>
+          {"kind"=>"plus#personOpenIdConnect",
+           "gender"=>"female",
+           "sub"=>"114980540934310234294",
+           "name"=>"Hilary Denton",
+           "given_name"=>"Hilary",
+           "family_name"=>"Denton",
+           "profile"=>"https://plus.google.com/114980540934310234294",
+           "picture"=>"https://lh6.googleusercontent.com/-F6l_63vc8Zs/AAAAAAAAAAI/AAAAAAAAABA/kFKkZ6CfMUw/photo.jpg?sz=50",
+           "email"=>"hilarydenton90@gmail.com",
+           "email_verified"=>"true",
+           "locale"=>"en"}}})
   end
 
   def valid_soundcloud_login
