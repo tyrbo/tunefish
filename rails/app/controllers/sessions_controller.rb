@@ -36,10 +36,11 @@ class SessionsController < ApplicationController
         render :close_window
       end
     end
-    if auth['provider'] == 'google_oauth2'
-      params[:subscriptions_hash] = @identity.user.subscriptions(YoutubeAPI.get_subscriptions(current_user))
-      @identity.user.add_tracked_subscriptions(params[:subscriptions_hash])
-    end
+    # subscriptions now have their own table
+    # if auth['provider'] == 'google_oauth2'
+    #   params[:subscriptions_hash] = @identity.user.subscriptions(YoutubeAPI.get_subscriptions(current_user))
+    #   @identity.user.add_tracked_subscriptions(params[:subscriptions_hash])
+    # end
   end
 
   private
