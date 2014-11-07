@@ -117,3 +117,36 @@ html, body {
   text-align: center;
   margin-top: 7%;
 }
+
+.provider-image{
+  margin-right: 8%;
+}
+
+.table>tbody>tr>td{
+  border-top: 0px;
+  border-bottom: 1px solid #ddd;
+}
+
+.login-link{
+  color: #FFFFFF;
+}
+
+.table {
+  margin-bottom: 10px;
+  display:none;
+}
+
+.table-condensed>tbody>tr>td{
+  padding-right: 0px;
+  padding-left: 0px;
+}
+
+#line{
+  border-right: 1px solid #ddd;
+  padding-left: 3px;
+  margin-right: 2px;
+}
+
+.ember-view-image{
+  display: inline;
+}
