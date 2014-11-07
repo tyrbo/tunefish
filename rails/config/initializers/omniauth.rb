@@ -7,5 +7,8 @@ Rails.application.config.middleware.use OmniAuth::Builder do
     scope:"email, profile, http://gdata.youtube.com"
     }
   provider :soundcloud, ENV['soundcloud_key'], ENV['soundcloud_secret']
+end
 
+if Rails.env.production?
+  OmniAuth.config.full_host = "https://tunefi.sh"
 end
