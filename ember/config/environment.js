@@ -52,7 +52,7 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
-    ENV.APP.api_endpoint = 'https://api.tunefi.sh';
+    ENV.APP.api_endpoint = 'https://tunefi.sh';
   }
 
   return ENV;
