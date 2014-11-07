@@ -10,5 +10,5 @@ Rails.application.config.middleware.use OmniAuth::Builder do
 end
 
 if Rails.env.production?
-  OmniAuth.config.full_host = "https://api.tunefi.sh"
+  OmniAuth.config.full_host = "https://tunefi.sh"
 end
