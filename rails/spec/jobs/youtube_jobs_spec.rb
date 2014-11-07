@@ -4,35 +4,33 @@ describe YoutubeAPIWorker do
   Sidekiq::Testing.fake!
 
   before(:each) do
-    @user = User.create(tracked_subscriptions:
-                  ["UCn8zNIfYAQNdrFRrr8oibKw",
+    @user = User.create
+    @channel_ids = ["UCn8zNIfYAQNdrFRrr8oibKw",
                    "UCt7YulMv6FtTkUGBWqOK9KQ",
-                   "UC_R3-VJlFnDhlG_9hk-tZiQ"])
+                   "UC_R3-VJlFnDhlG_9hk-tZiQ"]
   end
 
-  xit 'adds a job to the queue' do
+  it 'adds a job to the queue' do
     expect {
-      YoutubeAPIWorker.perform_async(@user.tracked_subscriptions, @user.id)
+      YoutubeAPIWorker.perform_async(@channel_ids, @user.id)
     }.to change(YoutubeAPIWorker.jobs, :size).by(1)
   end
 
   xit 'executes the queued jobs' do
     VCR.use_cassette('channelDetail_and_uploads') do
       expect {
-        YoutubeAPIWorker.perform_async(@user.tracked_subscriptions, @user.id)
+        YoutubeAPIWorker.perform_async(@channel_ids, @user.id)
       }.to change(YoutubeAPIWorker.jobs, :size).by(1)
       YoutubeAPIWorker.drain
       expect(YoutubeAPIWorker.jobs.size).to eq 0
     end
   end
 
-  xit 'returns the urls of videos' do
-    activity = Activity.create
-    VCR.use_cassette('youtube/channelDetail_and_uploads') do
-      expect(Activity.youtube.count).to eq(0)
-      YoutubeAPIWorker.perform_async(@user.tracked_subscriptions, @user.id)
-      YoutubeAPIWorker.drain
-      expect(Activity.youtube.first.url).to eq("//www.youtube.com/embed/iMYBy_9WBl4")
+  it 'saves youtube activity to the database' do
+    VCR.use_cassette('testing_youtube') do
+      expect(YoutubeActivity.count).to eq 0
+      YoutubeAPIWorker.new.perform(@channel_ids, @user.id)
+      expect(YoutubeActivity.count).to be > 0
     end
   end
 end
