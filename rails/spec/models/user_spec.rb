@@ -10,30 +10,24 @@ RSpec.describe User, :type => :model do
   end
 
   it { should have_many(:identities) }
-
   it { should have_many(:activities) }
 
-  it { should serialize(:tracked_subscriptions) }
-
-  it 'should have all youtube subscriptions' do
-    VCR.use_cassette('subscriptions') do
-      user = User.create(name: "Jon Snow", email: "jsnow@whitewall.gov")
-      channel_id = "UC_R3-VJlFnDhlG_9hk-tZiQ"
-      response = YoutubeAPI.get_subscriptions("user", channel_id)
-      expect(user.subscriptions(response)).to be_an_instance_of Hash
-      expect(user.subscriptions(response)).to eq({"Noisey"=>"UC0iwHRFpv2_fpojZgQhElEQ",
-                                                  "VICE News"=>"UCZaT_X_mc0BI-djXOlfhqWQ",
-                                                  "VICE"=>"UCn8zNIfYAQNdrFRrr8oibKw",
-                                                  "Cook's Illustrated - Topic"=>"UCt7YulMv6FtTkUGBWqOK9KQ",
-                                                  "Cook's Country - Topic"=>"UCTKpRucsWimjH6Ef43wQanA"})
+  describe '#parse_subscriptions' do
+    it 'returns a hash with titles and channel ids' do
+      user = User.create
+      json_string = youtube_subscriptions.to_json
+      result = user.parse_subscriptions(json_string)
+      expect(result.keys).to include("VICE")
     end
   end
 
-  it 'should have tracked subscriptions' do
+  it 'should mark subscriptions as tracked' do
     user = User.create(name: "Jon Snow", email: "jsnow@whitewall.gov")
-    json = selected_subscriptions
-    user.add_tracked_subscriptions(selected_subscriptions)
-    expect(user.tracked_subscriptions).to be_an_instance_of Array
-    expect(user.tracked_subscriptions).to eq(["UCxAS_aK7sS2x_bqnlJHDSHw", "UCn8zNIfYAQNdrFRrr8oibKw"])
+    user.youtube_subscriptions.create(title: "Example title", channel_id: "1234")
+    user.youtube_subscriptions.create(title: "Another xample title", channel_id: "5678")
+    channel_ids = ['1234', '5678']
+
+    user.add_tracked_subscriptions(channel_ids)
+    expect(user.youtube_subscriptions.first.tracked).to eq true
   end
 end

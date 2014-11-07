@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
   has_many  :activities
   has_many  :identities
-  serialize :tracked_subscriptions
+  has_many  :youtube_subscriptions
 
   def self.create_from_hash!(hash)
     create(:name => hash['info']['name'])
@@ -15,9 +15,10 @@ class User < ActiveRecord::Base
    "Bearer #{ google_identity.token}"
   end
 
-  def subscriptions(subscriptions_response)
-    subscriptions = JSON.parse subscriptions_response.body
+  def parse_subscriptions(subscriptions_response_string)
+    subscriptions = JSON.parse(subscriptions_response_string)
     channels = {}
+
     subscriptions['items'].each do |channel|
       title = channel['snippet']['title']
       channel_id = channel['snippet']['resourceId']['channelId']
@@ -27,9 +28,12 @@ class User < ActiveRecord::Base
     channels
   end
 
-  def add_tracked_subscriptions(subscriptions_hash)
-    tracked_subscriptions = subscriptions_hash.values
-    update(tracked_subscriptions: tracked_subscriptions)
-    YoutubeAPIWorker.perform_async(tracked_subscriptions, id)
+  # This method accepts an array of channel ids that will be coming back
+  # in some form from an ember ajax post request
+  def add_tracked_subscriptions(channel_ids)
+    channel_ids.each do |channel_id|
+      ys = self.youtube_subscriptions.find_by(channel_id: channel_id)
+      ys.update_attributes(tracked: true) if ys
+    end
   end
 end
