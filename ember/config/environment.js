@@ -16,6 +16,7 @@ module.exports = function(environment) {
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
+      api_endpoint: 'http://127.0.0.1:4200'
     },
 
     contentSecurityPolicy: {
@@ -51,7 +52,7 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
-
+    ENV.APP.api_endpoint = 'https://tunefi.sh';
   }
 
   return ENV;

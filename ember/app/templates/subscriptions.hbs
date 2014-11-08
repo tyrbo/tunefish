@@ -1,0 +1,23 @@
+<div class="modal-dialog">
+  <div class="modal-content youtube-modal">
+      <h3 class="flush--top">Youtube Settings</h5>
+        Select channels you want Tunefi.sh to add to your feed:
+        <div class='modal_body'>
+        {{#each subscription in subscription itemController='subscription'}}
+          <div class='sub'>
+          {{#with subscription}}
+          {{#if isTracked}}
+          <button class='btn btn-warning'{{action untrack}}><b> {{title}}</b></button>
+          {{else}}
+          <button class= 'btn'{{action track}}> {{title}}</button>
+          {{/if}}
+          {{/with}}
+        </div>
+        {{/each}}
+      </div><br><br><br><br><br><br>
+    <div>
+    <button class='btn btn-primary' {{action "close"}}>Done</button>
+    </div>
+  </div>
+
+</div>

@@ -81,5 +81,7 @@ test:
 production:
   <<: *default
   database: tunefish_production
-  username: tunefish
+  host: 10.132.194.67
+  username: rails
   password: <%= ENV['TUNEFISH_DATABASE_PASSWORD'] %>
+  template: template0

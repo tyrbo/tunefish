@@ -15,6 +15,7 @@ ApplicationRoute = Ember.Route.extend({
         outlet: 'modal',
         parentView: 'application'
       });
+      $('.modal-backdrop.in').removeClass('modal-backdrop in');
     }
   }
 });
