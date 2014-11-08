@@ -137,3 +137,35 @@ html, body {
 .done {
   clear: both;
 }
+
+
+.tab-list {
+  width: 50%;
+  color: orange;
+  border: orange;
+}
+
+a {
+  color: black;
+}
+
+.nav>.nav-tabs {
+  position: fixed;
+}
+
+.nav-tabs>li>a:hover {
+  color: orange;
+  background: none;
+  border:none;
+  border-color: none;
+}
+
+.nav-tabs>li>a{
+  text-align: center;
+}
+
+.nav-tabs>li.active>a, .nav-tabs>li.active>a:hover, .nav-tabs>li.active>a:focus {
+  border: none;
+  border-bottom: 2px solid black;
+  text-align: center;
+}

@@ -51,24 +51,35 @@
         <div class="row">
           <div class="col-md-9">
             <div class='feed'>
-              {{outlet 'modal'}}
-            {{#each activity in activity itemController="activity"}}
-              {{#with activity}}
-                {{#if isYoutube}}
-                  <div class='music'>
-                    <iframe width="100%" height="500" src={{unbound url}} frameborder="0" allowfullscreen></iframe>
-                  </div>
-                {{/if}}
-                {{#if isSoundcloud}}
-                  <div class='music'>
-                    <iframe height='300' width='100%' scrolling="no" frameborder="no" src={{unbound url}}></iframe>
-                  </div>
-                {{/if}}
-                {{#if isTwitter}}
-                  <div class='tweet'>{{{unbound url}}}</div>
-                {{/if}}
-              {{/with}}
-            {{/each}}
+              <div class="tabslist">
+              <ul class="nav nav-tabs" role="tablist">
+                <li role="presentation" class="tab-list active"><a href="#your-music" role="tab" data-toggle="tab">Your Music</a></li>
+                <li role="presentation" class="tab-list"><a href="#subscriptions" role="tab" data-toggle="tab">Subscription</a></li>
+              </ul>
+            </div>
+              <div class="tab-content">
+                <div role="tabpanel" class="tab-pane active" id="your-music">
+                {{outlet 'modal'}}
+                {{#each activity in activity itemController="activity"}}
+                  {{#with activity}}
+                    {{#if isYoutube}}
+                      <div class='music'>
+                        <iframe width="100%" height="500" src={{unbound url}} frameborder="0" allowfullscreen></iframe>
+                      </div>
+                    {{/if}}
+                    {{#if isSoundcloud}}
+                      <div class='music'>
+                        <iframe height='300' width='100%' scrolling="no" frameborder="no" src={{unbound url}}></iframe>
+                      </div>
+                    {{/if}}
+                    {{#if isTwitter}}
+                      <div class='tweet'>{{{unbound url}}}</div>
+                    {{/if}}
+                  {{/with}}
+                {{/each}}
+                </div>
+                <div role="tabpanel" class="tab-pane" id="subscriptions">...</div>
+              </div>
             </div>
           </div>
         </div>
