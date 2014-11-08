@@ -30,7 +30,7 @@ class YoutubeAPIWorker
 
   def assign_urls_to_activity(urls, current_user_id)
     urls.each do |url|
-      YoutubeActivity.create(url: url, user_id: current_user_id, provider: 'youtube')
+      YoutubeActivity.find_or_create_by(url: url, user_id: current_user_id, provider: 'youtube')
     end
   end
 end
