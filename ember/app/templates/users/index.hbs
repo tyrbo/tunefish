@@ -1,7 +1,35 @@
-<h2>Users!</h2>
-
-{{#each}}
-  {{~#link-to 'users.show' this}}
-    {{name}} ({{identities.length}})
-  {{~/link-to}}
-{{/each}}
+<div class='wrapper col-md-3'>
+  <div id="sidebar-wrapper">
+    <h1>Find new music</h1>
+    <div>
+      <h3>Recommended For You</h3>
+      <h3>Most Popular</h3>
+      <h3>New Additions</h3>
+    </div>
+  </div>
+</div>
+<div id="page-content-wrapper">
+  <div class="page-content ">
+    <div class="container user-page">
+      <div class="row">
+        <div class="col-md-9">
+          <ul class="user-list">
+          {{#each}}
+          <li class='user-list-item'>
+            {{~#link-to 'users.show' this}}
+              {{name}} ({{identities.length}})
+              <table class='hidden'>
+                <tr></tr>
+                <td>Song</td>
+                <tr></tr>
+                <td>Another</td>
+              </table>
+            {{~/link-to}}
+        </li>
+          {{/each}}
+          <ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

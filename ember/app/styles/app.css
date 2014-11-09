@@ -1,5 +1,5 @@
 html, body {
-  margin: 20px;
+  /*margin: 20px;*/
 }
 
 .navbar-custom {
@@ -26,7 +26,8 @@ html, body {
 }
 
 .logo {
-  float: right; }
+  float: right;
+}
 
 .landing-page-title {
   color: grey;
@@ -167,6 +168,9 @@ a {
   border: none;
   border-bottom: 2px solid black;
   text-align: center;
+  border-left: 2px solid orange;
+  border-right: 2px solid orange;
+  color: orange;
 }
 
 .provider-image{
@@ -200,4 +204,23 @@ a {
 
 .ember-view-image{
   display: inline;
+}
+
+.user-list {
+  list-style-type: none;
+}
+
+.user-page {
+  height: 100%;
+  width: 100%;
+  margin-top: 3%;
+}
+
+.user-list-item{
+  height: 100px;
+  background: orange;
+  margin-top: 7px;
+  margin-bottom: 7px;
+  margin-left: 4px;
+  margin-right: 4px;
 }
