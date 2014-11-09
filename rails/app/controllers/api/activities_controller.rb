@@ -1,7 +1,6 @@
 class Api::ActivitiesController < ApplicationController
   def index
-    respond_to do |format|
-        format.json { render json: Activity.all.shuffle }
-    end
+    @activities = current_user.activities.shuffle
+    render json: @activities, each_serializer: ActivitySerializer
   end
 end
