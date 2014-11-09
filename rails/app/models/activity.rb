@@ -22,4 +22,8 @@ class Activity < ActiveRecord::Base
     float_percentage = decimal_percentage * 100
     float_percentage.to_i
   end
+
+  def self.all_percentages
+    {youtube: youtube_percentage ,twitter: twitter_percentage,soundcloud: soundcloud_percentage }
+  end
 end
