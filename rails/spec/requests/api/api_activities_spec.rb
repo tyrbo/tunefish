@@ -13,7 +13,7 @@ RSpec.describe "Api::Activities", :type => :request do
       TwitterActivity.create(url: "twitter", provider: "twitter", user_id: @user.id)
     end
 
-    it "should retrieve a list of activiy objects" do
+    it "retrieves a list of activities" do
       get api_activities_path
       expect(response.status).to eq 200
       json = JSON.parse(response.body)
