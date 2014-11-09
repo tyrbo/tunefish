@@ -16,7 +16,7 @@ RSpec.describe "Api::YoutubeSubscriptions", :type => :request do
       get api_youtube_subscriptions_path
       expect(response.status).to be(200)
       json = JSON.parse(response.body)
-      expect(json['youtube_subscriptions'].length). to eq2
+      expect(json['youtube_subscriptions'].length). to eq(2)
     end
   end
 end
