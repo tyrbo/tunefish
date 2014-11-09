@@ -50,13 +50,11 @@
           <input type='checkbox'>Jazz<br>
           <input type='checkbox'>Blues<br>
         </p>
-        <h4>Other</h4>
-        <p class='provider-filters'>
-          <input type='checkbox'>Most Recent<br>
-          <input type='checkbox'>Least Recent<br>
-          <input type='checkbox'>Most Played<br>
-          <input type='checkbox'>Least Played<br>
-        </p>
+      </div>
+        <h3>Recommended<small><a class="see-more" href='/users'> See More </a></small></h3>
+        <div>
+
+        </div>
       </div>
     </div>
   </div>
@@ -86,7 +84,7 @@
                     {{/if}}
                     {{#if isSoundcloud}}
                       <div class='music'>
-                        <iframe height='300' width='100%' scrolling="no" frameborder="no" src={{unbound url}}></iframe>
+                        <iframe height='200' width='100%' scrolling="no" frameborder="no" src={{unbound url}}></iframe>
                       </div>
                     {{/if}}
                     {{#if isTwitter}}

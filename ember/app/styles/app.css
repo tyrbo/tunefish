@@ -1,5 +1,6 @@
 html, body {
-  /*margin: 20px;*/
+  margin: 20px;
+  margin-top: 5px;
 }
 
 .navbar-custom {
@@ -218,9 +219,48 @@ a {
 
 .user-list-item{
   height: 100px;
-  background: orange;
   margin-top: 7px;
   margin-bottom: 7px;
   margin-left: 4px;
   margin-right: 4px;
+  display: inline;
+
+}
+
+.user {
+  border: 1px solid black;
+  padding: 2%;
+  padding-bottom: 4%;
+}
+
+.followers {
+  float: right;
+}
+
+.follow-img {
+  height: 75px;
+  width: 75px;
+  display: inline;
+  float: left;
+  margin-right: 2%;
+  margin-bottom: 2%;
+}
+
+.follow-button {
+  float: right;
+  margin-top: -30px;
+}
+
+.user-header{
+  display:inline;
+}
+
+.see-more{
+  color: orange;
+  margin-left: 20%;
+}
+
+.see-more:hover{
+  color:orange;
+  text-decoration: underline;
 }
