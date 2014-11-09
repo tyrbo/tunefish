@@ -118,6 +118,26 @@ html, body {
   margin-top: 7%;
 }
 
+.youtube-modal {
+  padding: 3%;
+  padding-top: 0;
+}
+
+.modal_body{
+  padding: 3%;
+  height: 100%;
+  width: 100%;
+}
+
+.sub {
+  float: left;
+  margin: 2px;
+}
+
+.done {
+  clear: both;
+}
+
 .provider-image{
   margin-right: 8%;
 }

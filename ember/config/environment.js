@@ -16,6 +16,7 @@ module.exports = function(environment) {
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
+      api_endpoint: 'http://127.0.0.1:4200'
     },
 
     contentSecurityPolicy: {
@@ -25,7 +26,7 @@ module.exports = function(environment) {
       'connect-src': "'self' 127.0.0.1:3000 ws://127.0.0.1:35729",
       'img-src': "'self' s3-us-west-2.amazonaws.com",
       'style-src': "'self' maxcdn.bootstrapcdn.com",
-      'frame-src': "www.youtube.com w.soundcloud.com",
+      'frame-src': "www.youtube.com w.soundcloud.com ",
       'report-uri': 'http://localhost:4200'
     },
   };
@@ -51,7 +52,7 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
-
+    ENV.APP.api_endpoint = 'https://tunefi.sh';
   }
 
   return ENV;

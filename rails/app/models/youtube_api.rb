@@ -23,6 +23,7 @@ class YoutubeAPI
       ids_string = channel_ids.join(",")
     end
     connection.get "/youtube/v3/channels?part=contentDetails&fields=items/contentDetails/relatedPlaylists/uploads&key=#{Api_key}&id=#{ids_string}"
+
   end
 
   def self.get_uploads(uploads_id)

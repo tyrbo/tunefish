@@ -1,6 +1,5 @@
 import Ember from 'ember';
 
-export default Ember.ArrayController.extend({
-  itemController: 'activity'
-});
+export default Ember.ObjectController.extend({
 
+});

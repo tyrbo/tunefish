@@ -6,7 +6,7 @@ class Api::UsersController < ApplicationController
   end
 
   def show
-    render json: current_user.includes(:identities)
+    render json: User.find(params[:id])
   end
 
   def update
@@ -17,7 +17,8 @@ class Api::UsersController < ApplicationController
     else
       params[:subscriptions_hash] = @user.subscriptions(YoutubeAPI.get_subscriptions)
     end
-    @user.add_tracked_subscriptions(params[:subscriptions_hash])
+    # subscriptions now have their own table
+    # @user.add_tracked_subscriptions(params[:subscriptions_hash])
     render json: User.last #this should be to the user's feed page
   end
 end
