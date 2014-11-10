@@ -1,7 +1,7 @@
 class ActivitySerializer < ActiveModel::Serializer
   embed :ids, include: true
 
-  attributes :id, :provider, :url, :percentage_of_feed
+  attributes :id, :provider, :url, :percentage
   has_one :user
 
   def youtube_percentage
@@ -22,7 +22,7 @@ class ActivitySerializer < ActiveModel::Serializer
     float_percentage.to_i
   end
 
-  def percentage_of_feed
+  def percentage
     send("#{provider}_percentage")
   end
 end

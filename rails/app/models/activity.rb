@@ -4,6 +4,4 @@ class Activity < ActiveRecord::Base
   scope :youtube,    -> { where(type: "YoutubeActivity") }
   scope :soundcloud, -> { where(type: "SoundcloudActivity") }
   scope :twitter,    -> { where(type: "TwitterActivity") }
-
-  
 end
