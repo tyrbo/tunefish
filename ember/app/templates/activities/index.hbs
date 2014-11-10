@@ -38,10 +38,9 @@
       <div class='filters'>
         <h4>By Provider</h4>
         <p class='provider-filters'>
-          <input type='checkbox'>Youtube<br>
-          <input type='checkbox'>Twitter<br>
-          <input type='checkbox'>Last.fm<br>
-          <input type='checkbox'>Soundcloud<br>
+          {{#view 'youtube_filter'}}<input type='checkbox' checked>Youtube<br>{{/view}}
+          {{#view 'twitter_filter'}}<input type='checkbox' checked>Twitter<br>{{/view}}
+          {{#view 'soundcloud_filter'}}<input type='checkbox' checked>Soundcloud<br>{{/view}}
         </p>
         <h4>Tags</h4>
         <p class='provider-filters'>
@@ -59,7 +58,10 @@
     </div>
   </div>
 </div>
+<<<<<<< HEAD
 <div>
+=======
+>>>>>>> b6acd342ea0f89b424b505b641e937278c2d0fca
   <div id="page-content-wrapper">
     <div class="page-content ">
       <div class="container feed-page">
