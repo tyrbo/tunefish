@@ -38,9 +38,9 @@
       <div class='filters'>
         <h4>By Provider</h4>
         <p class='provider-filters'>
-          <input type='checkbox'>Youtube<br>
-          <input type='checkbox'>Twitter<br>
-          <input type='checkbox'>Soundcloud<br>
+          {{#view 'youtube_filter'}}<input type='checkbox'>Youtube<br>{{/view}}
+          {{#view 'twitter_filter'}}<input type='checkbox'>Twitter<br>{{/view}}
+          {{#view 'soundcloud_filter'}}<input type='checkbox'>Soundcloud<br>{{/view}}
         </p>
         <h4>Tags</h4>
         <p class='provider-filters'>
@@ -70,12 +70,12 @@
             {{#each activity in activity itemController="activity"}}
               {{#with activity}}
                 {{#if isYoutube}}
-                  <div class='music'>
+                  <div class='music youtube'>
                     <iframe width="100%" height="500" src={{unbound url}} frameborder="0" allowfullscreen></iframe>
                   </div>
                 {{/if}}
                 {{#if isSoundcloud}}
-                  <div class='music'>
+                  <div class='music soundcloud'>
                     <iframe height='300' width='100%' scrolling="no" frameborder="no" src={{unbound url}}></iframe>
                   </div>
                 {{/if}}
