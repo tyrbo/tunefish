@@ -1,4 +1,4 @@
 #!/bin/bash
 set -e
 
-rake db:migrate
+RAILS_ENV=production rake db:migrate
