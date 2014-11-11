@@ -1,0 +1,7 @@
+---
+language: ruby
+rvm:
+  - 2.1.4
+before_script:
+  chmod a+x ./test.sh
+script: "./test.sh"

@@ -11,6 +11,7 @@ FROM tyrbo/ruby-2.1.4
 USER root
 
 RUN apt-get update && \
+    apt-get upgrade -y && \
     apt-get install -y libpq-dev libreadline-dev
 
 # Install bundler
@@ -45,6 +46,5 @@ RUN chown -R ruby:ruby /ruby/tunefish
 
 # Back to ruby
 USER ruby
-
 
 CMD ["bash"]

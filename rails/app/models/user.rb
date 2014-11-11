@@ -4,7 +4,7 @@ class User < ActiveRecord::Base
   has_many  :youtube_subscriptions
 
   def self.create_from_hash!(hash)
-    create(:name => hash['info']['name'])
+    create(:name => hash['info']['name'], :photo => hash['info']['image'])
   end
 
   def google_identity
