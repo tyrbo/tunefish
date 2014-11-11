@@ -4,11 +4,21 @@ desc 'Deploy Ember and Rails'
 task :deploy do
 end
 
-namespace :deploy do
-  desc 'Build and Deploy Ember'
+namespace :build do
+  desc 'Build Ember'
   task :ember do
     sh 'cd ember; ember build --environment production --output-path production/'
+  end
 
+  desc 'Build Rails image'
+  task :rails do
+    sh 'cd rails; docker build -t tyrbo/tunefish . && docker push tyrbo/tunefish'
+  end
+end
+
+namespace :deploy do
+  desc 'Deploy Ember'
+  task :ember do
     service = Fog::Storage.new(provider: 'Rackspace',
                                rackspace_username: 'tyrbo', 
                                rackspace_api_key: ENV['RACKSPACE_API'], 
@@ -31,7 +41,6 @@ namespace :deploy do
 
     desc 'Hard deployment'
     task :hard do
-      sh 'cd rails; docker build -t tyrbo/tunefish . && docker push tyrbo/tunefish'
       raw = `fleetctl --tunnel=104.131.171.238 list-units --no-legend --fields=unit`.split("\n")
       units = raw.select { |x| x =~ /[rails|sidekiq]@[0-9]+.service/ }.join(' ')
 
