@@ -8,5 +8,6 @@ Rails.application.routes.draw do
     resources :activities
     resources :youtube_subscriptions
     resources :subscriptions
+    resources :subscription_activities
   end
 end
