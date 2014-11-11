@@ -34,3 +34,4 @@ TwitterActivity.create(provider: "twitter", user_id: user4.id, url: "\u003Cblock
                                                   Will Faurot (@Will_Faurot) \u003Ca href=\"https:\/\/twitter.com\/Will_Faurot\/status\/529292521097416705\"\u003ENovember
                                                   3, 2014\u003C\/a\u003E\u003C\/blockquote\u003E\n\u003Cscript async src=\"\/\/platform.twitter.com\/widgets.js\"
                                                   charset=\"utf-8\"\u003E\u003C\/script\u003Eki")
+
