@@ -1,7 +1,7 @@
 class Api::SubscriptionsController < ApplicationController
   
   def index
-    render json: current_user.following
+    render json: current_user.following.includes(:activities)
   end
 
   def create
