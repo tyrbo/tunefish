@@ -36,28 +36,18 @@
     <div>
       <h3>Feed Content</h3>
       <div class="progress">
-        {{#each activity in activity itemController="activity"}}
-          {{#with activity}}
-            {{#if isSoundcloud}}
-              <div class="progress-bar progress-bar-warning" style="width: {{unbound percentage}}%">
-                Soundcloud
-                <span class="sr-only">{{percentage}}% Complete (warning)</span>
-              </div>
-            {{/if}}
-            {{#if isYoutube}}
-              <div class="progress-bar progress-bar-danger" style="width: {{unbound percentage}}%">
-                Youtube
-                <span class="sr-only">{{percentage}}% Complete (danger)</span>
-              </div>
-            {{/if}}
-            {{#if isTwitter}}
-              <div class="progress-bar" style="width: {{unbound percentage}}%">
-                Twitter
-                <span class="sr-only">{{percentage}}% Complete (success)</span>
-              </div>
-            {{/if}}
-          {{/with}}
-        {{/each}}
+        <div class="progress-bar progress-bar-warning" {{bind-attr style=styledSoundcloudPercentage}}>
+          Soundcloud
+          <span class="sr-only"> {{soundcloudPercentage}}% Complete (warning)</span>
+        </div>
+        <div class="progress-bar progress-bar-danger" style="width: {{bind-attr style=styledYoutubePercentage}}%">
+          Youtube
+          <span class="sr-only">{{youtubePercentage}}% Complete (danger)</span>
+        </div>
+        <div class="progress-bar" style="width: {{bind-attr style=styledTwitterPercentage}}%">
+          Twitter
+          <span class="sr-only">{{twitterPercentage}}% Complete (success)</span>
+        </div>
       </div>
     </div>
     <div>
