@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141109223559) do
+ActiveRecord::Schema.define(version: 20141110204004) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,16 +19,10 @@ ActiveRecord::Schema.define(version: 20141109223559) do
   create_table "activities", force: true do |t|
     t.string   "type"
     t.text     "url"
-    t.integer  "feed_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "provider"
-  end
-
-  create_table "feeds", force: true do |t|
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "provider"
   end
 
   create_table "identities", force: true do |t|
@@ -41,6 +35,17 @@ ActiveRecord::Schema.define(version: 20141109223559) do
   end
 
   add_index "identities", ["user_id"], name: "index_identities_on_user_id", using: :btree
+
+  create_table "subscriptions", force: true do |t|
+    t.integer  "follower_id"
+    t.integer  "followed_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "subscriptions", ["followed_id"], name: "index_subscriptions_on_followed_id", using: :btree
+  add_index "subscriptions", ["follower_id", "followed_id"], name: "index_subscriptions_on_follower_id_and_followed_id", unique: true, using: :btree
+  add_index "subscriptions", ["follower_id"], name: "index_subscriptions_on_follower_id", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "name"

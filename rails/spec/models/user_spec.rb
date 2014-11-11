@@ -11,7 +11,9 @@ RSpec.describe User, :type => :model do
 
   it { should have_many(:identities) }
   it { should have_many(:activities) }
-
+  it { should have_many(:subscriptions) }
+  it { should have_many(:following) }
+  it { should have_many(:followers) }
   describe '#parse_subscriptions' do
     it 'returns a hash with titles and channel ids' do
       user = User.create

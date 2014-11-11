@@ -2,6 +2,10 @@ class User < ActiveRecord::Base
   has_many  :activities
   has_many  :identities
   has_many  :youtube_subscriptions
+  has_many :subscriptions, dependent: :destroy,
+                           foreign_key: 'follower_id'
+  has_many :following, through: :subscriptions, source: :followed
+  has_many :followers, through: :subscriptions, source: :follower
 
   def self.create_from_hash!(hash)
     create(:name => hash['info']['name'], :photo => hash['info']['image'])
