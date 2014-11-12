@@ -53,24 +53,13 @@
     <div>
       <h3>Filter Music</h3>
       <div class='filters'>
-        <h4>By Provider</h4>
-        <p class='provider-filters'>
+        <div class='provider-filters'>
           {{#view 'youtube_filter'}}<p class='youtube-filter'>Youtube</p>{{/view}}
           {{#view 'twitter_filter'}}<p class='twitter-filter'>Twitter</p>{{/view}}
           {{#view 'soundcloud_filter'}}<p class='soundcloud-filter'>Soundcloud</p>{{/view}}
-        </p>
-        <h4>Tags</h4>
-        <p class='provider-filters'>
-          <input type='checkbox'>Funk<br>
-          <input type='checkbox'>Rock<br>
-          <input type='checkbox'>Jazz<br>
-          <input type='checkbox'>Blues<br>
-        </p>
+        </div>
       </div>
       <h3>Recommended<small><a class="see-more" href='/users'>See More </a></small></h3>
-      <div>
-
-      </div>
     </div>
   </div>
 </div>
