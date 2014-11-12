@@ -3,9 +3,9 @@
       <h3 class="flush--top">Youtube Settings</h5>
         Select channels you want Tunefi.sh to add to your feed:
         <div class='modal_body'>
-        {{#each subscription in subscription itemController='subscription'}}
+        {{#each youtube_subscription in youtube_subscription itemController='youtube_subscription'}}
           <div class='sub'>
-          {{#with subscription}}
+          {{#with youtube_subscription}}
           {{#if isTracked}}
           <button class='btn btn-warning'{{action untrack}}><b> {{title}}</b></button>
           {{else}}

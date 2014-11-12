@@ -22,7 +22,7 @@
         <table id = "youtube-table" class="table table-condensed">
           <tr>
             <td role="presentation"><a href="http://127.0.0.1:3000/auth/google_oauth2" class="login-link" target="_blank">Login with Youtube</a><span id="line"></span></td>
-            <td role="presentation"><a class='jsYoutubeModal login-link' {{action openModal 'subscriptions' model}}>Tracked Subscriptions</a></td>
+            <td role="presentation"><a class='jsYoutubeModal login-link' {{action openModal 'youtube_subscriptions' model}}>Tracked Subscriptions</a></td>
           </tr>
         </table>
 
@@ -31,6 +31,23 @@
             <td role="presentation"><a href="http://127.0.0.1:3000/auth/twitter" class="login-link" target="_blank">Login with Twitter</a></td>
           </tr>
         </table>
+      </div>
+    </div>
+    <div>
+      <h3>Feed Content</h3>
+      <div class="progress">
+        <div class="progress-bar progress-bar-warning" {{bind-attr style=styledSoundcloudPercentage}}>
+          Soundcloud
+          <span class="sr-only"> {{soundcloudPercentage}}% Complete (warning)</span>
+        </div>
+        <div class="progress-bar progress-bar-danger" style="width: {{bind-attr style=styledYoutubePercentage}}%">
+          Youtube
+          <span class="sr-only">{{youtubePercentage}}% Complete (danger)</span>
+        </div>
+        <div class="progress-bar" style="width: {{bind-attr style=styledTwitterPercentage}}%">
+          Twitter
+          <span class="sr-only">{{twitterPercentage}}% Complete (success)</span>
+        </div>
       </div>
     </div>
     <div>
@@ -76,12 +93,12 @@
                   {{#each activity in activity itemController="activity"}}
                   {{#with activity}}
                   {{#if isYoutube}}
-                  <div class='music'>
+                  <div class='music youtube'>
                     <iframe width="100%" height="500" src={{unbound url}} frameborder="0" allowfullscreen></iframe>
                   </div>
                   {{/if}}
                   {{#if isSoundcloud}}
-                  <div class='music'>
+                  <div class='music soundcloud'>
                     <iframe height='200' width='100%' scrolling="no" frameborder="no" src={{unbound url}}></iframe>
                   </div>
                   {{/if}}
@@ -92,7 +109,7 @@
                   {{/each}}
                 </div>
                 <div role="tabpanel" class="tab-pane" id="subscriptions">
-                  This is where your subscribed activities would go!
+                  {{ render "subscription_activities" subscription_activities}}
                 </div>
               </div>
             </div>
