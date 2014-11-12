@@ -44,6 +44,7 @@
     </div>
   </div>
 </div>
+</div>
 <div>
   <div id="page-content-wrapper">
     <div class="page-content ">
@@ -51,7 +52,7 @@
         <div class="row">
           <div class="col-md-9">
             <div class='feed'>
-                  {{#each activity in activity itemController="activity"}}
+                  {{#each activity in activities itemController="activity"}}
                   {{#with activity}}
                   {{#if isYoutube}}
                   <div class='music youtube'>
