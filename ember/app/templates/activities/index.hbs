@@ -92,7 +92,23 @@
                   {{/each}}
                 </div>
                 <div role="tabpanel" class="tab-pane" id="subscriptions">
-                  {{ render "subscription_activities" subscription_activities}}
+                  {{#each subscription_activity in subscription_activity itemController="activity"}}
+                  {{#with subscription_activity}}
+                  {{#if isYoutube}}
+                  <div class='music'>
+                    <iframe width="100%" height="500" src={{unbound url}} frameborder="0" allowfullscreen></iframe>
+                  </div>
+                  {{/if}}
+                  {{#if isSoundcloud}}
+                  <div class='music'>
+                    <iframe height='200' width='100%' scrolling="no" frameborder="no" src={{unbound url}}></iframe>
+                  </div>
+                  {{/if}}
+                  {{#if isTwitter}}
+                  <div class='tweet'>{{{unbound url}}}</div>
+                  {{/if}}
+                  {{/with}}
+                  {{/each}}
                 </div>
               </div>
             </div>
