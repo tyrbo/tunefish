@@ -1,5 +1,7 @@
 require 'fog'
 
+IP_ADDR="104.131.171.238"
+
 desc 'Deploy Ember and Rails'
 task :deploy do
 end
@@ -43,8 +45,8 @@ namespace :deploy do
       units = fetch_rails_units
 
       units.each do |unit|
-        sh "fleetctl --tunnel=104.131.171.238 stop #{unit}"
-        sh "fleetctl --tunnel=104.131.171.238 start #{unit}"
+        sh "fleetctl --tunnel=#{IP_ADDR} stop #{unit}"
+        sh "fleetctl --tunnel=#{IP_ADDR} start #{unit}"
         sleep 5
       end
     end
@@ -56,21 +58,21 @@ namespace :deploy do
 
       units = fetch_rails_units.join(' ')
 
-      sh "fleetctl --tunnel=104.131.171.238 stop #{units}"
-      sh "fleetctl --tunnel=104.131.171.238 start #{units}"
+      sh "fleetctl --tunnel=#{IP_ADDR} stop #{units}"
+      sh "fleetctl --tunnel=#{IP_ADDR} start #{units}"
     end
   end
 end
 
 def prep_servers 
-  machines = `fleetctl --tunnel=104.131.171.238 list-machines --no-legend --full --fields=machine`.split("\n")
+  machines = `fleetctl --tunnel=#{IP_ADDR} list-machines --no-legend --full --fields=machine`.split("\n")
   machines.each do |machine|
-    sh "fleetctl --tunnel=104.131.171.238 ssh #{machine} \"/bin/bash -c 'docker pull tyrbo/tunefish'\""
+    sh "fleetctl --tunnel=#{IP_ADDR} ssh #{machine} \"/bin/bash -c 'docker pull tyrbo/tunefish'\""
   end
 end
 
 def run_migrations
-  sh "ssh core@104.131.171.238 /usr/bin/docker run tyrbo/tunefish /bin/bash -c 'bin/update'"
+  sh "ssh core@#{IP_ADDR} /usr/bin/docker run --rm tyrbo/tunefish /bin/bash -c 'bin/update'"
 end
 
 def fetch_rails_units
@@ -79,6 +81,6 @@ def fetch_rails_units
 end
 
 def fetch_units
-  `fleetctl --tunnel=104.131.171.238 list-units --no-legend --fields=unit,sub`.split("\n")
+  `fleetctl --tunnel=#{IP_ADDR} list-units --no-legend --fields=unit,sub`.split("\n")
 end
 
