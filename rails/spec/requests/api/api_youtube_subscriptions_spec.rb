@@ -18,15 +18,13 @@ RSpec.describe "Api::YoutubeSubscriptions", :type => :request do
       json = JSON.parse(response.body)
       expect(json['youtube_subscriptions'].length). to eq(2)
     end
-  end
 
-  # describe "PATCH api/youtube_subscriptions/:id" do
-  #   it "updates tracked status for a subscription" do
-  #     youtube_subscription = YoutubeSubscription.create(channel_id: "12345", title: "A title")
-  #     patch api_youtube_subscription_path(youtube_subscription.id)
-  #     expect(response.status).to eq(200)
-  #     expect(youtube_subscription.tracked). to eq(true)
-  #   end
-  # end
+     it "updates tracked status for a subscription" do
+       @youtube_subscription = YoutubeSubscription.create(channel_id: "12345", title: "A title")
+       put api_youtube_subscription_path id: @youtube_subscription.id, youtube_subscription: { id: @youtube_subscription.id, tracked: 'true' }
+       expect(response.status).to eq(200)
+       expect(YoutubeSubscription.last.tracked).to eq(true)
+     end
+   end
 end
 
