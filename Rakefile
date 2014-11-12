@@ -37,12 +37,21 @@ namespace :deploy do
   namespace :rails do
     desc 'Rolling deployment'
     task :rolling do
+      prep_servers
+      units = fetch_rails_units
+      units.unshift('rails-starter.service')
+
+      units.each do |unit|
+        sh "fleetctl --tunnel=104.131.171.238 stop #{unit}"
+        sh "fleetctl --tunnel=104.131.171.238 start #{unit}"
+        sleep 5
+      end
     end
 
     desc 'Hard deployment'
     task :hard do
-      raw = `fleetctl --tunnel=104.131.171.238 list-units --no-legend --fields=unit`.split("\n")
-      units = raw.select { |x| x =~ /[rails|sidekiq]@[0-9]+.service/ }.join(' ')
+      prep_servers
+      units = fetch_rails_units.join(' ')
 
       begin
         sh "fleetctl --tunnel=104.131.171.238 stop rails-starter.service #{units}"
@@ -50,7 +59,34 @@ namespace :deploy do
         puts "Unable to stop fleet services..."
       end
 
-      sh "fleetctl --tunnel=104.131.171.238 start rails-starter.service #{units}"
+      sh "fleetctl --tunnel=104.131.171.238 start rails-starter.service"
+      while !started?('rails-starter.service')
+        sleep 5
+      end
+
+      sh "fleetctl --tunnel=104.131.171.238 start #{units}"
     end
   end
 end
+
+def prep_servers 
+  machines = `fleetctl --tunnel=104.131.171.238 list-machines --no-legend --full --fields=machine`.split("\n")
+  machines.each do |machine|
+    sh "fleetctl --tunnel=104.131.171.238 ssh #{machine} \"/bin/bash -c 'docker pull tyrbo/tunefish'\""
+  end
+end
+
+def started?(unit)
+  units = fetch_units.map { |x| x.split("\t").reject { |x| x.empty? } }
+  units.detect { |x| x[0] == unit }[1] == 'running'
+end
+
+def fetch_rails_units
+  fetch_units.select { |x| x =~ /[rails|sidekiq]@[0-9]+.service/ }
+             .map { |x| x.split("\t").reject { |x| x.empty? }[0] }
+end
+
+def fetch_units
+  `fleetctl --tunnel=104.131.171.238 list-units --no-legend --fields=unit,sub`.split("\n")
+end
+
