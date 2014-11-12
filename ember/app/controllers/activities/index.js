@@ -72,15 +72,15 @@ var ActivitiesIndexController =  Ember.ObjectController.extend({
   }.property('model.activity.@each'),
 
   isYoutubePercentage: function () {
-    return this.get('youtubePercentage') === 0;
+    return this.get('youtubePercentage') !== 0;
   }.property('youtubePercentage'),
 
   isTwitterPercentage: function () {
-    return this.get('twitterPercentage') === 0;
+    return this.get('twitterPercentage') !== 0;
   }.property('twitterPercentage'),
 
   isSoundcloudPercentage: function () {
-    return this.get('soundcloudPercentage') === 0;
+    return this.get('soundcloudPercentage') !== 0;
   }.property('soundcloudPercentage')
 
 });
