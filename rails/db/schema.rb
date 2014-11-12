@@ -19,16 +19,10 @@ ActiveRecord::Schema.define(version: 20141109223559) do
   create_table "activities", force: true do |t|
     t.string   "type"
     t.text     "url"
-    t.integer  "feed_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "provider"
-  end
-
-  create_table "feeds", force: true do |t|
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "provider"
   end
 
   create_table "identities", force: true do |t|

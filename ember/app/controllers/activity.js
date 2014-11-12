@@ -12,6 +12,6 @@ export default Ember.ObjectController.extend({
 
   isTwitter: function() {
     return this.get('provider') === 'twitter';
-  }.property('provider'),
+  }.property('provider')
 
 });
