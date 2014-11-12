@@ -38,8 +38,9 @@ namespace :deploy do
     desc 'Rolling deployment'
     task :rolling do
       prep_servers
+      run_migrations
+
       units = fetch_rails_units
-      units.unshift('rails-starter.service')
 
       units.each do |unit|
         sh "fleetctl --tunnel=104.131.171.238 stop #{unit}"
@@ -51,19 +52,11 @@ namespace :deploy do
     desc 'Hard deployment'
     task :hard do
       prep_servers
+      run_migrations
+
       units = fetch_rails_units.join(' ')
 
-      begin
-        sh "fleetctl --tunnel=104.131.171.238 stop rails-starter.service #{units}"
-      rescue
-        puts "Unable to stop fleet services..."
-      end
-
-      sh "fleetctl --tunnel=104.131.171.238 start rails-starter.service"
-      while !started?('rails-starter.service')
-        sleep 5
-      end
-
+      sh "fleetctl --tunnel=104.131.171.238 stop #{units}"
       sh "fleetctl --tunnel=104.131.171.238 start #{units}"
     end
   end
@@ -76,9 +69,8 @@ def prep_servers
   end
 end
 
-def started?(unit)
-  units = fetch_units.map { |x| x.split("\t").reject { |x| x.empty? } }
-  units.detect { |x| x[0] == unit }[1] == 'running'
+def run_migrations
+  sh "ssh core@104.131.171.238 /usr/bin/docker run tyrbo/tunefish /bin/bash -c 'bin/update'"
 end
 
 def fetch_rails_units
