@@ -264,3 +264,7 @@ a {
   color:orange;
   text-decoration: underline;
 }
+
+.user-follow {
+  margin-left: 30px;
+}
