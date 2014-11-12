@@ -1,7 +1,7 @@
 <div class='wrapper col-md-3'>
   <div id="sidebar-wrapper">
     <div class='usercard'>
-      <img class='avatar' src='https://s3-us-west-2.amazonaws.com/tunefish/logo.jpg'>
+      <img class='avatar' src={{unbound photo}}>
       <p class='manage'>{{name}}<button class='btn btn-warning user-follow'{{action 'follow'}}> Follow! </button></p>
       <div>
       <h5><a href='/users' class='see-more'>Back to Users</a><a href='/activities' class='see-more'>Your Feed</a></h5>
@@ -24,23 +24,15 @@
     </div>
     <div>
       <h3>Filter Music</h3>
-      <div class='filters'>
-        <h4>By Provider</h4>
-        <p class='provider-filters'>
-          {{#view 'youtube_filter'}}<input type='checkbox' checked>Youtube<br>{{/view}}
-          {{#view 'twitter_filter'}}<input type='checkbox' checked>Twitter<br>{{/view}}
-          {{#view 'soundcloud_filter'}}<input type='checkbox' checked>Soundcloud<br>{{/view}}
-        </p>
-        <h4>Tags</h4>
-        <p class='provider-filters'>
-          <input type='checkbox'>Funk<br>
-          <input type='checkbox'>Rock<br>
-          <input type='checkbox'>Jazz<br>
-          <input type='checkbox'>Blues<br>
-        </p>
-      </div>
-    </div>
+<div class='filters'>
+  <div class='provider-filters'>
+    {{#view 'youtube_filter'}}<p class='youtube-filter'>Youtube</p>{{/view}}
+    {{#view 'twitter_filter'}}<p class='twitter-filter'>Twitter</p>{{/view}}
+    {{#view 'soundcloud_filter'}}<p class='soundcloud-filter'>Soundcloud</p>{{/view}}
   </div>
+</div>
+<h3 class='left-pane-subheader'>Recommended<small><a class="see-more" href='/users'>See More </a></small></h3>
+</div>
 </div>
 </div>
 <div>
