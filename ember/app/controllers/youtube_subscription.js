@@ -14,5 +14,4 @@ export default Ember.ObjectController.extend({
    this.set('tracked', 'false');
    this.get('model').save();
   }
-
 });
