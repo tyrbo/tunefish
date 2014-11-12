@@ -1,17 +1,16 @@
 class Api::SubscriptionsController < ApplicationController
-  
+
   def index
     render json: current_user.subscriptions.includes(:users)
   end
 
   def create
-    binding.pry
-    if current_user.subscriptions.create(followed_id: params[:subscription][:followed_id]) 
+    if current_user.subscriptions.create(followed_id: params[:subscription][:followed_id])
       render json: current_user.following
     end
   end
 
-  def destroy 
+  def destroy
     follower = current_user.following.find(params[:subscription][:followed_id])
 
     if follower.destroy
