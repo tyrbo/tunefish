@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :sessions
 
   namespace :api do
+    resource :status, only: [:show]
     resources :users
     resources :activities
     resources :youtube_subscriptions
