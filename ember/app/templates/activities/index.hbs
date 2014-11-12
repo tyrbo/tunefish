@@ -21,7 +21,7 @@
 
         <table id = "youtube-table" class="table table-condensed">
           <tr>
-            <td role="presentation"><a href="/activities#" class="login-link" onclick="openAuthWindow('google_oauth2');">Login with Youtube</a><span id="line"></span></td>
+            <td role="presentation"><a href="/activities#" class="login-link" onclick="openAuthWindow('google_oauth2');">Login with Youtube</a></td>
             <td role="presentation"><a class='jsYoutubeModal login-link' {{action openModal 'youtube_subscriptions' model}}>Tracked Subscriptions</a></td>
           </tr>
         </table>
@@ -37,11 +37,11 @@
       <h3>Feed Content</h3>
       <div class="progress">
         <div class="progress-bar progress-bar-warning" {{bind-attr style=styledSoundcloudPercentage}}>
-          Soundcloud
+          <img src='https://cdn1.iconfinder.com/data/icons/smallicons-logotypes/32/soundcloud-48.png' height='80%' width='50%' class="provider-image" id="twitter-icon">
           <span class="sr-only"> {{soundcloudPercentage}}% Complete (warning)</span>
         </div>
         <div class="progress-bar progress-bar-danger" style="width: {{bind-attr style=styledYoutubePercentage}}%">
-          Youtube
+          <img src='https://cdn2.iconfinder.com/data/icons/browsers-and-social-media/1024/Youtube-48.png' height='80%' width='10%' class="provider-image" id="twitter-icon">
           <span class="sr-only">{{youtubePercentage}}% Complete (danger)</span>
         </div>
         <div class="progress-bar" style="width: {{bind-attr style=styledTwitterPercentage}}%">

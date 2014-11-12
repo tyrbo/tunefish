@@ -6,6 +6,7 @@ class TwitterAPI
   end
 
   def get_tweets_with_hashtag_tf
+    binding.pry
     tweets = client.user_timeline(@twitter_screen_name)
     tweets.select do |tweet|
       words = tweet.text.split
