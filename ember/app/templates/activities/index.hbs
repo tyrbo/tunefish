@@ -37,15 +37,15 @@
       <h3>Feed Content</h3>
       <div class="progress">
         <div class="progress-bar progress-bar-warning" {{bind-attr style=styledSoundcloudPercentage}}>
-          <img src='https://cdn1.iconfinder.com/data/icons/smallicons-logotypes/32/soundcloud-48.png' height='80%' width='50%' class="provider-image" id="twitter-icon">
+          <img src='http://www.myiconfinder.com/uploads/iconsets/128-128-de7acb73d6cf503246fca922e193da1f.png' height='16px' width='16px' id="twitter-icon">
           <span class="sr-only"> {{soundcloudPercentage}}% Complete (warning)</span>
         </div>
-        <div class="progress-bar progress-bar-danger" style="width: {{bind-attr style=styledYoutubePercentage}}%">
-          <img src='https://cdn2.iconfinder.com/data/icons/browsers-and-social-media/1024/Youtube-48.png' height='80%' width='10%' class="provider-image" id="twitter-icon">
+        <div class="progress-bar progress-bar-danger" {{bind-attr style=styledYoutubePercentage}}>
+          <img src='https://cdn2.iconfinder.com/data/icons/browsers-and-social-media/1024/Youtube-48.png' height='16px' width='22px' id="twitter-icon">
           <span class="sr-only">{{youtubePercentage}}% Complete (danger)</span>
         </div>
-        <div class="progress-bar" style="width: {{bind-attr style=styledTwitterPercentage}}%">
-          Twitter
+        <div class="progress-bar" {{bind-attr style=styledTwitterPercentage}}>
+          <img src='https://cdn4.iconfinder.com/data/icons/iconsimple-logotypes/512/twitter-128.png' height='16px' width='16px' id="twitter-icon">
           <span class="sr-only">{{twitterPercentage}}% Complete (success)</span>
         </div>
       </div>
