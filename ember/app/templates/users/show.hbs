@@ -3,7 +3,9 @@
     <div class='usercard'>
       <img class='avatar' src='https://s3-us-west-2.amazonaws.com/tunefish/logo.jpg'>
       <p class='manage'>{{name}}<button class='btn btn-warning user-follow'{{action 'follow'}}> Follow! </button></p>
-    <div>
+      <div>
+      <h5><a href='/users' class='see-more'>Back to Users</a><a href='/activities' class='see-more'>Your Feed</a></h5>
+    </div>
       <h3>Feed Content</h3>
       <div class="progress">
         <div class="progress-bar progress-bar-warning" {{bind-attr style=styledSoundcloudPercentage}}>
@@ -36,10 +38,6 @@
           <input type='checkbox'>Jazz<br>
           <input type='checkbox'>Blues<br>
         </p>
-      </div>
-      <h3>Recommended<small><a class="see-more" href='/users'>See More </a></small></h3>
-      <div>
-
       </div>
     </div>
   </div>
