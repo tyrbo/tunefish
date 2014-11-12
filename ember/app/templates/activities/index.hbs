@@ -5,13 +5,13 @@
       <p class='manage'>Manage Your Acccounts</p>
       <div class='icon-container'>
         {{#view "soundcloudimage" class="ember-view-image"}}
-          <img src='https://s3-us-west-2.amazonaws.com/tunefish/soundcloud-icon.png' height='26%' width='26%' class="provider-image" id="soundcloud-icon">
+        <img src='https://s3-us-west-2.amazonaws.com/tunefish/soundcloud-icon.png' height='26%' width='26%' class="provider-image" id="soundcloud-icon">
         {{/view}}
         {{#view "youtubeimage" class="ember-view-image"}}
-          <img src='https://s3-us-west-2.amazonaws.com/tunefish/256px-Youtube_icon.svg.png' height='23%' width='23%' class="provider-image" id="youtube-icon">
+        <img src='https://s3-us-west-2.amazonaws.com/tunefish/256px-Youtube_icon.svg.png' height='23%' width='23%' class="provider-image" id="youtube-icon">
         {{/view}}
         {{#view "twitterimage" class="ember-view-image"}}
-          <img src='https://s3-us-west-2.amazonaws.com/tunefish/twitter-icon.png' height='23%' width='23%' class="provider-image" id="twitter-icon">
+        <img src='https://s3-us-west-2.amazonaws.com/tunefish/twitter-icon.png' height='23%' width='23%' class="provider-image" id="twitter-icon">
         {{/view}}
         <table id = "soundcloud-table" class="table table-condensed">
           <tr>
@@ -50,10 +50,9 @@
           <input type='checkbox'>Blues<br>
         </p>
       </div>
-        <h3>Recommended<small><a class="see-more" href='/users'>See More </a></small></h3>
-        <div>
+      <h3>Recommended<small><a class="see-more" href='/users'>See More </a></small></h3>
+      <div>
 
-        </div>
       </div>
     </div>
   </div>
@@ -66,31 +65,31 @@
           <div class="col-md-9">
             <div class='feed'>
               <div class="tabslist">
-              <ul class="nav nav-tabs" role="tablist">
-                <li role="presentation" class="tab-list active"><a href="#your-music" role="tab" data-toggle="tab">Your Music</a></li>
-                <li role="presentation" class="tab-list"><a href="#subscriptions" role="tab" data-toggle="tab">Subscription</a></li>
-              </ul>
-            </div>
+                <ul class="nav nav-tabs" role="tablist">
+                  <li role="presentation" class="tab-list active"><a href="#your-music" role="tab" data-toggle="tab">Your Music</a></li>
+                  <li role="presentation" class="tab-list"><a href="#subscriptions" role="tab" data-toggle="tab">Subscription</a></li>
+                </ul>
+              </div>
               <div class="tab-content">
                 <div role="tabpanel" class="tab-pane active" id="your-music">
                   {{outlet 'modal'}}
-                {{#each activity in activity itemController="activity"}}
+                  {{#each activity in activity itemController="activity"}}
                   {{#with activity}}
-                    {{#if isYoutube}}
-                      <div class='music'>
-                        <iframe width="100%" height="500" src={{unbound url}} frameborder="0" allowfullscreen></iframe>
-                      </div>
-                    {{/if}}
-                    {{#if isSoundcloud}}
-                      <div class='music'>
-                        <iframe height='200' width='100%' scrolling="no" frameborder="no" src={{unbound url}}></iframe>
-                      </div>
-                    {{/if}}
-                    {{#if isTwitter}}
-                      <div class='tweet'>{{{unbound url}}}</div>
-                    {{/if}}
+                  {{#if isYoutube}}
+                  <div class='music'>
+                    <iframe width="100%" height="500" src={{unbound url}} frameborder="0" allowfullscreen></iframe>
+                  </div>
+                  {{/if}}
+                  {{#if isSoundcloud}}
+                  <div class='music'>
+                    <iframe height='200' width='100%' scrolling="no" frameborder="no" src={{unbound url}}></iframe>
+                  </div>
+                  {{/if}}
+                  {{#if isTwitter}}
+                  <div class='tweet'>{{{unbound url}}}</div>
+                  {{/if}}
                   {{/with}}
-                {{/each}}
+                  {{/each}}
                 </div>
                 <div role="tabpanel" class="tab-pane" id="subscriptions">
                   This is where your subscribed activities would go!
