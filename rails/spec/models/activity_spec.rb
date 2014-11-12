@@ -16,8 +16,24 @@ RSpec.describe Activity, :type => :model do
     expect(Activity.twitter.first).to eq(twitter_activity)
   end
 
-  it 'should have a lastfm scope' do
-    lastfm_activity = LastfmActivity.create
-    expect(Activity.lastfm.first).to eq(lastfm_activity)
+  context 'type percentages' do
+    before(:each) do
+      5.times {youtube_activity = YoutubeActivity.create}
+      4.times {soundcloud_activity = SoundcloudActivity.create}
+      twitter_activity = TwitterActivity.create
+    end
+
+    it 'should calculate the percentage of youtube activities the activity has' do
+      expect(Activity.youtube_percentage).to eq(50)
+    end
+
+    it 'should calculate the percentage of soundcloud activities the activity has' do
+      expect(Activity.soundcloud_percentage).to eq(40)
+
+    end
+
+    it 'should calculate the percentage of youtube activities the activity has' do
+      expect(Activity.twitter_percentage).to eq(10)
+    end
   end
 end
