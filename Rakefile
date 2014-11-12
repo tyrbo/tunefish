@@ -9,11 +9,13 @@ end
 namespace :build do
   desc 'Build Ember'
   task :ember do
+    puts "Building Ember..."
     sh 'cd ember; ember build --environment production --output-path production/'
   end
 
   desc 'Build Rails image'
   task :rails do
+    puts "Building Rails..."
     sh 'cd rails; docker build -t tyrbo/tunefish . && docker push tyrbo/tunefish'
   end
 end
@@ -65,13 +67,18 @@ namespace :deploy do
 end
 
 def prep_servers 
+  puts "Downloading images to hosts concurrently..."
+
   machines = `fleetctl --tunnel=#{IP_ADDR} list-machines --no-legend --full --fields=machine`.split("\n")
-  machines.each do |machine|
-    sh "fleetctl --tunnel=#{IP_ADDR} ssh #{machine} \"/bin/bash -c 'docker pull tyrbo/tunefish'\""
+  threads = machines.map do |machine|
+    Thread.new { sh "fleetctl --tunnel=#{IP_ADDR} ssh #{machine} \"/bin/bash -c 'docker pull tyrbo/tunefish'\"" }
   end
+  threads.each { |t| t.join }
 end
 
 def run_migrations
+  puts "Running migrations..."
+
   sh "ssh core@#{IP_ADDR} /usr/bin/docker run --rm tyrbo/tunefish /bin/bash -c 'bin/update'"
 end
 
