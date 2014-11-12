@@ -5,7 +5,7 @@ class Api::SubscriptionsController < ApplicationController
   end
 
   def create
-    if current_user.subscriptions.create(followed_id: params[:subscription][:followed_id]) 
+    if current_user.subscriptions.create(followed_id: params[:subscription][:followed_id])
       render json: current_user.following
     end
   end
