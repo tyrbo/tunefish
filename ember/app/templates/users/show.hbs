@@ -1,9 +1,78 @@
-<h4>{{name}}</h4>
-<ul>
-  {{#each identities}}
-   <li>{{provider}}</li>
-   {{/each}}
- </ul>
-<a href='http://127.0.0.1:3000/auth/twitter' target='_blank'>Twitter</a>
-<a href='http://127.0.0.1:3000/auth/lastfm' target='_blank'>Last.fm</a>
-<a href='http://127.0.0.1:3000/auth/google_oauth2' target='_blank'>Google</a>
+<div class='wrapper col-md-3'>
+  <div id="sidebar-wrapper">
+    <div class='usercard'>
+      <img class='avatar' src='https://s3-us-west-2.amazonaws.com/tunefish/logo.jpg'>
+      <p class='manage'>{{name}}<button class='btn btn-warning user-follow'{{action 'follow'}}> Follow! </button></p>
+    <div>
+      <h3>Feed Content</h3>
+      <div class="progress">
+        <div class="progress-bar progress-bar-warning" {{bind-attr style=styledSoundcloudPercentage}}>
+          Soundcloud
+          <span class="sr-only"> {{soundcloudPercentage}}% Complete (warning)</span>
+        </div>
+        <div class="progress-bar progress-bar-danger" style="width: {{bind-attr style=styledYoutubePercentage}}%">
+          Youtube
+          <span class="sr-only">{{youtubePercentage}}% Complete (danger)</span>
+        </div>
+        <div class="progress-bar" style="width: {{bind-attr style=styledTwitterPercentage}}%">
+          Twitter
+          <span class="sr-only">{{twitterPercentage}}% Complete (success)</span>
+        </div>
+      </div>
+    </div>
+    <div>
+      <h3>Filter Music</h3>
+      <div class='filters'>
+        <h4>By Provider</h4>
+        <p class='provider-filters'>
+          {{#view 'youtube_filter'}}<input type='checkbox' checked>Youtube<br>{{/view}}
+          {{#view 'twitter_filter'}}<input type='checkbox' checked>Twitter<br>{{/view}}
+          {{#view 'soundcloud_filter'}}<input type='checkbox' checked>Soundcloud<br>{{/view}}
+        </p>
+        <h4>Tags</h4>
+        <p class='provider-filters'>
+          <input type='checkbox'>Funk<br>
+          <input type='checkbox'>Rock<br>
+          <input type='checkbox'>Jazz<br>
+          <input type='checkbox'>Blues<br>
+        </p>
+      </div>
+      <h3>Recommended<small><a class="see-more" href='/users'>See More </a></small></h3>
+      <div>
+
+      </div>
+    </div>
+  </div>
+</div>
+<div>
+  <div id="page-content-wrapper">
+    <div class="page-content ">
+      <div class="container feed-page">
+        <div class="row">
+          <div class="col-md-9">
+            <div class='feed'>
+                  {{#each activity in activity itemController="activity"}}
+                  {{#with activity}}
+                  {{#if isYoutube}}
+                  <div class='music youtube'>
+                    <iframe width="100%" height="500" src={{unbound url}} frameborder="0" allowfullscreen></iframe>
+                  </div>
+                  {{/if}}
+                  {{#if isSoundcloud}}
+                  <div class='music soundcloud'>
+                    <iframe height='200' width='100%' scrolling="no" frameborder="no" src={{unbound url}}></iframe>
+                  </div>
+                  {{/if}}
+                  {{#if isTwitter}}
+                  <div class='tweet'>{{{unbound url}}}</div>
+                  {{/if}}
+                  {{/with}}
+                  {{/each}}
+                </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
