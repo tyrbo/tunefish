@@ -61,6 +61,7 @@ html, body {
   border-right: 2px solid orange;
   color: white;
   font-weight: 100;
+  letter-spacing: 1px;
 }
 
 #page-content-wrapper {
@@ -82,8 +83,8 @@ html, body {
 }
 
 .provider-filters {
+  cursor: pointer;
   margin-left: 10%;
-  font-size: 18px;
 }
 
 .avatar{
@@ -251,18 +252,42 @@ a {
   margin-top: -30px;
 }
 
-.user-header{
+.user-header {
   display:inline;
 }
 
-.see-more{
+.see-more {
   color: orange;
   margin-left: 20%;
 }
 
-.see-more:hover{
+.see-more:hover {
   color:orange;
   text-decoration: underline;
+}
+
+.left-pane-subheader {
+  font-weight: 100;
+}
+
+/* Filters */
+.youtube-filter {
+  font-size: 2em;
+  color: #e52d27;
+}
+
+.twitter-filter {
+  font-size: 2em;
+  color: #4099FF;
+}
+
+.soundcloud-filter {
+  font-size: 2em;
+  color: #FF6600;
+}
+
+.filter-off {
+  color: white;
 }
 
 .user-follow {
