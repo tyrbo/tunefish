@@ -61,6 +61,7 @@ html, body {
   border-right: 2px solid orange;
   color: white;
   font-weight: 100;
+  letter-spacing: 1px;
 }
 
 #page-content-wrapper {
@@ -263,6 +264,10 @@ a {
 .see-more:hover {
   color:orange;
   text-decoration: underline;
+}
+
+.left-pane-subheader {
+  font-weight: 100;
 }
 
 /* Filters */
