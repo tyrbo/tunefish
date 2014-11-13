@@ -33,11 +33,11 @@
               <span class='user-header'><h4>{{~#link-to 'users.show' this}}{{name}}{{~/link-to}}</h4>
               Song Count: {{activities.length}}</span>
               {{#if following}}
-              <div class='follow-button'><button class='btn btn-danger' {{action 'unfollow'}}>Unfollow</button>
+              <div class='follow-button'><button class='btn btn-danger' {{action 'unfollow'}}>Unfollow</button></div>
               {{else}}
-              <div class='follow-button'><button class='btn btn-warning'{{action 'follow'}}> Follow! </button></p>
+              <div class='follow-button'><button class='btn btn-warning'{{action 'follow'}}> Follow! </button></p></div>
               {{/if}}
-              <div class="followers">Following: {{subscriptions.length}}</p>
+              <div class="followers">Following: {{subscriptions.length}}</p></div>
               <table class='hidden'>
                 <tr></tr>
                 <td>Song</td>

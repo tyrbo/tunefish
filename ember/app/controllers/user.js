@@ -14,9 +14,6 @@ export default Ember.ObjectController.extend({
       subscription.save();
     },
     unfollow: function(){
-        var subscription = this.store.find('subscription', this).then(function(subscription){
-          subscription.destroyRecord();
-        });
         this.set('following', false);
     }
   }
