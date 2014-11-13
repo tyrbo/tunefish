@@ -1,35 +1,5 @@
 <div class='wrapper col-md-3'>
   <div id="sidebar-wrapper">
-    <div class='usercard'>
-      <h3 class='left-pane-subheader'>Manage Your Accounts</h3>
-      <div class='icon-container'>
-        {{#view "soundcloudimage" class="ember-view-image"}}
-        <img src='https://s3-us-west-2.amazonaws.com/tunefish/soundcloud-icon.png' height='26%' width='26%' class="provider-image" id="soundcloud-icon">
-      {{/view}}
-      {{#view "youtubeimage" class="ember-view-image"}}
-        <img src='https://s3-us-west-2.amazonaws.com/tunefish/256px-Youtube_icon.svg.png' height='23%' width='23%' class="provider-image" id="youtube-icon">
-      {{/view}}
-      {{#view "twitterimage" class="ember-view-image"}}
-        <img src='https://s3-us-west-2.amazonaws.com/tunefish/twitter-icon.png' height='23%' width='23%' class="provider-image" id="twitter-icon">
-      {{/view}}
-      <table id = "soundcloud-table" class="table table-condensed">
-        <tr>
-          <td role="presentation"><a href="/activites#" class="login-link" onclick="openAuthWindow('soundcloud');">Login with Soundcloud</a></td>
-        </tr>
-      </table>
-      <table id = "youtube-table" class="table table-condensed">
-        <tr>
-          <td role="presentation"><a href="/activities#" class="login-link" onclick="openAuthWindow('google_oauth2');">Login with Youtube</a></td>
-          <td role="presentation"><a class='jsYoutubeModal login-link' {{action openModal 'youtube_subscriptions' model}}>Tracked Subscriptions</a></td>
-        </tr>
-      </table>
-      <table id = "twitter-table" class="table table-condensed">
-        <tr>
-          <td role="presentation"><a href="/activities#" class="login-link" onclick="openAuthWindow('twitter');">Login with Twitter</a></td>
-        </tr>
-      </table>
-    </div>
-  </div>
   <div>
     <h3 class='left-pane-subheader'>Feed Content</h3>
     <div class="progress">
@@ -54,7 +24,7 @@
     </div>
   </div>
   <div>
-    <h3 class='left-pane-subheader'><a class="user-index-link" href='/users'>Find People To Follow</a></h3>
+    <h3 class='left-pane-subheader'>{{#link-to 'users' class="user-index-link"}}Find People To Follow{{/link-to}}</h3>
     <h3 class='left-pane-subheader'>Filter Music</h3>
     <div class='filters'>
       <div class='provider-filters'>
@@ -63,6 +33,36 @@
         {{#view 'soundcloud_filter'}}<p class='soundcloud-filter'>Soundcloud</p>{{/view}}
       </div>
     </div>
+  </div>
+  <div class='usercard'>
+    <h3 class='left-pane-subheader'>Manage Your Accounts</h3>
+    <div class='icon-container'>
+      {{#view "soundcloudimage" class="ember-view-image"}}
+      <img src='https://s3-us-west-2.amazonaws.com/tunefish/soundcloud-icon.png' height='26%' width='26%' class="provider-image" id="soundcloud-icon">
+    {{/view}}
+    {{#view "youtubeimage" class="ember-view-image"}}
+      <img src='https://s3-us-west-2.amazonaws.com/tunefish/256px-Youtube_icon.svg.png' height='23%' width='23%' class="provider-image" id="youtube-icon">
+    {{/view}}
+    {{#view "twitterimage" class="ember-view-image"}}
+      <img src='https://s3-us-west-2.amazonaws.com/tunefish/twitter-icon.png' height='23%' width='23%' class="provider-image" id="twitter-icon">
+    {{/view}}
+    <table id = "soundcloud-table" class="table table-condensed">
+      <tr>
+        <td role="presentation"><a href="/activites#" class="login-link" onclick="openAuthWindow('soundcloud');">Login with Soundcloud</a></td>
+      </tr>
+    </table>
+    <table id = "youtube-table" class="table table-condensed">
+      <tr>
+        <td role="presentation"><a href="/activities#" class="login-link" onclick="openAuthWindow('google_oauth2');">Login with Youtube</a></td>
+        <td role="presentation"><a class='jsYoutubeModal login-link' {{action openModal 'youtube_subscriptions' model}}>Tracked Subscriptions</a></td>
+      </tr>
+    </table>
+    <table id = "twitter-table" class="table table-condensed">
+      <tr>
+        <td role="presentation"><a href="/activities#" class="login-link" onclick="openAuthWindow('twitter');">Login with Twitter</a></td>
+      </tr>
+    </table>
+  </div>
 </div>
 </div>
 </div>
