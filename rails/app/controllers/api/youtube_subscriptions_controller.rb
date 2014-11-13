@@ -18,7 +18,7 @@ class Api::YoutubeSubscriptionsController < ApplicationController
       channel_id = params['youtube_subscription']['channel_id']
       
       sub.activities.each do |x|
-        Pusher.trigger("user_#{current_user.id}", 'activity', ActivitySerializer.new(x).to_json)
+        Pusher.trigger("user_#{current_user.id}", 'activity', x.to_json)
       end
 
       YoutubeAPIWorker.perform_async(channel_id, current_user.id, params[:id])
