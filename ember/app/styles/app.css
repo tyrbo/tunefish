@@ -114,6 +114,7 @@ html, body {
 .manage {
   font-size: 1.4em;
   display: inline-block;
+  text-align: center;j
 }
 
 .icon-container {
@@ -292,4 +293,8 @@ a {
 
 .user-follow {
   margin-left: 30px;
+}
+
+.category-sidebar {
+  clear: both;
 }
