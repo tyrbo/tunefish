@@ -3,4 +3,5 @@ class UserSerializer < ActiveModel::Serializer
 
   attributes :id, :name, :photo
   has_many :activities
+  has_many :subscriptions
 end

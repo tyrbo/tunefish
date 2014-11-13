@@ -20,9 +20,9 @@
             <div class= 'user'>
             <img src='https://s3-us-west-2.amazonaws.com/tunefish/logo.jpg' class="follow-img">
               <span class='user-header'><h4>{{~#link-to 'users.show' this}}{{name}}{{~/link-to}}</h4>
-              Song Count: 100</span>
+              Song Count: {{activities.length}}</span>
               <div class='follow-button'><button class='btn btn-warning'{{action 'follow'}}> Follow! </button></p>
-              <div class="followers">Followers: 73</p>
+              <div class="followers">Followers: {{subscriptions.length}}</p>
               <table class='hidden'>
                 <tr></tr>
                 <td>Song</td>

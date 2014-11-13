@@ -1,6 +1,8 @@
 import Ember from 'ember';
 
 export default Ember.ObjectController.extend({
+    
+  actions: {
     follow: function(){
       var subscription = this.store.createRecord('subscription', {
         followed_id: this.get('id')
@@ -8,4 +10,5 @@ export default Ember.ObjectController.extend({
 
       subscription.save();
     }
+  }
 });
