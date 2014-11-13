@@ -250,8 +250,7 @@ a {
 
 .follow-button {
   float: right;
-  margin-bottom: 30px;
-
+  margin-top: -40px;
 }
 
 .user-header {

@@ -1,5 +1,6 @@
 <div class='wrapper col-md-3'>
   <div id="sidebar-wrapper">
+  </h5><a href='/activities' class='see-more'>Your Feed</a></h5>
     <h1>Find new music</h1>
       <div class='category-sidebar'>
       <h3>Most Popular Users</h3>
@@ -35,9 +36,9 @@
               {{#if following}}
               <div class='follow-button'><button class='btn btn-danger' {{action 'unfollow'}}>Unfollow</button></div>
               {{else}}
-              <div class='follow-button'><button class='btn btn-warning'{{action 'follow'}}> Follow! </button></p></div>
+              <div class='follow-button'><button class='btn btn-warning'{{action 'follow'}}> Follow! </button></div>
               {{/if}}
-              <div class="followers">Following: {{subscriptions.length}}</p></div>
+              <div class="followers">Following: {{subscriptions.length}}</div>
               <table class='hidden'>
                 <tr></tr>
                 <td>Song</td>
