@@ -7,7 +7,10 @@ class SoundcloudAPIWorker
     tracks = JSON.parse(resp.body)
     tracks.each do |track|
       url = soundcloud_embed_url(track['id'])
-      SoundcloudActivity.find_or_create_by(url: url, user_id: user_id, provider: 'soundcloud')
+
+      SoundcloudActivity.find_or_create_by(url: url, user_id: user_id, provider: 'soundcloud') do |x|
+        Pusher.trigger("user_#{user_id}", 'activity', ActivitySerializer.new(x).to_json)
+      end
     end
   end
 

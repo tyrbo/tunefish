@@ -1,5 +1,7 @@
 require 'fog'
 
+IP_ADDR="104.131.171.238"
+
 desc 'Deploy Ember and Rails'
 task :deploy do
 end
@@ -7,11 +9,13 @@ end
 namespace :build do
   desc 'Build Ember'
   task :ember do
+    puts "Building Ember..."
     sh 'cd ember; ember build --environment production --output-path production/'
   end
 
   desc 'Build Rails image'
   task :rails do
+    puts "Building Rails..."
     sh 'cd rails; docker build -t tyrbo/tunefish . && docker push tyrbo/tunefish'
   end
 end
@@ -38,12 +42,13 @@ namespace :deploy do
     desc 'Rolling deployment'
     task :rolling do
       prep_servers
+      run_migrations
+
       units = fetch_rails_units
-      units.unshift('rails-starter.service')
 
       units.each do |unit|
-        sh "fleetctl --tunnel=104.131.171.238 stop #{unit}"
-        sh "fleetctl --tunnel=104.131.171.238 start #{unit}"
+        sh "fleetctl --tunnel=#{IP_ADDR} stop #{unit}"
+        sh "fleetctl --tunnel=#{IP_ADDR} start #{unit}"
         sleep 5
       end
     end
@@ -51,34 +56,30 @@ namespace :deploy do
     desc 'Hard deployment'
     task :hard do
       prep_servers
+      run_migrations
+
       units = fetch_rails_units.join(' ')
 
-      begin
-        sh "fleetctl --tunnel=104.131.171.238 stop rails-starter.service #{units}"
-      rescue
-        puts "Unable to stop fleet services..."
-      end
-
-      sh "fleetctl --tunnel=104.131.171.238 start rails-starter.service"
-      while !started?('rails-starter.service')
-        sleep 5
-      end
-
-      sh "fleetctl --tunnel=104.131.171.238 start #{units}"
+      sh "fleetctl --tunnel=#{IP_ADDR} stop #{units}"
+      sh "fleetctl --tunnel=#{IP_ADDR} start #{units}"
     end
   end
 end
 
 def prep_servers 
-  machines = `fleetctl --tunnel=104.131.171.238 list-machines --no-legend --full --fields=machine`.split("\n")
-  machines.each do |machine|
-    sh "fleetctl --tunnel=104.131.171.238 ssh #{machine} \"/bin/bash -c 'docker pull tyrbo/tunefish'\""
+  puts "Downloading images to hosts concurrently..."
+
+  machines = `fleetctl --tunnel=#{IP_ADDR} list-machines --no-legend --full --fields=machine`.split("\n")
+  threads = machines.map do |machine|
+    Thread.new { sh "fleetctl --tunnel=#{IP_ADDR} ssh #{machine} \"/bin/bash -c 'docker pull tyrbo/tunefish'\"" }
   end
+  threads.each { |t| t.join }
 end
 
-def started?(unit)
-  units = fetch_units.map { |x| x.split("\t").reject { |x| x.empty? } }
-  units.detect { |x| x[0] == unit }[1] == 'running'
+def run_migrations
+  puts "Running migrations..."
+
+  sh "ssh core@#{IP_ADDR} /usr/bin/docker run --rm tyrbo/tunefish /bin/bash -c 'bin/update'"
 end
 
 def fetch_rails_units
@@ -87,6 +88,6 @@ def fetch_rails_units
 end
 
 def fetch_units
-  `fleetctl --tunnel=104.131.171.238 list-units --no-legend --fields=unit,sub`.split("\n")
+  `fleetctl --tunnel=#{IP_ADDR} list-units --no-legend --fields=unit,sub`.split("\n")
 end
 

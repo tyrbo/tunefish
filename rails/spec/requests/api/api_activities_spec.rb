@@ -7,8 +7,10 @@ RSpec.describe "Api::Activities", :type => :request do
       allow_any_instance_of(ApplicationController)
         .to receive(:current_user) { @user }
 
+      @subscription = YoutubeSubscription.create(user_id: @user.id, channel_id: "sdflaAF5sjs", title: "yay", tracked: 'true')
+
       # Make sure all providers are being aggregated
-      YoutubeActivity.create(url: "http://youtube.com", provider: "youtube", user_id: @user.id)
+      YoutubeActivity.create(url: "http://youtube.com", provider: "youtube", user_id: @user.id, youtube_subscription_id: @subscription.id)
       SoundcloudActivity.create(url: "123456789", provider: "soundcloud", user_id: @user.id)
       TwitterActivity.create(url: "twitter", provider: "twitter", user_id: @user.id)
     end

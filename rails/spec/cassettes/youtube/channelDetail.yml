@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://www.googleapis.com/youtube/v3/channels?fields=items/contentDetails/relatedPlaylists/uploads&id=UCn8zNIfYAQNdrFRrr8oibKw,UCt7YulMv6FtTkUGBWqOK9KQ,UC_R3-VJlFnDhlG_9hk-tZiQ&key=AIzaSyBL9xCOlf9VoLtOyHq78KfF7R17zsYx75k&part=contentDetails
+    uri: https://www.googleapis.com/youtube/v3/channels?fields=items/contentDetails/relatedPlaylists/uploads&id=UCn8zNIfYAQNdrFRrr8oibKw&key=AIzaSyBL9xCOlf9VoLtOyHq78KfF7R17zsYx75k&part=contentDetails
     body:
       encoding: US-ASCII
       string: ''
@@ -19,16 +19,15 @@ http_interactions:
       message: OK
     headers:
       Expires:
-      - Wed, 05 Nov 2014 20:28:24 GMT
+      - Thu, 13 Nov 2014 01:02:02 GMT
       Date:
-      - Wed, 05 Nov 2014 20:28:24 GMT
+      - Thu, 13 Nov 2014 01:02:02 GMT
       Cache-Control:
       - private, max-age=300, must-revalidate, no-transform
       Etag:
-      - '"PSjn-HSKiX6orvNhGZvglLI2lvk/R0Ju91eY8fudQdlGGpvnQ_SQnr4"'
+      - '"VWxPoEGGsFABuqUjd074WYFuSzg/EcEcaVFFDDbykk3UBGdracA9USw"'
       Vary:
       - Origin
-      - Referer
       - X-Origin
       Content-Type:
       - application/json; charset=UTF-8
@@ -39,7 +38,7 @@ http_interactions:
       X-Xss-Protection:
       - 1; mode=block
       Content-Length:
-      - '354'
+      - '130'
       Server:
       - GSE
       Alternate-Protocol:
@@ -55,23 +54,9 @@ http_interactions:
              "uploads": "UUn8zNIfYAQNdrFRrr8oibKw"
             }
            }
-          },
-          {
-           "contentDetails": {
-            "relatedPlaylists": {
-             "uploads": "UUt7YulMv6FtTkUGBWqOK9KQ"
-            }
-           }
-          },
-          {
-           "contentDetails": {
-            "relatedPlaylists": {
-             "uploads": "UU_R3-VJlFnDhlG_9hk-tZiQ"
-            }
-           }
           }
          ]
         }
     http_version: 
-  recorded_at: Wed, 05 Nov 2014 20:28:24 GMT
+  recorded_at: Thu, 13 Nov 2014 01:02:02 GMT
 recorded_with: VCR 2.9.3
