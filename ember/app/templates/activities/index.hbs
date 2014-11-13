@@ -54,6 +54,7 @@
     </div>
   </div>
   <div>
+    <h3 class='left-pane-subheader'><a class="user-index-link" href='/users'>Find People To Follow</a></h3>
     <h3 class='left-pane-subheader'>Filter Music</h3>
     <div class='filters'>
       <div class='provider-filters'>
@@ -61,12 +62,8 @@
         {{#view 'twitter_filter'}}<p class='twitter-filter'>Twitter</p>{{/view}}
         {{#view 'soundcloud_filter'}}<p class='soundcloud-filter'>Soundcloud</p>{{/view}}
       </div>
-      <h3 class='left-pane-subheader'>Recommended<small><a class="see-more" href='/users'>See More </a></small></h3>
-      {{#each user}}
-        <img src={{unbound photo}} class="follow-img">
-      {{/each}}
     </div>
-  </div>
+</div>
 </div>
 </div>
 <div id="page-content-wrapper">
