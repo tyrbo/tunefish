@@ -24,20 +24,20 @@ class SessionsController < ApplicationController
     end
 
     if signed_in?
-      if @identity.user == current_user
-        render :close_window
-      else
+      if @identity.user != current_user
         @identity.user = current_user
         @identity.save
-        render :close_window
       end
     else
       if @identity.user.present?
         self.current_user = @identity.user
-        render :close_window
-      else
-        render :close_window
       end
+    end
+
+    if auth['provider'] == 'soundcloud'
+      redirect_to activities_path
+    else
+      render :close_window
     end
   end
 end

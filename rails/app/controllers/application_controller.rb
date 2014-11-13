@@ -16,4 +16,12 @@ class ApplicationController < ActionController::Base
     @current_user = user
     session[:user_id] = user.id
   end
+
+  def activities_path
+    if Rails.env.production?
+      'https://tunefi.sh/activities'
+    else
+      "http://#{request.host}:4200/activities"
+    end
+  end
 end

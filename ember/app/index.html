@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="assets/vendor.css">
     <link rel="stylesheet" href="assets/tunefish.css">
 
-    <script type="text/javascript">function openAuthWindow(e){var t=JSON.parse(decodeURIComponent($('meta[name="tunefish/config/environment"]').attr("content")));if(t.environment==="production"){window.open("http://tunefi.sh/auth/"+e,'_blank')}else{window.open("http://127.0.0.1:3000/auth/"+e,'_blank')}}</script>
+    <script type="text/javascript">function getEnvVar(){return JSON.parse(decodeURIComponent($('meta[name="tunefish/config/environment"]').attr("content")))}function getAPIUrl(){var t=getEnvVar();if(t.environment==="production"){return "https://tunefi.sh";}else{return "http://127.0.0.1:3000"}}function openAuthWindow(e){window.open(getAPIUrl()+"/auth/"+e,'_blank')}</script>
   </head>
   <body>
     <script src="assets/vendor.js"></script>
