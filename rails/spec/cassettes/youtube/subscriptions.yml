@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://www.googleapis.com/youtube/v3/subscriptions?channelId=UC_R3-VJlFnDhlG_9hk-tZiQ&fields=items/snippet&key=AIzaSyBL9xCOlf9VoLtOyHq78KfF7R17zsYx75k&part=snippet
+    uri: https://www.googleapis.com/youtube/v3/subscriptions?channelId=UC_R3-VJlFnDhlG_9hk-tZiQ&fields=items/snippet&key=AIzaSyBL9xCOlf9VoLtOyHq78KfF7R17zsYx75k&maxResults=50&part=snippet
     body:
       encoding: US-ASCII
       string: ''
@@ -19,16 +19,15 @@ http_interactions:
       message: OK
     headers:
       Expires:
-      - Wed, 05 Nov 2014 20:44:31 GMT
+      - Thu, 13 Nov 2014 00:51:33 GMT
       Date:
-      - Wed, 05 Nov 2014 20:44:31 GMT
+      - Thu, 13 Nov 2014 00:51:33 GMT
       Cache-Control:
       - private, max-age=0, must-revalidate, no-transform
       Etag:
-      - '"PSjn-HSKiX6orvNhGZvglLI2lvk/JnpYQpXw2bYWzY1sxNcpPH2DigM"'
+      - '"VWxPoEGGsFABuqUjd074WYFuSzg/2RzY5HHjPp3bhl0Ecuxcs-f0e_o"'
       Vary:
       - Origin
-      - Referer
       - X-Origin
       Content-Type:
       - application/json; charset=UTF-8
@@ -39,7 +38,7 @@ http_interactions:
       X-Xss-Protection:
       - 1; mode=block
       Content-Length:
-      - '4253'
+      - '11390'
       Server:
       - GSE
       Alternate-Protocol:
@@ -49,6 +48,86 @@ http_interactions:
       string: |
         {
          "items": [
+          {
+           "snippet": {
+            "publishedAt": "2014-11-12T16:56:07.000Z",
+            "title": "Vevo",
+            "description": "",
+            "resourceId": {
+             "kind": "youtube#channel",
+             "channelId": "UC2pmfLm7iq6Ov1UwYrWYkZA"
+            },
+            "channelId": "UC_R3-VJlFnDhlG_9hk-tZiQ",
+            "thumbnails": {
+             "default": {
+              "url": "https://yt3.ggpht.com/-hmxOepMtptM/AAAAAAAAAAI/AAAAAAAAAAA/nzePQZGAM2Y/s88-c-k-no/photo.jpg"
+             },
+             "high": {
+              "url": "https://yt3.ggpht.com/-hmxOepMtptM/AAAAAAAAAAI/AAAAAAAAAAA/nzePQZGAM2Y/s240-c-k-no/photo.jpg"
+             }
+            }
+           }
+          },
+          {
+           "snippet": {
+            "publishedAt": "2014-11-12T16:55:22.000Z",
+            "title": "TaylorSwiftVEVO",
+            "description": "",
+            "resourceId": {
+             "kind": "youtube#channel",
+             "channelId": "UCANLZYMidaCbLQFWXBC95Jg"
+            },
+            "channelId": "UC_R3-VJlFnDhlG_9hk-tZiQ",
+            "thumbnails": {
+             "default": {
+              "url": "https://yt3.ggpht.com/-PS6pgnf-7pY/AAAAAAAAAAI/AAAAAAAAAAA/QCBjV6iZUBI/s88-c-k-no/photo.jpg"
+             },
+             "high": {
+              "url": "https://yt3.ggpht.com/-PS6pgnf-7pY/AAAAAAAAAAI/AAAAAAAAAAA/QCBjV6iZUBI/s240-c-k-no/photo.jpg"
+             }
+            }
+           }
+          },
+          {
+           "snippet": {
+            "publishedAt": "2014-11-12T16:55:19.000Z",
+            "title": "LordeVEVO",
+            "description": "",
+            "resourceId": {
+             "kind": "youtube#channel",
+             "channelId": "UCVrPiUtl29kULN2HIAm244Q"
+            },
+            "channelId": "UC_R3-VJlFnDhlG_9hk-tZiQ",
+            "thumbnails": {
+             "default": {
+              "url": "https://yt3.ggpht.com/-3T2nI4lyIHY/AAAAAAAAAAI/AAAAAAAAAAA/7SYQQeVjD_g/s88-c-k-no/photo.jpg"
+             },
+             "high": {
+              "url": "https://yt3.ggpht.com/-3T2nI4lyIHY/AAAAAAAAAAI/AAAAAAAAAAA/7SYQQeVjD_g/s240-c-k-no/photo.jpg"
+             }
+            }
+           }
+          },
+          {
+           "snippet": {
+            "publishedAt": "2014-11-12T16:55:53.000Z",
+            "title": "iggyazaleamusicVEVO",
+            "description": "",
+            "resourceId": {
+             "kind": "youtube#channel",
+             "channelId": "UCcdOEjqjiVAnUtEFZIRTlHg"
+            },
+            "channelId": "UC_R3-VJlFnDhlG_9hk-tZiQ",
+            "thumbnails": {
+             "default": {
+              "url": "https://yt3.ggpht.com/-jpr6C1mFEb4/AAAAAAAAAAI/AAAAAAAAAAA/6dkOjSiMkDk/s88-c-k-no/photo.jpg"
+             },
+             "high": {
+              "url": "https://yt3.ggpht.com/-jpr6C1mFEb4/AAAAAAAAAAI/AAAAAAAAAAA/6dkOjSiMkDk/s240-c-k-no/photo.jpg"
+             }
+            }
+           }
+          },
           {
            "snippet": {
             "publishedAt": "2014-10-30T15:39:17.000Z",
@@ -148,9 +227,109 @@ http_interactions:
              }
             }
            }
+          },
+          {
+           "snippet": {
+            "publishedAt": "2014-10-30T15:38:59.000Z",
+            "title": "America's Test Kitchen: Best Baking Recipes - Topic",
+            "description": "",
+            "resourceId": {
+             "kind": "youtube#channel",
+             "channelId": "UCAISQG9LRnSWSXu6lXG9pSQ"
+            },
+            "channelId": "UC_R3-VJlFnDhlG_9hk-tZiQ",
+            "thumbnails": {
+             "default": {
+              "url": "https://i.ytimg.com/i/AISQG9LRnSWSXu6lXG9pSQ/1.jpg"
+             },
+             "high": {
+              "url": "https://i.ytimg.com/i/AISQG9LRnSWSXu6lXG9pSQ/mq1.jpg"
+             }
+            }
+           }
+          },
+          {
+           "snippet": {
+            "publishedAt": "2014-10-30T15:38:58.000Z",
+            "title": "America's Test Kitchen: Best Entertaining Recipes - Topic",
+            "description": "America's Test Kitchen: Best Entertaining Recipes is a 2007 instructional film.\n\nThis channel was generated automatically by YouTube's video discovery system.",
+            "resourceId": {
+             "kind": "youtube#channel",
+             "channelId": "UCFb310TyEvcf8HWGmg5si6w"
+            },
+            "channelId": "UC_R3-VJlFnDhlG_9hk-tZiQ",
+            "thumbnails": {
+             "default": {
+              "url": "https://i.ytimg.com/i/Fb310TyEvcf8HWGmg5si6w/1.jpg"
+             },
+             "high": {
+              "url": "https://i.ytimg.com/i/Fb310TyEvcf8HWGmg5si6w/mq1.jpg"
+             }
+            }
+           }
+          },
+          {
+           "snippet": {
+            "publishedAt": "2014-10-30T15:38:54.000Z",
+            "title": "America's Test Kitchen - Topic",
+            "description": "America's Test Kitchen is a half-hour cooking show distributed to public television stations in the United States, also airing in Canada. The show's host is Cook's Illustrated editor-in-chief Christopher Kimball; the show and the magazine are affiliated, and the magazine's test kitchen facility in Brookline, Massachusetts, is used as a set for the show. Cook's Illustrated's parent company, Boston Common Press, renamed itself America's Test Kitchen in 2004.\n\nThis channel was generated automatically by YouTube's video discovery system.",
+            "resourceId": {
+             "kind": "youtube#channel",
+             "channelId": "UCchEFKMi36Zh2Zk-Dkp-2FA"
+            },
+            "channelId": "UC_R3-VJlFnDhlG_9hk-tZiQ",
+            "thumbnails": {
+             "default": {
+              "url": "https://i.ytimg.com/i/chEFKMi36Zh2Zk-Dkp-2FA/1.jpg"
+             },
+             "high": {
+              "url": "https://i.ytimg.com/i/chEFKMi36Zh2Zk-Dkp-2FA/mq1.jpg"
+             }
+            }
+           }
+          },
+          {
+           "snippet": {
+            "publishedAt": "2014-10-30T15:38:52.000Z",
+            "title": "America's Test Kitchen",
+            "description": "America's Test Kitchen is a real 2,500 square foot test kitchen located just outside of Boston that is home to more than three dozen full-time cooks and product testers. Our mission is simple: to develop the absolute best recipes for all of your favorite foods. To do this, we test each recipe 30, 40, sometimes as many as 70 times, until we arrive at the combination of ingredients, technique, temperature, cooking time, and equipment that yields the best, most-foolproof recipe.",
+            "resourceId": {
+             "kind": "youtube#channel",
+             "channelId": "UCxAS_aK7sS2x_bqnlJHDSHw"
+            },
+            "channelId": "UC_R3-VJlFnDhlG_9hk-tZiQ",
+            "thumbnails": {
+             "default": {
+              "url": "https://yt3.ggpht.com/-xD86CT1wq-c/AAAAAAAAAAI/AAAAAAAAAAA/2ZahY6VfMt0/s88-c-k-no/photo.jpg"
+             },
+             "high": {
+              "url": "https://yt3.ggpht.com/-xD86CT1wq-c/AAAAAAAAAAI/AAAAAAAAAAA/2ZahY6VfMt0/s240-c-k-no/photo.jpg"
+             }
+            }
+           }
+          },
+          {
+           "snippet": {
+            "publishedAt": "2014-10-30T15:38:39.000Z",
+            "title": "Munchies",
+            "description": "MUNCHIES is a new website and digital video channel from VICE dedicated to food and its global purpose. Launched in 2014, MUNCHIES offers groundbreaking content from a youth driven perspective. In today's modern world, the formerly tangible pleasures of music, film, and emerging media are just one click away. Food and the events that manifest around it are one of the everlasting experiences that cannot be replicated by arcs and zeroes. MUNCHIES chronicles the wide spectrum of the global culinary experience and the diverse voices that are pulling us forward: chefs and home cooks, makers and consumers, the politics and policies of food, \"front\" and \"back of house\" restaurant life, old wives tales and innovative news, and culturally significant indicators in our modern world. Through engaging original video content, compelling editorial features, articles, how-tos, recipes and events, MUNCHIES offers a signature perspective on the intersection where humans and food connect.",
+            "resourceId": {
+             "kind": "youtube#channel",
+             "channelId": "UCaLfMkkHhSA_LaCta0BzyhQ"
+            },
+            "channelId": "UC_R3-VJlFnDhlG_9hk-tZiQ",
+            "thumbnails": {
+             "default": {
+              "url": "https://yt3.ggpht.com/-VXDa5ce1Zr0/AAAAAAAAAAI/AAAAAAAAAAA/yLyEVhQzQIw/s88-c-k-no/photo.jpg"
+             },
+             "high": {
+              "url": "https://yt3.ggpht.com/-VXDa5ce1Zr0/AAAAAAAAAAI/AAAAAAAAAAA/yLyEVhQzQIw/s240-c-k-no/photo.jpg"
+             }
+            }
+           }
           }
          ]
         }
     http_version: 
-  recorded_at: Wed, 05 Nov 2014 20:44:31 GMT
+  recorded_at: Thu, 13 Nov 2014 00:51:33 GMT
 recorded_with: VCR 2.9.3
