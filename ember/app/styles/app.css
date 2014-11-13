@@ -86,7 +86,8 @@ html, body {
 }
 
 #page-content-wrapper {
-  width: 100%;
+  width: 74%;
+  margin-left: 26%;
 }
 
 .usercard {
@@ -118,6 +119,16 @@ html, body {
 
 .username {
   text-align: center;
+}
+
+.feed{
+  max-width: 1300px;
+  margin: auto;
+}
+
+.progress{
+  max-width: 300px;
+  min-width: 20px;
 }
 
 .music {

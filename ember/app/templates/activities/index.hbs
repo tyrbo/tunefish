@@ -1,147 +1,137 @@
-<div class='wrapper col-md-3'>
-  <div id="sidebar-wrapper">
-    <div class='usercard'>
-      <img class='avatar' src='https://s3-us-west-2.amazonaws.com/tunefish/logo.jpg'>
-      <p class='manage'>Manage Your Acccounts</p>
-      <div class='icon-container'>
-        {{#view "soundcloudimage" class="ember-view-image"}}
-          <img src='https://s3-us-west-2.amazonaws.com/tunefish/soundcloud-icon.png' height='26%' width='26%' class="provider-image" id="soundcloud-icon">
-        {{/view}}
-        {{#view "youtubeimage" class="ember-view-image"}}
-          <img src='https://s3-us-west-2.amazonaws.com/tunefish/256px-Youtube_icon.svg.png' height='23%' width='23%' class="provider-image" id="youtube-icon">
-        {{/view}}
-        {{#view "twitterimage" class="ember-view-image"}}
-          <img src='https://s3-us-west-2.amazonaws.com/tunefish/twitter-icon.png' height='23%' width='23%' class="provider-image" id="twitter-icon">
-        {{/view}}
-        <table id = "soundcloud-table" class="table table-condensed">
-          <tr>
-            <td role="presentation"><a href="/activities#" class="login-link" onclick="openAuthWindow('soundcloud');">Login with Soundcloud</a></td>
-          </tr>
-        </table>
-
-        <table id = "youtube-table" class="table table-condensed">
-          <tr>
-            <td role="presentation"><a href="/activities#" class="login-link" onclick="openAuthWindow('google_oauth2');">Login with Youtube</a></td>
-            <td role="presentation"><a class='jsYoutubeModal login-link' {{action openModal 'youtube_subscriptions' model}}>Tracked Subscriptions</a></td>
-          </tr>
-        </table>
-
-        <table id = "twitter-table" class="table table-condensed">
-          <tr>
-            <td role="presentation"><a href="/activities#" class="login-link" onclick="openAuthWindow('twitter');">Login with Twitter</a></td>
-          </tr>
-        </table>
-      </div>
-    </div>
-    <div>
-      <h3 class='left-pane-subheader'>Feed Content</h3>
-      <div class="progress">
-        <div class="progress-bar progress-bar-warning" {{bind-attr style=styledSoundcloudPercentage}}>
-          {{#if isSoundcloudPercentage }}
-            <img src='http://www.myiconfinder.com/uploads/iconsets/128-128-de7acb73d6cf503246fca922e193da1f.png' height='16px' width='16px' id="twitter-icon">
-            <span class="sr-only"> {{soundcloudPercentage}}% Complete (warning)</span>
-          {{/if}}
-        </div>
-        <div class="progress-bar progress-bar-danger" {{bind-attr style=styledYoutubePercentage}}>
-          {{#if isYoutubePercentage }}
-            <img src='https://cdn2.iconfinder.com/data/icons/browsers-and-social-media/1024/Youtube-48.png' height='16px' width='22px' id="twitter-icon">
-            <span class="sr-only">{{youtubePercentage}}% Complete (danger)</span>
-          {{/if}}
-        </div>
-        <div class="progress-bar" {{bind-attr style=styledTwitterPercentage}}>
-          {{#if isTwitterPercentage }}
-            <img src='https://cdn4.iconfinder.com/data/icons/iconsimple-logotypes/512/twitter-128.png' height='16px' width='16px' id="twitter-icon">
-            <span class="sr-only">{{twitterPercentage}}% Complete (success)</span>
-          {{/if}}
-        </div>
-      </div>
-    </div>
-    <div>
-      <h3 class='left-pane-subheader'>Filter Music</h3>
-      <div class='filters'>
-        <div class='provider-filters'>
-          {{#view 'youtube_filter'}}<p class='youtube-filter'>Youtube</p>{{/view}}
-          {{#view 'twitter_filter'}}<p class='twitter-filter'>Twitter</p>{{/view}}
-          {{#view 'soundcloud_filter'}}<p class='soundcloud-filter'>Soundcloud</p>{{/view}}
-        </div>
-      </div>
-      <h3 class='left-pane-subheader'>Recommended<small><a class="see-more" href='/users'>See More </a></small></h3>
+<div id="sidebar-wrapper">
+  <div class='usercard'>
+    <img class='avatar' src='https://s3-us-west-2.amazonaws.com/tunefish/logo.jpg'>
+    <p class='manage'>Manage Your Acccounts</p>
+    <div class='icon-container'>
+      {{#view "soundcloudimage" class="ember-view-image"}}
+        <img src='https://s3-us-west-2.amazonaws.com/tunefish/soundcloud-icon.png' height='26%' width='26%' class="provider-image" id="soundcloud-icon">
+      {{/view}}
+      {{#view "youtubeimage" class="ember-view-image"}}
+        <img src='https://s3-us-west-2.amazonaws.com/tunefish/256px-Youtube_icon.svg.png' height='23%' width='23%' class="provider-image" id="youtube-icon">
+      {{/view}}
+      {{#view "twitterimage" class="ember-view-image"}}
+        <img src='https://s3-us-west-2.amazonaws.com/tunefish/twitter-icon.png' height='23%' width='23%' class="provider-image" id="twitter-icon">
+      {{/view}}
+      <table id = "soundcloud-table" class="table table-condensed">
+        <tr>
+          <td role="presentation"><a href="/activites#" class="login-link" onclick="openAuthWindow('soundcloud');">Login with Soundcloud</a></td>
+        </tr>
+      </table>
+      <table id = "youtube-table" class="table table-condensed">
+        <tr>
+          <td role="presentation"><a href="/activities#" class="login-link" onclick="openAuthWindow('google_oauth2');">Login with Youtube</a></td>
+          <td role="presentation"><a class='jsYoutubeModal login-link' {{action openModal 'youtube_subscriptions' model}}>Tracked Subscriptions</a></td>
+        </tr>
+      </table>
+      <table id = "twitter-table" class="table table-condensed">
+        <tr>
+          <td role="presentation"><a href="/activities#" class="login-link" onclick="openAuthWindow('twitter');">Login with Twitter</a></td>
+        </tr>
+      </table>
     </div>
   </div>
+  <div>
+    <h3 class='left-pane-subheader'>Feed Content</h3>
+    <div class="progress">
+      <div class="progress-bar progress-bar-warning" {{bind-attr style=styledSoundcloudPercentage}}>
+        {{#if isSoundcloudPercentage }}
+          <img src='http://www.myiconfinder.com/uploads/iconsets/128-128-de7acb73d6cf503246fca922e193da1f.png' height='16px' width='16px' id="twitter-icon">
+          <span class="sr-only"> {{soundcloudPercentage}}% Complete (warning)</span>
+        {{/if}}
+      </div>
+      <div class="progress-bar progress-bar-danger" {{bind-attr style=styledYoutubePercentage}}>
+        {{#if isYoutubePercentage }}
+          <img src='https://cdn2.iconfinder.com/data/icons/browsers-and-social-media/1024/Youtube-48.png' height='16px' width='22px' id="twitter-icon">
+          <span class="sr-only">{{youtubePercentage}}% Complete (danger)</span>
+        {{/if}}
+      </div>
+      <div class="progress-bar" {{bind-attr style=styledTwitterPercentage}}>
+        {{#if isTwitterPercentage }}
+          <img src='https://cdn4.iconfinder.com/data/icons/iconsimple-logotypes/512/twitter-128.png' height='16px' width='16px' id="twitter-icon">
+          <span class="sr-only">{{twitterPercentage}}% Complete (success)</span>
+        {{/if}}
+      </div>
+    </div>
+  </div>
+  <div>
+    <h3 class='left-pane-subheader'>Filter Music</h3>
+    <div class='filters'>
+      <div class='provider-filters'>
+        {{#view 'youtube_filter'}}<p class='youtube-filter'>Youtube</p>{{/view}}
+        {{#view 'twitter_filter'}}<p class='twitter-filter'>Twitter</p>{{/view}}
+        {{#view 'soundcloud_filter'}}<p class='soundcloud-filter'>Soundcloud</p>{{/view}}
+      </div>
+    </div>
+    <h3 class='left-pane-subheader'>Recommended<small><a class="see-more" href='/users'>See More </a></small></h3>
+  </div>
 </div>
-<div>
-  <div id="page-content-wrapper">
-    <div class="page-content ">
-      <div class="container feed-page">
-        <div class="row">
-          <div class="col-md-9">
-            <div class='feed'>
-              <div class="tabslist">
-                <ul class="nav nav-tabs" role="tablist">
-                  <li role="presentation" class="tab-list active"><a href="#your-music" role="tab" data-toggle="tab">Your Music</a></li>
-                  <li role="presentation" class="tab-list"><a href="#subscriptions" role="tab" data-toggle="tab">Subscription</a></li>
-                </ul>
-              </div>
-              <div class="tab-content">
-                <div role="tabpanel" class="tab-pane active" id="your-music">
-                  {{outlet 'modal'}}
-                  {{#each activity in activity itemController="activity"}}
-                  {{#with activity}}
-                  {{#if isYoutube}}
+<div id="page-content-wrapper">
+  <div class="page-content ">
+    <div class="container feed-page">
+      <div class='feed'>
+        <div class="tabslist">
+          <ul class="nav nav-tabs" role="tablist">
+            <li role="presentation" class="tab-list active"><a href="#your-music" role="tab" data-toggle="tab">Your Music</a></li>
+            <li role="presentation" class="tab-list"><a href="#subscriptions" role="tab" data-toggle="tab">Subscription</a></li>
+          </ul>
+        </div>
+        <div class="tab-content">
+          <div role="tabpanel" class="tab-pane active feed" id="your-music">
+            {{outlet 'modal'}}
+            {{#each activity in activity itemController="activity"}}
+              {{#with activity}}
+                {{#if isYoutube}}
                   <div class='music youtube'>
                     <iframe width="100%" height="500" src={{unbound url}} frameborder="0" allowfullscreen></iframe>
                   </div>
-                  {{/if}}
-                  {{#if isSoundcloud}}
+                {{/if}}
+                {{#if isSoundcloud}}
                   <div class='music soundcloud'>
                     <iframe height='200' width='100%' scrolling="no" frameborder="no" src={{unbound url}}></iframe>
                   </div>
-                  {{/if}}
-                  {{#if isTwitter}}
+                {{/if}}
+                {{#if isTwitter}}
                   <div class='tweet'>{{{unbound url}}}</div>
-                  {{/if}}
-                  {{/with}}
-                  {{else}}
-                  <div class="loading-wrapper">
-                    <div class="spinner">
-                      <div class="bounce1"></div>
-                      <div class="bounce2"></div>
-                      <div class="bounce3"></div>
-                    </div>
-                    <h4 class="text-center">Waiting for activities...</h2>
-                  </div>
-                  {{/each}}
+                {{/if}}
+              {{/with}}
+            {{else}}
+              <div class="loading-wrapper">
+                <div class="spinner">
+                  <div class="bounce1"></div>
+                  <div class="bounce2"></div>
+                  <div class="bounce3"></div>
                 </div>
-                <div role="tabpanel" class="tab-pane" id="subscriptions">
-                  {{#each subscription_activity in subscription_activity itemController="activity"}}
-                  {{#with subscription_activity}}
-                  {{#if isYoutube}}
+                <h4 class="text-center">Waiting for activities...</h2>
+              </div>
+            {{/each}}
+          </div>
+          <div role="tabpanel" class="tab-pane" id="subscriptions">
+            {{#each subscription_activity in subscription_activity itemController="activity"}}
+              {{#with subscription_activity}}
+                {{#if isYoutube}}
                   <div class='music'>
                     <iframe width="100%" height="500" src={{unbound url}} frameborder="0" allowfullscreen></iframe>
                   </div>
-                  {{/if}}
-                  {{#if isSoundcloud}}
+                {{/if}}
+                {{#if isSoundcloud}}
                   <div class='music'>
                     <iframe height='200' width='100%' scrolling="no" frameborder="no" src={{unbound url}}></iframe>
                   </div>
-                  {{/if}}
-                  {{#if isTwitter}}
+                {{/if}}
+                {{#if isTwitter}}
                   <div class='tweet'>{{{unbound url}}}</div>
-                  {{/if}}
-                  {{/with}}
-                  {{else}}
-                  <div class="loading-wrapper">
-                    <div class="spinner">
-                      <div class="bounce1"></div>
-                      <div class="bounce2"></div>
-                      <div class="bounce3"></div>
-                    </div>
-                    <h4 class="text-center">Waiting for subscriptions...</h2>
-                  </div>
-                  {{/each}}
+                {{/if}}
+              {{/with}}
+            {{else}}
+              <div class="loading-wrapper">
+                <div class="spinner">
+                  <div class="bounce1"></div>
+                  <div class="bounce2"></div>
+                  <div class="bounce3"></div>
                 </div>
+                <h4 class="text-center">Waiting for subscriptions...</h2>
               </div>
-            </div>
+            {{/each}}
           </div>
         </div>
       </div>

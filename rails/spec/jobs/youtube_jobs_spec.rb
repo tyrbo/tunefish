@@ -5,21 +5,20 @@ describe YoutubeAPIWorker do
 
   before(:each) do
     @user = User.create
-    @channel_ids = ["UCn8zNIfYAQNdrFRrr8oibKw",
-                   "UCt7YulMv6FtTkUGBWqOK9KQ",
-                   "UC_R3-VJlFnDhlG_9hk-tZiQ"]
+    @channel_id = "UCn8zNIfYAQNdrFRrr8oibKw"
+    @youtube_subscription = YoutubeSubscription.create(user_id: @user.id, channel_id: "UCn8zNIfYAQNdrFRrr8oibKw", title: 'YAY', tracked: 'true')
   end
 
   it 'adds a job to the queue' do
     expect {
-      YoutubeAPIWorker.perform_async(@channel_ids, @user.id)
+      YoutubeAPIWorker.perform_async(@channel_ids, @user.id, @youtube_subscription.id )
     }.to change(YoutubeAPIWorker.jobs, :size).by(1)
   end
 
-  xit 'executes the queued jobs' do
-    VCR.use_cassette('channelDetail_and_uploads') do
+  it 'executes the queued jobs' do
+    VCR.use_cassette('youtube/channelDetail_and_uploads') do
       expect {
-        YoutubeAPIWorker.perform_async(@channel_ids, @user.id)
+        YoutubeAPIWorker.perform_async(@channel_id, @user.id, @youtube_subscription.id)
       }.to change(YoutubeAPIWorker.jobs, :size).by(1)
       YoutubeAPIWorker.drain
       expect(YoutubeAPIWorker.jobs.size).to eq 0
@@ -27,9 +26,9 @@ describe YoutubeAPIWorker do
   end
 
   it 'saves youtube activity to the database' do
-    VCR.use_cassette('testing_youtube') do
+    VCR.use_cassette('youtube/testing_youtube') do
       expect(YoutubeActivity.count).to eq 0
-      YoutubeAPIWorker.new.perform(@channel_ids, @user.id)
+      YoutubeAPIWorker.new.perform(@channel_id, @user.id, @youtube_subscription.id)
       expect(YoutubeActivity.count).to be > 0
     end
   end

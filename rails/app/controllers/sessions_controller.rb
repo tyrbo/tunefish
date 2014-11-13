@@ -19,11 +19,8 @@ class SessionsController < ApplicationController
       subscriptions = @identity.user.parse_subscriptions(subscriptions_json)
 
       subscriptions.each do |title, channel_id|
-        @identity.user.youtube_subscriptions.create(title: title, channel_id: channel_id)
+        @identity.user.youtube_subscriptions.find_or_create_by(title: title, channel_id: channel_id)
       end
-
-      channel_ids = subscriptions.values
-      YoutubeAPIWorker.perform_async(channel_ids, @identity.user.id)
     end
 
     if signed_in?

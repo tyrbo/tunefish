@@ -2,6 +2,65 @@
 http_interactions:
 - request:
     method: get
+    uri: https://www.googleapis.com/youtube/v3/channels?fields=items/contentDetails/relatedPlaylists/uploads&id=UCn8zNIfYAQNdrFRrr8oibKw&key=AIzaSyBL9xCOlf9VoLtOyHq78KfF7R17zsYx75k&part=contentDetails
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Expires:
+      - Thu, 13 Nov 2014 01:03:43 GMT
+      Date:
+      - Thu, 13 Nov 2014 01:03:43 GMT
+      Cache-Control:
+      - private, max-age=300, must-revalidate, no-transform
+      Etag:
+      - '"VWxPoEGGsFABuqUjd074WYFuSzg/EcEcaVFFDDbykk3UBGdracA9USw"'
+      Vary:
+      - Origin
+      - X-Origin
+      Content-Type:
+      - application/json; charset=UTF-8
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      Content-Length:
+      - '130'
+      Server:
+      - GSE
+      Alternate-Protocol:
+      - 443:quic,p=0.01
+    body:
+      encoding: UTF-8
+      string: |
+        {
+         "items": [
+          {
+           "contentDetails": {
+            "relatedPlaylists": {
+             "uploads": "UUn8zNIfYAQNdrFRrr8oibKw"
+            }
+           }
+          }
+         ]
+        }
+    http_version: 
+  recorded_at: Thu, 13 Nov 2014 01:03:43 GMT
+- request:
+    method: get
     uri: https://www.googleapis.com/youtube/v3/playlistItems?fields=items/snippet/resourceId/videoId&key=AIzaSyBL9xCOlf9VoLtOyHq78KfF7R17zsYx75k&maxResults=5&part=snippet&playlistId=UUn8zNIfYAQNdrFRrr8oibKw
     body:
       encoding: US-ASCII
@@ -19,9 +78,9 @@ http_interactions:
       message: OK
     headers:
       Expires:
-      - Thu, 13 Nov 2014 01:03:29 GMT
+      - Thu, 13 Nov 2014 01:03:44 GMT
       Date:
-      - Thu, 13 Nov 2014 01:03:29 GMT
+      - Thu, 13 Nov 2014 01:03:44 GMT
       Cache-Control:
       - private, max-age=0, must-revalidate, no-transform
       Etag:
@@ -86,5 +145,5 @@ http_interactions:
          ]
         }
     http_version: 
-  recorded_at: Thu, 13 Nov 2014 01:03:29 GMT
+  recorded_at: Thu, 13 Nov 2014 01:03:44 GMT
 recorded_with: VCR 2.9.3

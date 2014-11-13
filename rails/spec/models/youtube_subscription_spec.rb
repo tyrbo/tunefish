@@ -1,6 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe YoutubeSubscription, :type => :model do
+  it { should have_many(:activities) }
+
   before do
     @youtube_subscription = YoutubeSubscription.new(title: "Example title",
                                                     channel_id: "12345",
