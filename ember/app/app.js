@@ -8,7 +8,8 @@ Ember.MODEL_FACTORY_INJECTIONS = true;
 var App = Ember.Application.extend({
   modulePrefix: config.modulePrefix,
   podModulePrefix: config.podModulePrefix,
-  Resolver: Resolver
+  Resolver: Resolver,
+  PUSHER_OPTS: { key: '1c01a36b23a3a8ea1383', connection: {} }
 });
 
 loadInitializers(App, config.modulePrefix);

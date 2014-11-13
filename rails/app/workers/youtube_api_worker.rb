@@ -30,7 +30,9 @@ class YoutubeAPIWorker
 
   def assign_urls_to_activity(urls, current_user_id)
     urls.each do |url|
-      YoutubeActivity.find_or_create_by(url: url, user_id: current_user_id, provider: 'youtube')
+      YoutubeActivity.find_or_create_by(url: url, user_id: current_user_id, provider: 'youtube') do |x|
+        Pusher.trigger("user_#{user_id}", 'activity', ActivitySerializer.new(x).to_json)
+      end
     end
   end
 end

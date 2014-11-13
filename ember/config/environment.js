@@ -21,9 +21,9 @@ module.exports = function(environment) {
 
     contentSecurityPolicy: {
       'default-src': "'none'",
-      'script-src': "'self' 'unsafe-eval' 'unsafe-inline' maxcdn.bootstrapcdn.com http://127.0.0.1:35729",
+      'script-src': "'self' 'unsafe-eval' 'unsafe-inline' maxcdn.bootstrapcdn.com http://127.0.0.1:35729 https://stats.pusher.com",
       'font-src': "'self' maxcdn.bootstrapcdn.com",
-      'connect-src': "'self' 127.0.0.1:3000 ws://127.0.0.1:35729",
+      'connect-src': "'self' 127.0.0.1:3000 ws://127.0.0.1:35729 wss://ws.pusherapp.com",
       'img-src': "'self' s3-us-west-2.amazonaws.com",
       'style-src': "'self' 'unsafe-inline' maxcdn.bootstrapcdn.com",
       'frame-src': "www.youtube.com w.soundcloud.com ",

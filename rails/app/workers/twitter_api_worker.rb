@@ -9,9 +9,9 @@ class TwitterAPIWorker
 
     oembed_tweets.each do |tweet|
       oembed_html = tweet.html
-      TwitterActivity.find_or_create_by(url: oembed_html,
-                                        user_id: user_id,
-                                        provider: 'twitter')
+      TwitterActivity.find_or_create_by(url: oembed_html, user_id: user_id, provider: 'twitter') do |x|
+        Pusher.trigger("user_#{user_id}", 'activity', ActivitySerializer.new(x).to_json)
+      end
     end
   end
 end
