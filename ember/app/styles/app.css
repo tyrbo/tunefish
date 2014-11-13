@@ -261,6 +261,15 @@ a {
   margin-left: 20%;
 }
 
+.user-index-link {
+  color: orange;
+}
+
+.user-index-link:hover {
+  color:orange;
+  text-decoration: underline;
+}
+
 .see-more:hover {
   color:orange;
   text-decoration: underline;
