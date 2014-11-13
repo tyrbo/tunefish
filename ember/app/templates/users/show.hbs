@@ -1,51 +1,54 @@
 <div class='wrapper col-md-3'>
   <div id="sidebar-wrapper">
     <div>
-      <h5 class='left-pane-subheader'><a href='/users' class='user-index-link'>Back to Users</a><a href='/activities' class='see-more'>Your Feed</a></h5>
+      <h5 class='left-pane-subheader'>
+        {{link-to 'Back to Users' 'users.index' class='user-index-link'}}
+        {{link-to 'Your Feed' 'activities.index' class='see-more'}}
+      </h5>
     </div>
     <div class='usercard'>
       <img class='avatar' src={{unbound photo}}>
       <p class='manage'>{{name}}
-      {{#if following}}
+        {{#if following}}
         <button class='btn btn-danger user-follow' {{action 'unfollow'}}> Unfollow </button>
-      {{else}}
+        {{else}}
         <button class='btn btn-warning user-follow'{{action 'follow'}}> Follow! </button>
-      {{/if}}
-    </p>
+        {{/if}}
+      </p>
 
-<h3 class='left-pane-subheader'>Feed Content</h3>
+      <h3 class='left-pane-subheader'>Feed Content</h3>
       <div class="progress">
-<div class="progress-bar progress-bar-warning" {{bind-attr style=styledSoundcloudPercentage}}>
+        <div class="progress-bar progress-bar-warning" {{bind-attr style=styledSoundcloudPercentage}}>
           {{#if isSoundcloudPercentage }}
-            <img src='http://www.myiconfinder.com/uploads/iconsets/128-128-de7acb73d6cf503246fca922e193da1f.png' height='16px' width='16px' id="twitter-icon">
-            <span class="sr-only"> {{soundcloudPercentage}}% Complete (warning)</span>
+          <img src='http://www.myiconfinder.com/uploads/iconsets/128-128-de7acb73d6cf503246fca922e193da1f.png' height='16px' width='16px' id="twitter-icon">
+          <span class="sr-only"> {{soundcloudPercentage}}% Complete (warning)</span>
           {{/if}}
         </div>
         <div class="progress-bar progress-bar-danger" {{bind-attr style=styledYoutubePercentage}}>
           {{#if isYoutubePercentage }}
-            <img src='https://cdn2.iconfinder.com/data/icons/browsers-and-social-media/1024/Youtube-48.png' height='16px' width='22px' id="twitter-icon">
-            <span class="sr-only">{{youtubePercentage}}% Complete (danger)</span>
+          <img src='https://cdn2.iconfinder.com/data/icons/browsers-and-social-media/1024/Youtube-48.png' height='16px' width='22px' id="twitter-icon">
+          <span class="sr-only">{{youtubePercentage}}% Complete (danger)</span>
           {{/if}}
         </div>
         <div class="progress-bar" {{bind-attr style=styledTwitterPercentage}}>
           {{#if isTwitterPercentage }}
-            <img src='https://cdn4.iconfinder.com/data/icons/iconsimple-logotypes/512/twitter-128.png' height='16px' width='16px' id="twitter-icon">
-            <span class="sr-only">{{twitterPercentage}}% Complete (success)</span>
+          <img src='https://cdn4.iconfinder.com/data/icons/iconsimple-logotypes/512/twitter-128.png' height='16px' width='16px' id="twitter-icon">
+          <span class="sr-only">{{twitterPercentage}}% Complete (success)</span>
           {{/if}}
+        </div>
+      </div>
+      <div>
+        <h3 class='left-pane-subheader'>Filter Music</h3>
+        <div class='filters'>
+          <div class='provider-filters'>
+            {{#view 'youtube_filter'}}<p class='youtube-filter'>Youtube</p>{{/view}}
+            {{#view 'twitter_filter'}}<p class='twitter-filter'>Twitter</p>{{/view}}
+            {{#view 'soundcloud_filter'}}<p class='soundcloud-filter'>Soundcloud</p>{{/view}}
+          </div>
+        </div>
       </div>
     </div>
-    <div>
-<h3 class='left-pane-subheader'>Filter Music</h3>
-<div class='filters'>
-  <div class='provider-filters'>
-    {{#view 'youtube_filter'}}<p class='youtube-filter'>Youtube</p>{{/view}}
-    {{#view 'twitter_filter'}}<p class='twitter-filter'>Twitter</p>{{/view}}
-    {{#view 'soundcloud_filter'}}<p class='soundcloud-filter'>Soundcloud</p>{{/view}}
   </div>
-</div>
-</div>
-</div>
-</div>
 </div>
 <div>
   <div id="page-content-wrapper">
