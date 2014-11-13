@@ -2,8 +2,14 @@
   <div id="sidebar-wrapper">
     <div class='usercard'>
       <img class='avatar' src={{unbound photo}}>
-      <p class='manage'>{{name}}<button class='btn btn-warning user-follow'{{action 'follow'}}> Follow! </button></p>
-      <div>
+      <p class='manage'>{{name}}
+      {{#if following}}
+        <button class='btn btn-danger user-follow' {{action 'unfollow'}}> Unfollow </button>
+      {{else}}
+        <button class='btn btn-warning user-follow'{{action 'follow'}}> Follow! </button>
+      {{/if}}  
+    </p>
+    <div>
       <h5><a href='/users' class='see-more'>Back to Users</a><a href='/activities' class='see-more'>Your Feed</a></h5>
     </div>
       <h3>Feed Content</h3>
@@ -31,7 +37,6 @@
     {{#view 'soundcloud_filter'}}<p class='soundcloud-filter'>Soundcloud</p>{{/view}}
   </div>
 </div>
-<h3 class='left-pane-subheader'>Recommended<small><a class="see-more" href='/users'>See More </a></small></h3>
 </div>
 </div>
 </div>

@@ -1,11 +1,23 @@
 <div class='wrapper col-md-3'>
   <div id="sidebar-wrapper">
+  </h5><a href='/activities' class='see-more'>Your Feed</a></h5>
     <h1>Find new music</h1>
-    <div>
-      <h3>Recommended For You</h3>
-      <h3>Most Popular</h3>
-      <h3>New Additions</h3>
-    </div>
+      <div class='category-sidebar'>
+      <h3>Most Popular Users</h3>
+      {{#each popular}}
+        <div class='user-sidebar'>       
+         {{~#link-to 'users.show' this}}<img src={{unbound photo}} class="follow-img">{{~/link-to}}
+        </div> 
+      {{/each}}
+      </div>
+      <div class='category-sidebar'>
+      <h3>Newest Additions</h3>
+      {{#each newest}}
+        <div class='user-sidebar'>
+         {{~#link-to 'users.show' this}}<img src={{unbound photo}} class="follow-img">{{~/link-to}}
+        </div>
+      {{/each}}
+      </div>
   </div>
 </div>
 <div id="page-content-wrapper">
@@ -19,10 +31,14 @@
           <li class='user-list-item' >
             <div class= 'user'>
             <img src={{unbound photo}} class="follow-img">
-              <span class='user-header'><h4>{{~#link-to 'users.show' this class='user-index-link'}}{{name}}{{~/link-to}}</h4>
-              Song Count: 100</span>
-              <div class='follow-button'><button class='btn btn-warning'{{action 'follow'}}> Follow! </button></p>
-              <div class="followers">Followers: 73</p>
+              <span class='user-header'><h4>{{~#link-to 'users.show' this}}{{name}}{{~/link-to}}</h4>
+              Song Count: {{activities.length}}</span>
+              {{#if following}}
+              <div class='follow-button'><button class='btn btn-danger' {{action 'unfollow'}}>Unfollow</button></div>
+              {{else}}
+              <div class='follow-button'><button class='btn btn-warning'{{action 'follow'}}> Follow! </button></div>
+              {{/if}}
+              <div class="followers">Following: {{subscriptions.length}}</div>
               <table class='hidden'>
                 <tr></tr>
                 <td>Song</td>

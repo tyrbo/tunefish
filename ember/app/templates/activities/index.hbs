@@ -1,9 +1,9 @@
-<div id="sidebar-wrapper">
-  <div class='usercard'>
-    <img class='avatar' src='https://s3-us-west-2.amazonaws.com/tunefish/logo.jpg'>
-    <p class='manage'>Manage Your Acccounts</p>
-    <div class='icon-container'>
-      {{#view "soundcloudimage" class="ember-view-image"}}
+<div class='wrapper col-md-3'>
+  <div id="sidebar-wrapper">
+    <div class='usercard'>
+      <h3 class='left-pane-subheader'>Manage Your Accounts</h3>
+      <div class='icon-container'>
+        {{#view "soundcloudimage" class="ember-view-image"}}
         <img src='https://s3-us-west-2.amazonaws.com/tunefish/soundcloud-icon.png' height='26%' width='26%' class="provider-image" id="soundcloud-icon">
       {{/view}}
       {{#view "youtubeimage" class="ember-view-image"}}
@@ -61,9 +61,13 @@
         {{#view 'twitter_filter'}}<p class='twitter-filter'>Twitter</p>{{/view}}
         {{#view 'soundcloud_filter'}}<p class='soundcloud-filter'>Soundcloud</p>{{/view}}
       </div>
+      <h3 class='left-pane-subheader'>Recommended<small><a class="see-more" href='/users'>See More </a></small></h3>
+      {{#each user}}
+        <img src={{unbound photo}} class="follow-img">
+      {{/each}}
     </div>
-    <h3 class='left-pane-subheader'>Recommended<small><a class="see-more" href='/users'>See More </a></small></h3>
   </div>
+</div>
 </div>
 <div id="page-content-wrapper">
   <div class="page-content ">

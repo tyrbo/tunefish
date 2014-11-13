@@ -69,6 +69,19 @@ export default Ember.ObjectController.extend({
 
     var percentage = (soundcloudCount/activitiesCount) *100;
     return percentage;
-  }.property('model.activities.@each')
-
+  }.property('model.activities.@each'),
+  
+  following: false, 
+  actions: {
+    follow: function(){
+      var subscription = this.store.createRecord('subscription', {
+        followed_id: this.get('id')
+      });
+      this.set('following', true);
+      subscription.save();      
+   },
+   unfollow: function(){
+      this.set('following', false);          
+   }
+  }
 });
