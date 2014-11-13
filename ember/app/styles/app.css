@@ -99,6 +99,16 @@ html, body {
   text-align: center;
 }
 
+.feed{
+  max-width: 1300px;
+  margin: auto;
+}
+
+.progress{
+  max-width: 300px;
+  min-width: 20px;
+}
+
 .music {
   padding: 10px;
   margin-top: 10px;
