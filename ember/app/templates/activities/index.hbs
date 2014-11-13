@@ -101,6 +101,15 @@
                   <div class='tweet'>{{{unbound url}}}</div>
                   {{/if}}
                   {{/with}}
+                  {{else}}
+                  <div class="loading-wrapper">
+                    <div class="spinner">
+                      <div class="bounce1"></div>
+                      <div class="bounce2"></div>
+                      <div class="bounce3"></div>
+                    </div>
+                    <h4 class="text-center">Waiting for activities...</h2>
+                  </div>
                   {{/each}}
                 </div>
                 <div role="tabpanel" class="tab-pane" id="subscriptions">
@@ -120,6 +129,15 @@
                   <div class='tweet'>{{{unbound url}}}</div>
                   {{/if}}
                   {{/with}}
+                  {{else}}
+                  <div class="loading-wrapper">
+                    <div class="spinner">
+                      <div class="bounce1"></div>
+                      <div class="bounce2"></div>
+                      <div class="bounce3"></div>
+                    </div>
+                    <h4 class="text-center">Waiting for subscriptions...</h2>
+                  </div>
                   {{/each}}
                 </div>
               </div>
