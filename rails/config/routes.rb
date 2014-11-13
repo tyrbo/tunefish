@@ -10,5 +10,13 @@ Rails.application.routes.draw do
     resources :youtube_subscriptions
     resources :subscriptions
     resources :subscription_activities
+
+    # externally facing API
+    namespace :v1 do
+      resources :activities, only: [:index]
+      resources :users, only: [:show, :index] do
+        resources :activities, only: [:index], controller: 'users/activities'
+      end
+    end
   end
 end
