@@ -81,7 +81,12 @@ var ActivitiesIndexController =  Ember.ObjectController.extend({
 
   isSoundcloudPercentage: function () {
     return this.get('soundcloudPercentage') !== 0;
-  }.property('soundcloudPercentage')
+  }.property('soundcloudPercentage'),
+
+  validActivities: function() {
+    debugger;
+    return this.get('model.activity').filterBy('user.id', this.get('user_id'))
+  }.property('model.activity.@each')
 
 });
 

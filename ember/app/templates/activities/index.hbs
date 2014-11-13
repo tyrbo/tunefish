@@ -79,7 +79,7 @@
         <div class="tab-content">
           <div role="tabpanel" class="tab-pane active feed" id="your-music">
             {{outlet 'modal'}}
-            {{#each activity in activity itemController="activity"}}
+            {{#each activity in validActivities itemController="activity"}}
               {{#with activity}}
                 {{#if isYoutube}}
                   <div class='music youtube'>
