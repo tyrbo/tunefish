@@ -32,7 +32,11 @@
             <img src={{unbound photo}} class="follow-img">
               <span class='user-header'><h4>{{~#link-to 'users.show' this}}{{name}}{{~/link-to}}</h4>
               Song Count: {{activities.length}}</span>
+              {{#if following}}
+              <div class='follow-button'><button class='btn btn-danger' {{action 'unfollow'}}>Unfollow</button>
+              {{else}}
               <div class='follow-button'><button class='btn btn-warning'{{action 'follow'}}> Follow! </button></p>
+              {{/if}}
               <div class="followers">Following: {{subscriptions.length}}</p>
               <table class='hidden'>
                 <tr></tr>

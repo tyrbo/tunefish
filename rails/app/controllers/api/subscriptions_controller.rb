@@ -14,7 +14,7 @@ class Api::SubscriptionsController < ApplicationController
     follower = current_user.following.find(params[:subscription][:followed_id])
 
     if follower.destroy
-      render json: current_user.following
+      render json: current_user
     end
   end
 end
