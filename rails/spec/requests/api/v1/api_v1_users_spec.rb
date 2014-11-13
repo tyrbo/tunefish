@@ -12,4 +12,15 @@ RSpec.describe "Api::V1::Users", :type => :request do
       expect(json['users'].length).to eq(2)
     end
   end
+
+  describe "GET /api_v1_user" do
+    it "gets a single user" do
+      user1 = User.create(name: "John Doe", photo: "example.com/img")
+
+      get api_v1_user_path(user1.id)
+      expect(response.status).to eq(200)
+      json = JSON.parse(response.body)
+      expect(json['user']['name']).to eq('John Doe')
+    end
+  end
 end
