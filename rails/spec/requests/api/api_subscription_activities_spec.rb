@@ -10,7 +10,7 @@ RSpec.describe "Api::SubscriptionActivities", :type => :request do
       @follower.activities.create(provider: 'soundcloud', url: "music")
     end
 
-    xit 'retrieves followed activities' do
+    it 'retrieves followed activities' do
       get api_subscription_activities_path
       expect(response.status).to eq(200)
       json = JSON.parse(response.body)
