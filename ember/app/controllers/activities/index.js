@@ -1,6 +1,10 @@
 import Ember from 'ember';
 
 var ActivitiesIndexController =  Ember.ObjectController.extend({
+  validActivities: function() {
+    return this.get('model.activity').filterBy('uid', this.get('user_id'))
+  }.property('model.activity.@each'),
+
   styledYoutubePercentage: function () {
     return 'width: ' + this.get('youtubePercentage') + '%';
   }.property('youtubePercentage'),
@@ -15,7 +19,7 @@ var ActivitiesIndexController =  Ember.ObjectController.extend({
 
   youtubePercentage: function() {
     var youtubeActivities = [];
-    var activities = this.get('model.activity');
+    var activities = this.get('validActivities');
     function getYoutubeActivities(element){
       if(element.get('provider') === "youtube"){
         youtubeActivities.push(element);
@@ -35,7 +39,7 @@ var ActivitiesIndexController =  Ember.ObjectController.extend({
 
   twitterPercentage: function() {
     var twitterActivities = [];
-    var activities = this.get('model.activity');
+    var activities = this.get('validActivities');
     function getTwitterActivities(element){
       if(element.get('provider') === "twitter"){
         twitterActivities.push(element);
@@ -54,7 +58,7 @@ var ActivitiesIndexController =  Ember.ObjectController.extend({
 
   soundcloudPercentage: function() {
     var soundcloudActivities = [];
-    var activities = this.get('model.activity');
+    var activities = this.get('validActivities');
     function getSoundcloudActivities(element){
       if(element.get('provider') === "soundcloud"){
         soundcloudActivities.push(element);
@@ -82,12 +86,6 @@ var ActivitiesIndexController =  Ember.ObjectController.extend({
   isSoundcloudPercentage: function () {
     return this.get('soundcloudPercentage') !== 0;
   }.property('soundcloudPercentage'),
-
-  validActivities: function() {
-    debugger;
-    return this.get('model.activity').filterBy('user.id', this.get('user_id'))
-  }.property('model.activity.@each')
-
 });
 
 export default ActivitiesIndexController;

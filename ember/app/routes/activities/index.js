@@ -27,7 +27,7 @@ export default Ember.Route.extend({
     var self = controller;
 
     if (user_id != null) {
-      controller.set('user_id', user_id.toString());
+      controller.set('user_id', user_id);
       self.set('pusher', new Pusher('1c01a36b23a3a8ea1383'));
       self.set('channel', self.get('pusher').subscribe('user_' + user_id));
       self.get('channel').bind('activity', function(data) {

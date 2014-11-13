@@ -7,11 +7,13 @@ class TwitterAPIWorker
     tweet_ids = tweets.map { |tweet| tweet.id }
     oembed_tweets = twitter.get_oembed_tweets(tweet_ids)
 
-    oembed_tweets.each do |tweet|
+    new_tweets = oembed_tweets.map do |tweet|
       oembed_html = tweet.html
       TwitterActivity.find_or_create_by(url: oembed_html, user_id: user_id, provider: 'twitter') do |x|
-        Pusher.trigger("user_#{user_id}", 'activity', x.to_json)
+        x
       end
     end
+
+    new_tweets.each { |x| Pusher.trigger("user_#{user_id}", 'activity', x.to_json) }
   end
 end

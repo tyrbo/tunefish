@@ -6,4 +6,13 @@ class Activity < ActiveRecord::Base
   scope :soundcloud, -> { where(type: "SoundcloudActivity") }
   scope :twitter,    -> { where(type: "TwitterActivity") }
 
+  def as_json(options = { })
+    super((options || { }).merge({
+        :methods => [:uid]
+    }))
+  end
+
+  def uid
+    user_id
+  end
 end
