@@ -2,7 +2,12 @@ class Api::UsersController < ApplicationController
   # include ResponseJsonFaker
 
   def index
-    render json: User.all
+    users = User.all
+    if current_user
+      users = users.reject { |x| x.id == current_user.id }
+    end
+
+    render json: users
   end
 
   def show
@@ -19,6 +24,6 @@ class Api::UsersController < ApplicationController
     end
     # subscriptions now have their own table
     # @user.add_tracked_subscriptions(params[:subscriptions_hash])
-    render json: User.last #this should be to the user's feed page
+    render json: @user #this should be to the user's feed page
   end
 end
